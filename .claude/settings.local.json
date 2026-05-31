@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Start-Process \"c:\\\\Users\\\\Pradeep Gupta\\\\OneDrive\\\\Desktop\\\\Satyam\\\\index.html\")",
+      "PowerShell($git = \"C:\\\\Program Files\\\\Git\\\\cmd\\\\git.exe\"; Set-Location \"c:\\\\Users\\\\Pradeep Gupta\\\\OneDrive\\\\Desktop\\\\Satyam\"; & $git init)",
+      "PowerShell($git = \"C:\\\\Program Files\\\\Git\\\\cmd\\\\git.exe\"; Set-Location \"c:\\\\Users\\\\Pradeep Gupta\\\\OneDrive\\\\Desktop\\\\Satyam\"; & $git add .; & $git commit -m \"Initial portfolio commit\")"
+    ]
+  }
+}

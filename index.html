@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Satyam Rai – AI Agent & RPA Developer</title>
+  <style>
+    :root {
+      --primary: #0f172a;
+      --accent: #3b82f6;
+      --accent2: #06b6d4;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --card: #1e293b;
+      --border: #334155;
+      --gradient: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--primary);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 5%;
+      display: flex; justify-content: space-between; align-items: center;
+      height: 60px;
+    }
+    .nav-brand { font-weight: 700; font-size: 1.2rem; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; transition: color .2s; }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      padding: 80px 5% 60px;
+      background: radial-gradient(ellipse at 70% 40%, rgba(59,130,246,0.12) 0%, transparent 60%),
+                  radial-gradient(ellipse at 20% 80%, rgba(6,182,212,0.08) 0%, transparent 50%);
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233b82f6' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+    }
+    .hero-content {
+      display: flex; align-items: center; gap: 5rem;
+      max-width: 1100px; width: 100%; position: relative;
+    }
+    .hero-photo {
+      flex-shrink: 0;
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      border: 3px solid transparent;
+      background: var(--gradient) border-box;
+      padding: 3px;
+      box-shadow: 0 0 40px rgba(59,130,246,0.3);
+      animation: float 4s ease-in-out infinite;
+    }
+    .hero-photo img {
+      width: 100%; height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+    }
+    .photo-placeholder {
+      width: 100%; height: 100%;
+      border-radius: 50%;
+      background: var(--card);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      color: var(--muted); font-size: 0.8rem; text-align: center; gap: 8px;
+    }
+    .photo-placeholder svg { width: 48px; height: 48px; opacity: 0.4; }
+    .hero-text { flex: 1; }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(59,130,246,0.15);
+      border: 1px solid rgba(59,130,246,0.3);
+      color: var(--accent);
+      padding: 4px 14px; border-radius: 20px;
+      font-size: 0.8rem; font-weight: 500; letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+    .hero h1 { font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 800; line-height: 1.15; margin-bottom: 0.5rem; }
+    .hero h1 span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-sub { font-size: 1.1rem; color: var(--muted); margin-bottom: 1.5rem; }
+    .hero-location { display: flex; align-items: center; gap: 0.4rem; color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; }
+    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn {
+      padding: 12px 28px; border-radius: 8px; font-size: 0.95rem; font-weight: 600;
+      text-decoration: none; cursor: pointer; border: none; transition: all .2s; display: inline-block;
+    }
+    .btn-primary { background: var(--gradient); color: #fff; box-shadow: 0 4px 15px rgba(59,130,246,0.35); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(59,130,246,0.5); }
+    .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border); }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+    .hero-stats { display: flex; gap: 2.5rem; margin-top: 2.5rem; }
+    .stat-item { text-align: center; }
+    .stat-num { font-size: 1.8rem; font-weight: 800; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .stat-label { font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+
+    @keyframes float { 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-10px); } }
+
+    /* ── SECTIONS ── */
+    section { padding: 90px 5%; max-width: 1200px; margin: 0 auto; }
+    .section-label {
+      text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.78rem;
+      color: var(--accent); font-weight: 600; margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+    .section-divider {
+      width: 50px; height: 3px; background: var(--gradient);
+      border-radius: 2px; margin-bottom: 3rem;
+    }
+
+    /* ── ABOUT ── */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    .about-text p { color: var(--muted); margin-bottom: 1rem; line-height: 1.8; }
+    .about-contact { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem; }
+    .contact-item { display: flex; align-items: center; gap: 0.75rem; color: var(--muted); font-size: 0.9rem; }
+    .contact-item a { color: var(--accent); text-decoration: none; }
+    .contact-item a:hover { text-decoration: underline; }
+    .contact-icon { width: 36px; height: 36px; border-radius: 8px; background: rgba(59,130,246,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .contact-icon svg { width: 16px; height: 16px; color: var(--accent); }
+    .about-highlights { display: grid; gap: 1rem; }
+    .highlight-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+      padding: 1.25rem; display: flex; align-items: flex-start; gap: 1rem;
+      transition: border-color .2s, transform .2s;
+    }
+    .highlight-card:hover { border-color: var(--accent); transform: translateX(4px); }
+    .highlight-icon { font-size: 1.5rem; }
+    .highlight-card h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.2rem; }
+    .highlight-card p { font-size: 0.82rem; color: var(--muted); }
+
+    /* ── SKILLS ── */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .skill-category {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px; padding: 1.75rem;
+      transition: border-color .2s, transform .2s;
+    }
+    .skill-category:hover { border-color: var(--accent); transform: translateY(-4px); }
+    .skill-category-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem; }
+    .skill-category-icon { font-size: 1.4rem; }
+    .skill-category h3 { font-size: 0.95rem; font-weight: 700; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .skill-tag {
+      background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.2);
+      color: var(--text); padding: 4px 12px; border-radius: 20px; font-size: 0.78rem;
+    }
+
+    /* ── EXPERIENCE ── */
+    .timeline { position: relative; padding-left: 2rem; }
+    .timeline::before {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+      width: 2px; background: var(--border);
+    }
+    .timeline-item { position: relative; margin-bottom: 3rem; }
+    .timeline-dot {
+      position: absolute; left: -2.45rem; top: 0.3rem;
+      width: 14px; height: 14px; border-radius: 50%;
+      background: var(--gradient); box-shadow: 0 0 10px rgba(59,130,246,0.5);
+    }
+    .timeline-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+      padding: 1.75rem; transition: border-color .2s;
+    }
+    .timeline-card:hover { border-color: var(--accent); }
+    .timeline-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem; }
+    .timeline-role { font-size: 1.05rem; font-weight: 700; }
+    .timeline-period {
+      background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.2);
+      color: var(--accent); padding: 3px 10px; border-radius: 20px; font-size: 0.78rem; white-space: nowrap;
+    }
+    .timeline-company { color: var(--accent2); font-size: 0.9rem; margin-bottom: 1rem; }
+    .timeline-card ul { padding-left: 1.2rem; }
+    .timeline-card li { color: var(--muted); font-size: 0.88rem; margin-bottom: 0.4rem; line-height: 1.6; }
+
+    /* ── PROJECTS ── */
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.5rem; }
+    .project-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+      padding: 1.75rem; transition: border-color .2s, transform .2s;
+      display: flex; flex-direction: column;
+    }
+    .project-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+    .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; }
+    .project-title { font-size: 1rem; font-weight: 700; flex: 1; margin-right: 0.5rem; }
+    .project-icon { font-size: 1.6rem; flex-shrink: 0; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
+    .project-tag {
+      background: rgba(6,182,212,0.1); border: 1px solid rgba(6,182,212,0.2);
+      color: var(--accent2); padding: 2px 10px; border-radius: 20px; font-size: 0.73rem;
+    }
+    .project-desc { color: var(--muted); font-size: 0.86rem; line-height: 1.7; flex: 1; }
+    .project-highlights { list-style: none; margin-top: 1rem; }
+    .project-highlights li { color: var(--muted); font-size: 0.83rem; padding-left: 1rem; position: relative; margin-bottom: 0.3rem; }
+    .project-highlights li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
+
+    /* ── CERTIFICATIONS ── */
+    .cert-edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .cert-edu-col h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--accent); }
+    .cert-item {
+      background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+      padding: 1.25rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem;
+      transition: border-color .2s;
+    }
+    .cert-item:hover { border-color: var(--accent); }
+    .cert-badge { width: 40px; height: 40px; border-radius: 8px; background: var(--gradient); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.1rem; }
+    .cert-info h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.15rem; }
+    .cert-info p { font-size: 0.8rem; color: var(--muted); }
+    .cert-info a { color: var(--accent); font-size: 0.78rem; text-decoration: none; }
+    .cert-info a:hover { text-decoration: underline; }
+    .edu-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+      padding: 1.5rem; transition: border-color .2s;
+    }
+    .edu-card:hover { border-color: var(--accent); }
+    .edu-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .edu-card p { color: var(--muted); font-size: 0.88rem; }
+    .edu-degree { color: var(--accent2) !important; font-weight: 600; margin-top: 0.5rem !important; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--card); border-top: 1px solid var(--border);
+      text-align: center; padding: 3rem 5%;
+    }
+    .footer-name { font-size: 1.5rem; font-weight: 800; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.5rem; }
+    .footer-links { display: flex; justify-content: center; gap: 2rem; margin: 1.5rem 0; flex-wrap: wrap; }
+    .footer-links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; transition: color .2s; }
+    .footer-links a:hover { color: var(--accent); }
+    .footer-copy { color: var(--muted); font-size: 0.8rem; }
+
+    /* ── LIGHT MODE ── */
+    body.light {
+      --primary: #f1f5f9;
+      --text: #0f172a;
+      --muted: #64748b;
+      --card: #ffffff;
+      --border: #e2e8f0;
+    }
+    body.light nav { background: rgba(241,245,249,0.95); border-bottom-color: #e2e8f0; }
+    body.light .btn-outline { color: var(--text); }
+    body.light footer { background: #e8edf3; }
+    body.light .highlight-card h4,
+    body.light .timeline-role,
+    body.light .project-title,
+    body.light .edu-card h4,
+    body.light .cert-info h4 { color: #0f172a; }
+
+    /* ── THEME TOGGLE ── */
+    .nav-right { display: flex; align-items: center; gap: 0.9rem; flex-shrink: 0; }
+    .theme-toggle { background: none; border: none; cursor: pointer; padding: 0; display: flex; align-items: center; }
+    .toggle-track {
+      width: 48px; height: 24px; border-radius: 12px;
+      background: #bfdbfe; border: 1px solid #93c5fd;
+      position: relative; display: flex; align-items: center;
+      transition: background .35s, border-color .35s;
+    }
+    body:not(.light) .toggle-track { background: #1e3358; border-color: #2d4a7a; }
+    .toggle-thumb {
+      position: absolute; left: 2px;
+      width: 20px; height: 20px; border-radius: 50%;
+      background: var(--gradient);
+      transition: transform .35s cubic-bezier(.34,1.56,.64,1);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+      z-index: 1;
+    }
+    body:not(.light) .toggle-thumb { transform: translateX(24px); }
+    .toggle-icon { position: absolute; font-size: 10px; line-height: 1; }
+    .toggle-icon.sun  { left: 4px; }
+    .toggle-icon.moon { right: 4px; }
+
+    /* ── HAMBURGER ── */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+    }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: all .3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ── MOBILE MENU ── */
+    .mobile-menu {
+      display: none; position: fixed; top: 60px; left: 0; right: 0; z-index: 98;
+      background: var(--card); border-bottom: 1px solid var(--border);
+      padding: 0.5rem 5% 1rem; box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-menu ul { list-style: none; }
+    .mobile-menu a {
+      display: block; padding: 0.85rem 0; color: var(--text);
+      text-decoration: none; font-size: 1rem; font-weight: 500;
+      border-bottom: 1px solid var(--border); transition: color .2s, padding-left .2s;
+    }
+    .mobile-menu a:hover { color: var(--accent); padding-left: 6px; }
+    .mobile-menu li:last-child a { border-bottom: none; }
+
+    /* ── RESPONSIVE — tablet ── */
+    @media (max-width: 900px) {
+      .projects-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── RESPONSIVE — mobile (≤768px, covers most Android & iPhone) ── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+
+      .hero { padding: 76px 4% 48px; }
+      .hero-content { flex-direction: column; text-align: center; gap: 2rem; }
+      .hero-photo { width: 160px; height: 160px; }
+      .hero-cta { justify-content: center; gap: 0.75rem; }
+      .hero-stats { justify-content: center; gap: 1.8rem; }
+      .hero-location { justify-content: center; }
+
+      section { padding: 60px 4%; }
+      .about-grid { grid-template-columns: 1fr; }
+      .cert-edu-grid { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
+
+      .timeline { padding-left: 1.5rem; }
+      .timeline-dot { left: -1.9rem; }
+      .timeline-header { flex-direction: column; align-items: flex-start; }
+    }
+
+    /* ── RESPONSIVE — small phones (≤480px, iPhone SE, older Android) ── */
+    @media (max-width: 480px) {
+      nav { padding: 0 4%; }
+      .nav-brand { font-size: 1rem; }
+      .toggle-track { width: 44px; height: 22px; }
+      .toggle-thumb { width: 18px; height: 18px; }
+      body:not(.light) .toggle-thumb { transform: translateX(22px); }
+
+      .hero-photo { width: 120px; height: 120px; }
+      .hero h1 { font-size: 1.75rem; }
+      .hero-sub { font-size: 0.92rem; }
+      .hero-stats { gap: 1.1rem; }
+      .stat-num { font-size: 1.4rem; }
+      .stat-label { font-size: 0.68rem; }
+      .hero-cta { flex-direction: column; align-items: center; }
+      .btn { width: 100%; max-width: 260px; text-align: center; padding: 11px 20px; font-size: 0.88rem; }
+
+      section { padding: 48px 4%; }
+      .timeline-card { padding: 1.2rem; }
+      .project-card { padding: 1.2rem; }
+      .skill-category { padding: 1.2rem; }
+
+      .footer-links { gap: 0.9rem; }
+      .footer-links a { font-size: 0.8rem; }
+    }
+
+    /* ── SCROLL ANIMATION ── */
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <span class="nav-brand">Satyam Rai</span>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle day/night mode">
+        <span class="toggle-track">
+          <span class="toggle-thumb"></span>
+          <span class="toggle-icon moon">🌙</span>
+          <span class="toggle-icon sun">☀️</span>
+        </span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" class="mob-link">About</a></li>
+      <li><a href="#skills" class="mob-link">Skills</a></li>
+      <li><a href="#experience" class="mob-link">Experience</a></li>
+      <li><a href="#projects" class="mob-link">Projects</a></li>
+      <li><a href="#certifications" class="mob-link">Certifications</a></li>
+      <li><a href="#contact" class="mob-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-photo">
+        <img src="photo.jpeg" alt="Satyam Rai" />
+      </div>
+      <div class="hero-text">
+        <span class="hero-badge">Available for Opportunities</span>
+        <h1>Hi, I'm <span>Satyam Rai</span></h1>
+        <p class="hero-sub">AI Agent Developer &amp; RPA Developer</p>
+        <p class="hero-location">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          Gurugram, India
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-outline">Contact Me</a>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=satyamraisatya@gmail.com" target="_blank" rel="noopener" class="btn btn-outline">Email Me</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-num">5+</div>
+            <div class="stat-label">Years Exp.</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">7+</div>
+            <div class="stat-label">Projects</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">95%</div>
+            <div class="stat-label">Accuracy</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">60%+</div>
+            <div class="stat-label">Effort Saved</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about" class="fade-in">
+    <p class="section-label">About Me</p>
+    <h2 class="section-title">Who I Am</h2>
+    <div class="section-divider"></div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>AI Agent Developer &amp; RPA Developer with <strong>5+ years of experience</strong> building intelligent automation and enterprise AI solutions using Microsoft Copilot Studio, Azure AI Foundry, Power Platform, and Python.</p>
+        <p>Specialized in designing and deploying AI agents, RPA workflows, and end-to-end automation pipelines integrated with Azure AI Services, SharePoint, Dataverse, and REST APIs.</p>
+        <p>Skilled in prompt engineering, web scraping, machine learning integration, and cloud platforms (Azure &amp; AWS), with a proven track record of driving digital transformation through scalable, AI-powered solutions.</p>
+        <div class="about-contact">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <span><a href="https://mail.google.com/mail/?view=cm&fs=1&to=satyamraisatya@gmail.com" target="_blank" rel="noopener">satyamraisatya@gmail.com</a></span>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 8.9a16 16 0 006.29 6.29l1.24-1.24a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <span><a href="tel:+919793924928">+91-9793924928</a></span>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            </div>
+            <span><a href="https://linkedin.com/in/raisatyam" target="_blank" rel="noopener">linkedin.com/in/raisatyam</a></span>
+          </div>
+        </div>
+      </div>
+      <div class="about-highlights">
+        <div class="highlight-card">
+          <span class="highlight-icon">🤖</span>
+          <div>
+            <h4>AI Agent Development</h4>
+            <p>Building conversational &amp; autonomous AI agents using Microsoft Copilot Studio and Azure AI Foundry</p>
+          </div>
+        </div>
+        <div class="highlight-card">
+          <span class="highlight-icon">⚙️</span>
+          <div>
+            <h4>RPA &amp; Automation</h4>
+            <p>Designing end-to-end automation pipelines with Power Automate Cloud &amp; Desktop Flows</p>
+          </div>
+        </div>
+        <div class="highlight-card">
+          <span class="highlight-icon">☁️</span>
+          <div>
+            <h4>Cloud &amp; Azure AI</h4>
+            <p>Integrating Azure AI Services — Document Intelligence, AI Vision, OpenAI — into enterprise solutions</p>
+          </div>
+        </div>
+        <div class="highlight-card">
+          <span class="highlight-icon">📊</span>
+          <div>
+            <h4>Power Platform</h4>
+            <p>Full-stack Power Apps, Power BI, Dataverse, and custom connector development</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="fade-in">
+    <p class="section-label">What I Know</p>
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="section-divider"></div>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <div class="skill-category-header">
+          <span class="skill-category-icon">🤖</span>
+          <h3>AI Agents &amp; Automation</h3>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Microsoft Copilot Studio</span>
+          <span class="skill-tag">AI Agents</span>
+          <span class="skill-tag">Power Automate</span>
+          <span class="skill-tag">Desktop Flows / RPA</span>
+          <span class="skill-tag">Prompt Engineering</span>
+          <span class="skill-tag">Web Scraping</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-category-header">
+          <span class="skill-category-icon">⚡</span>
+          <h3>Microsoft Power Platform</h3>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Power Apps (Canvas &amp; Model-Driven)</span>
+          <span class="skill-tag">Power Automate</span>
+          <span class="skill-tag">Power BI</span>
+          <span class="skill-tag">Dataverse</span>
+          <span class="skill-tag">Dataflows</span>
+          <span class="skill-tag">Power Fx</span>
+          <span class="skill-tag">AI Builder</span>
+          <span class="skill-tag">Custom Connectors</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-category-header">
+          <span class="skill-category-icon">☁️</span>
+          <h3>Microsoft Azure &amp; AI</h3>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Azure AI Foundry</span>
+          <span class="skill-tag">Azure OpenAI</span>
+          <span class="skill-tag">Document Intelligence</span>
+          <span class="skill-tag">AI Vision</span>
+          <span class="skill-tag">Azure Functions</span>
+          <span class="skill-tag">Azure Logic Apps</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-category-header">
+          <span class="skill-category-icon">🔧</span>
+          <h3>Development &amp; Integration</h3>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">REST APIs</span>
+          <span class="skill-tag">SQL / DBMS</span>
+          <span class="skill-tag">SharePoint</span>
+          <span class="skill-tag">Microsoft Graph API</span>
+          <span class="skill-tag">Microsoft Teams</span>
+          <span class="skill-tag">Dynamics 365</span>
+          <span class="skill-tag">AWS</span>
+          <span class="skill-tag">Machine Learning</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="fade-in">
+    <p class="section-label">My Journey</p>
+    <h2 class="section-title">Professional Experience</h2>
+    <div class="section-divider"></div>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <span class="timeline-role">RPA Developer II / AI Agent Developer</span>
+            <span class="timeline-period">Dec 2025 – Present</span>
+          </div>
+          <p class="timeline-company">Hollister Incorporated (Full-time)</p>
+          <ul>
+            <li>Designing and developing AI-powered automation solutions combining RPA, Microsoft Copilot Studio, and Power Platform to solve complex business challenges.</li>
+            <li>Building and deploying intelligent AI agents (Copilot-based) to streamline enterprise workflows, enhance decision-making, and improve operational efficiency.</li>
+            <li>Working on end-to-end automation pipelines including data ingestion, processing, and visualization using Python, Power Automate, and cloud platforms.</li>
+            <li>Collaborating with cross-functional teams to deliver scalable solutions and support dynamic business requirements.</li>
+            <li>Driving innovation by integrating AI, Machine Learning, and enterprise automation tools for high-impact digital transformation.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <span class="timeline-role">Microsoft 365 Administrator / Power Platform Developer</span>
+            <span class="timeline-period">Aug 2023 – Aug 2025</span>
+          </div>
+          <p class="timeline-company">Areness — Gurugram, Haryana</p>
+          <ul>
+            <li>Architected and deployed enterprise-scale automation solutions using Power Automate Desktop (RPA) and Cloud Flows, reducing manual effort by 60–80%.</li>
+            <li>Developed Canvas and Model-Driven Power Apps with complex business logic integrating Dataverse, SharePoint, and external systems via Microsoft Graph API.</li>
+            <li>Implemented AI-enhanced applications using Copilot Studio for conversational interfaces and AI Builder for intelligent document processing.</li>
+            <li>Integrated Azure AI Services (Document Intelligence, AI Vision) for advanced OCR, data extraction, and cognitive capabilities.</li>
+            <li>Provided technical leadership in code reviews, troubleshooting, and performance optimization for Power Platform production environments.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <span class="timeline-role">IT Engineer</span>
+            <span class="timeline-period">Jan 2021 – Apr 2023</span>
+          </div>
+          <p class="timeline-company">KIPM — Gorakhpur, UP</p>
+          <ul>
+            <li>Developed comprehensive Power Platform solutions for academic and administrative process automation.</li>
+            <li>Created Canvas Apps for data collection, integrated with SharePoint and SQL databases.</li>
+            <li>Designed automated workflows using Power Automate Cloud Flows for data synchronization and business process automation.</li>
+            <li>Built interactive Power BI dashboards and reports for data visualization and decision support.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="fade-in">
+    <p class="section-label">What I've Built</p>
+    <h2 class="section-title">Key Projects</h2>
+    <div class="section-divider"></div>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-header">
+          <h3 class="project-title">AI-Powered Resume Screening &amp; Fitment Analysis Agent</h3>
+          <span class="project-icon">📄</span>
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">Copilot Studio</span>
+          <span class="project-tag">Power Platform</span>
+          <span class="project-tag">SharePoint</span>
+          <span class="project-tag">AI</span>
+        </div>
+        <p class="project-desc">Conversational and autonomous AI agent on Microsoft Copilot Studio to automate resume screening and candidate fitment analysis against Job Descriptions.</p>
+        <ul class="project-highlights">
+          <li>Multi-channel resume ingestion via SharePoint &amp; conversational upload</li>
+          <li>AI-based parsing: name, skills, experience, education, gaps, certifications</li>
+          <li>JD-based fitness score (%) prediction with auto-updated Excel tables</li>
+          <li>Autonomous post-upload processing with scheduled daily updates</li>
+        </ul>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <h3 class="project-title">Marketing Insights Tool</h3>
+          <span class="project-icon">📊</span>
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">Power Platform</span>
+          <span class="project-tag">Copilot Studio</span>
+          <span class="project-tag">Power BI</span>
+          <span class="project-tag">Salesforce</span>
+        </div>
+        <p class="project-desc">AI-powered insight management solution converting unstructured frontline notes from Salesforce, Chatter, and account comments into real-time business intelligence.</p>
+        <ul class="project-highlights">
+          <li>Reduced manual analysis time from 120–240 minutes to ~10 minutes</li>
+          <li>Enhanced competitor risk visibility &amp; patient/clinician understanding</li>
+          <li>Centralized fragmented information for leadership &amp; commercial teams</li>
+        </ul>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <h3 class="project-title">IBPedia – SAP IBP Knowledge Agent</h3>
+          <span class="project-icon">🧠</span>
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">Copilot Studio</span>
+          <span class="project-tag">Power Automate</span>
+          <span class="project-tag">Excel</span>
+          <span class="project-tag">AI</span>
+        </div>
+        <p class="project-desc">Autonomous AI knowledge management agent that processes incoming emails and continuously updates the SAP IBP knowledge base stored in an Excel Q&A table.</p>
+        <ul class="project-highlights">
+          <li>Intelligent email analysis filtering noise, signatures &amp; greetings</li>
+          <li>Relevance detection &amp; duplicate identification logic</li>
+          <li>Auto-generates searchable questions &amp; precise answers as new rows</li>
+        </ul>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <h3 class="project-title">Enterprise Process Automation Suite</h3>
+          <span class="project-icon">⚙️</span>
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">Power Automate</span>
+          <span class="project-tag">Azure AI</span>
+          <span class="project-tag">Dataverse</span>
+        </div>
+        <p class="project-desc">Comprehensive automation solution using Power Automate Desktop for repetitive tasks and Cloud Flows for end-to-end process automation.</p>
+        <ul class="project-highlights">
+          <li>Azure AI Document Intelligence processing 500+ invoices/week at 95% accuracy</li>
+          <li>Advanced data modeling in Dataverse with efficient Dataflows</li>
+          <li>Approval workflows with conditional logic &amp; Graph API integrations</li>
+        </ul>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <h3 class="project-title">AI-Powered Business Card Data Extractor</h3>
+          <span class="project-icon">💼</span>
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">Power Apps</span>
+          <span class="project-tag">AI Builder</span>
+          <span class="project-tag">SharePoint</span>
+          <span class="project-tag">Graph API</span>
+        </div>
+        <p class="project-desc">Canvas App with AI Builder integration for automated contact extraction from business card images with 98% accuracy.</p>
+        <ul class="project-highlights">
+          <li>98% accuracy in contact information extraction</li>
+          <li>Graph API integration for contact management</li>
+          <li>Reduced manual data entry time by 85%</li>
+        </ul>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <h3 class="project-title">HRMS Automation System</h3>
+          <span class="project-icon">👥</span>
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">Power Apps</span>
+          <span class="project-tag">Power Automate</span>
+          <span class="project-tag">Custom Connectors</span>
+          <span class="project-tag">Teams</span>
+        </div>
+        <p class="project-desc">Canvas App with geofencing capabilities and Model-Driven App for comprehensive HR management with multi-level approval workflows.</p>
+        <ul class="project-highlights">
+          <li>Geofencing-enabled attendance tracking</li>
+          <li>Multi-level approval with Teams integration</li>
+          <li>Reduced payroll processing errors by 60%</li>
+        </ul>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <h3 class="project-title">HR &amp; IT Conversational AI Agent</h3>
+          <span class="project-icon">💬</span>
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">Copilot Studio</span>
+          <span class="project-tag">Microsoft Teams</span>
+          <span class="project-tag">Graph API</span>
+          <span class="project-tag">NLP</span>
+        </div>
+        <p class="project-desc">AI-powered chatbot using Copilot Studio for intelligent HR and IT support integrated with Microsoft Teams and Graph API for seamless employee access.</p>
+        <ul class="project-highlights">
+          <li>Natural language processing for contextual response generation</li>
+          <li>Automated ticket management &amp; escalation workflows</li>
+          <li>Reduced support resolution time by 50%</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS & EDUCATION -->
+  <section id="certifications" class="fade-in">
+    <p class="section-label">Credentials</p>
+    <h2 class="section-title">Certifications &amp; Education</h2>
+    <div class="section-divider"></div>
+    <div class="cert-edu-grid">
+      <div class="cert-edu-col">
+        <h3>Certifications</h3>
+        <div class="cert-item">
+          <div class="cert-badge">🏆</div>
+          <div class="cert-info">
+            <h4>Microsoft Certifications</h4>
+            <p>Multiple Microsoft credentials</p>
+            <a href="https://learn.microsoft.com" target="_blank" rel="noopener">View Microsoft Learn Profile →</a>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-badge">🟢</div>
+          <div class="cert-info">
+            <h4>HackerRank: SQL (Intermediate)</h4>
+            <p>Verified SQL proficiency</p>
+            <a href="https://hackerrank.com" target="_blank" rel="noopener">View Credential →</a>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-badge">🐍</div>
+          <div class="cert-info">
+            <h4>HackerRank: Python (Gold Badge)</h4>
+            <p>Verified Python proficiency – Gold level</p>
+            <a href="https://hackerrank.com" target="_blank" rel="noopener">View Profile →</a>
+          </div>
+        </div>
+      </div>
+      <div class="cert-edu-col">
+        <h3>Education</h3>
+        <div class="edu-card">
+          <h4>Dr. A. P. J. Abdul Kalam Technical University</h4>
+          <p>Uttar Pradesh, India</p>
+          <p class="edu-degree">Bachelor of Technology</p>
+          <p style="color: var(--muted); font-size: 0.85rem; margin-top: 0.5rem;">Graduated: 2021</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="fade-in">
+    <p class="section-label">Get In Touch</p>
+    <h2 class="section-title">Contact</h2>
+    <div class="section-divider"></div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; max-width: 800px;">
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=satyamraisatya@gmail.com" target="_blank" rel="noopener" style="text-decoration:none;">
+        <div class="highlight-card" style="cursor:pointer;">
+          <span class="highlight-icon">✉️</span>
+          <div>
+            <h4>Email</h4>
+            <p style="word-break: break-all;">satyamraisatya@gmail.com</p>
+          </div>
+        </div>
+      </a>
+      <a href="tel:+919793924928" style="text-decoration:none;">
+        <div class="highlight-card" style="cursor:pointer;">
+          <span class="highlight-icon">📱</span>
+          <div>
+            <h4>Phone</h4>
+            <p>+91-9793924928</p>
+          </div>
+        </div>
+      </a>
+      <a href="https://linkedin.com/in/raisatyam" target="_blank" rel="noopener" style="text-decoration:none;">
+        <div class="highlight-card" style="cursor:pointer;">
+          <span class="highlight-icon">💼</span>
+          <div>
+            <h4>LinkedIn</h4>
+            <p>linkedin.com/in/raisatyam</p>
+          </div>
+        </div>
+      </a>
+      <div class="highlight-card">
+        <span class="highlight-icon">📍</span>
+        <div>
+          <h4>Location</h4>
+          <p>Gurugram, India</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-name">Satyam Rai</div>
+    <p style="color: var(--muted); font-size: 0.9rem; margin-bottom: 0.5rem;">AI Agent Developer &amp; RPA Developer</p>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=satyamraisatya@gmail.com" target="_blank" rel="noopener">Email</a>
+      <a href="https://linkedin.com/in/raisatyam" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <p class="footer-copy">&copy; 2025 Satyam Rai. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // ── THEME TOGGLE ──
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    if (localStorage.getItem('theme') !== 'dark') body.classList.add('light');
+
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('light');
+      localStorage.setItem('theme', body.classList.contains('light') ? 'light' : 'dark');
+    });
+
+    // ── HAMBURGER / MOBILE MENU ──
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+
+    document.querySelectorAll('.mob-link').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+      });
+    });
+
+    // Close mobile menu on outside click
+    document.addEventListener('click', e => {
+      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+      }
+    });
+
+    // ── SCROLL ANIMATION ──
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // ── ACTIVE NAV HIGHLIGHT ──
+    const sections = document.querySelectorAll('section[id], div[id="home"]');
+    const allNavLinks = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        if (window.scrollY >= section.offsetTop - 100) current = section.id;
+      });
+      allNavLinks.forEach(link => {
+        link.style.color = link.getAttribute('href') === '#' + current ? 'var(--accent)' : '';
+      });
+    });
+  </script>
+</body>
+</html>
