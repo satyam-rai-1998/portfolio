@@ -266,7 +266,8 @@
     body.light .cert-info h4 { color: #0f172a; }
 
     /* ── THEME TOGGLE ── */
-    .nav-right { display: flex; align-items: center; gap: 0.9rem; flex-shrink: 0; }
+    .nav-end { display: flex; align-items: center; gap: 0; }
+    .nav-right { display: flex; align-items: center; gap: 0.9rem; flex-shrink: 0; margin-left: 0.6rem; }
     .theme-toggle { background: none; border: none; cursor: pointer; padding: 0; display: flex; align-items: center; }
     .toggle-track {
       width: 48px; height: 24px; border-radius: 12px;
@@ -378,25 +379,27 @@
   <!-- NAV -->
   <nav>
     <a href="#home" class="nav-brand">Satyam Rai</a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#certifications">Certifications</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="nav-right">
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle day/night mode">
-        <span class="toggle-track">
-          <span class="toggle-thumb"></span>
-          <span class="toggle-icon moon">🌙</span>
-          <span class="toggle-icon sun">☀️</span>
-        </span>
-      </button>
-      <button class="hamburger" id="hamburger" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
+    <div class="nav-end">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle day/night mode">
+          <span class="toggle-track">
+            <span class="toggle-thumb"></span>
+            <span class="toggle-icon moon">🌙</span>
+            <span class="toggle-icon sun">☀️</span>
+          </span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
