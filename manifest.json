@@ -1,0 +1,26 @@
+{
+  "name": "Satyam Rai | AI Agent Developer",
+  "short_name": "Satyam Rai",
+  "description": "Portfolio of Satyam Rai — AI Agent Developer & RPA Developer based in Gurugram, India.",
+  "start_url": "/portfolio/",
+  "scope": "/portfolio/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "lang": "en-US",
+  "icons": [
+    {
+      "src": "photo.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "photo.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}
