@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://satyam-rai-1998.github.io/portfolio/</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://satyam-rai-1998.github.io/portfolio/photo.jpeg</image:loc>
+      <image:title>Satyam Rai — AI Agent Developer and RPA Expert</image:title>
+      <image:caption>Satyam Rai, AI Agent Developer and RPA Developer based in Gurugram, India</image:caption>
+    </image:image>
   </url>
 </urlset>
