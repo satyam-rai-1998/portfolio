@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | Satyam Rai — AI Agent Developer & RPA Expert</title>
+  <meta name="description" content="Technical blog by Satyam Rai covering Microsoft Copilot Studio, AI Agent development, Prompt Engineering, Azure AI, Power Platform, RPA, and Python automation." />
+  <meta name="keywords" content="Satyam Rai blog, Copilot Studio tutorial, AI Agent development guide, Prompt Engineering tips, Azure AI Foundry, Power Platform blog, RPA automation, Python web scraping, FastAPI tutorial" />
+  <meta name="author" content="Satyam Rai" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://satyam-rai-1998.github.io/portfolio/blog.html" />
+  <link rel="author" href="https://linkedin.com/in/raisatyam" />
+  <meta name="theme-color" content="#3b82f6" />
+  <meta property="og:type" content="blog" />
+  <meta property="og:title" content="Blog | Satyam Rai — AI Agent & RPA Developer" />
+  <meta property="og:description" content="Technical blog covering Copilot Studio, AI Agents, Azure AI, Power Platform, RPA, and Python automation." />
+  <meta property="og:url" content="https://satyam-rai-1998.github.io/portfolio/blog.html" />
+  <meta property="og:image" content="https://satyam-rai-1998.github.io/portfolio/photo.jpeg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Blog | Satyam Rai — AI Agent Developer" />
+  <meta name="twitter:image" content="https://satyam-rai-1998.github.io/portfolio/photo.jpeg" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Satyam Rai — AI & Automation Blog",
+    "url": "https://satyam-rai-1998.github.io/portfolio/blog.html",
+    "author": {
+      "@type": "Person",
+      "name": "Satyam Rai",
+      "url": "https://satyam-rai-1998.github.io/portfolio/"
+    },
+    "description": "Technical insights on AI Agent development, Microsoft Copilot Studio, Power Platform, Azure AI, RPA, and Python automation."
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary: #0f172a; --accent: #3b82f6; --accent2: #06b6d4;
+      --text: #e2e8f0; --muted: #94a3b8; --card: #1e293b;
+      --border: #334155; --gradient: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: var(--primary); color: var(--text); line-height: 1.6; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(15,23,42,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 5%; display: flex; justify-content: space-between; align-items: center; height: 60px; }
+    .nav-brand { font-weight: 700; font-size: 1.8rem; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-decoration: none; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: all .3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; top: 60px; left: 0; right: 0; z-index: 98; background: var(--card); border-bottom: 1px solid var(--border); padding: 0.5rem 5% 1rem; }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a { display: block; padding: 0.85rem 0; color: var(--text); text-decoration: none; font-size: 1rem; border-bottom: 1px solid var(--border); }
+    .mobile-menu li:last-child a { border-bottom: none; }
+
+    /* BLOG HERO */
+    .blog-hero { padding: 120px 5% 60px; text-align: center; background: radial-gradient(ellipse at 50% 0%, rgba(59,130,246,0.15) 0%, transparent 60%); }
+    .blog-hero .hero-badge { display: inline-block; background: rgba(59,130,246,0.15); border: 1px solid rgba(59,130,246,0.3); color: var(--accent); padding: 4px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 500; margin-bottom: 1rem; }
+    .blog-hero h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin-bottom: 0.75rem; }
+    .blog-hero h1 span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .blog-hero p { color: var(--muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto 2rem; }
+    .blog-stats { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; }
+    .blog-stat { text-align: center; }
+    .blog-stat-num { font-size: 1.6rem; font-weight: 800; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .blog-stat-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+
+    /* FILTER TAGS */
+    .filter-bar { display: flex; gap: 0.6rem; flex-wrap: wrap; justify-content: center; padding: 0 5% 2.5rem; }
+    .filter-btn { background: var(--card); border: 1px solid var(--border); color: var(--muted); padding: 6px 16px; border-radius: 20px; font-size: 0.82rem; cursor: pointer; transition: all .2s; }
+    .filter-btn:hover, .filter-btn.active { background: rgba(59,130,246,0.15); border-color: var(--accent); color: var(--accent); }
+
+    /* BLOG GRID */
+    .blog-container { max-width: 1200px; margin: 0 auto; padding: 0 5% 80px; }
+    .featured-label { text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.78rem; color: var(--accent); font-weight: 600; margin-bottom: 1rem; }
+
+    /* FEATURED POST */
+    .featured-post { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 2.5rem; margin-bottom: 2rem; position: relative; overflow: hidden; }
+    .featured-post::before { content: 'FEATURED'; position: absolute; top: 1.5rem; right: 1.5rem; background: var(--gradient); color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; padding: 3px 10px; border-radius: 10px; }
+    .featured-post:hover { border-color: var(--accent); }
+
+    /* POST GRID */
+    .posts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 1.5rem; }
+
+    /* POST CARD */
+    .post-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem; display: flex; flex-direction: column; transition: border-color .2s, transform .2s; }
+    .post-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+
+    .post-meta { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 0.9rem; }
+    .post-category { background: rgba(59,130,246,0.12); border: 1px solid rgba(59,130,246,0.25); color: var(--accent); padding: 3px 10px; border-radius: 12px; font-size: 0.73rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+    .post-date { color: var(--muted); font-size: 0.8rem; }
+    .post-read-time { color: var(--muted); font-size: 0.8rem; }
+    .post-read-time::before { content: '·'; margin-right: 0.75rem; }
+
+    .post-title { font-size: 1.05rem; font-weight: 700; line-height: 1.4; margin-bottom: 0.75rem; color: var(--text); }
+    .featured-post .post-title { font-size: 1.4rem; }
+    .post-excerpt { color: var(--muted); font-size: 0.88rem; line-height: 1.75; margin-bottom: 1rem; flex: 1; }
+
+    /* EXPANDABLE CONTENT */
+    details { margin-top: 0.5rem; }
+    details summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; color: var(--accent); font-size: 0.88rem; font-weight: 600; padding: 6px 0; transition: color .2s; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::after { content: '↓'; font-size: 0.75rem; transition: transform .3s; }
+    details[open] summary::after { transform: rotate(180deg); }
+    details summary:hover { color: var(--accent2); }
+
+    .post-full { margin-top: 1.25rem; border-top: 1px solid var(--border); padding-top: 1.25rem; }
+    .post-full h3 { font-size: 0.95rem; font-weight: 700; margin: 1.25rem 0 0.5rem; color: var(--accent2); }
+    .post-full h3:first-child { margin-top: 0; }
+    .post-full p { color: var(--muted); font-size: 0.87rem; line-height: 1.8; margin-bottom: 0.75rem; }
+    .post-full ul, .post-full ol { padding-left: 1.3rem; margin-bottom: 0.75rem; }
+    .post-full li { color: var(--muted); font-size: 0.87rem; line-height: 1.7; margin-bottom: 0.3rem; }
+    .post-full code { background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.2); padding: 1px 6px; border-radius: 4px; font-size: 0.82rem; color: var(--accent2); font-family: 'Cascadia Code', 'Courier New', monospace; }
+    .post-full pre { background: #0d1526; border: 1px solid var(--border); border-radius: 8px; padding: 1rem; margin: 0.75rem 0; overflow-x: auto; }
+    .post-full pre code { background: none; border: none; padding: 0; font-size: 0.83rem; color: #a5f3fc; }
+    .key-takeaways { background: rgba(59,130,246,0.06); border: 1px solid rgba(59,130,246,0.2); border-radius: 10px; padding: 1rem 1.25rem; margin-top: 1rem; }
+    .key-takeaways h4 { font-size: 0.82rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.6rem; }
+    .key-takeaways li { color: var(--text); font-size: 0.84rem; }
+
+    .post-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
+    .post-tag { background: rgba(6,182,212,0.08); border: 1px solid rgba(6,182,212,0.2); color: var(--accent2); padding: 2px 9px; border-radius: 10px; font-size: 0.72rem; }
+
+    /* LIGHT MODE */
+    body.light { --primary: #f1f5f9; --text: #0f172a; --muted: #64748b; --card: #ffffff; --border: #e2e8f0; }
+    body.light nav { background: rgba(241,245,249,0.95); }
+    body.light .post-full pre { background: #1e293b; }
+    body.light .post-title { color: #0f172a; }
+
+    /* THEME TOGGLE */
+    .nav-right { display: flex; align-items: center; gap: 0.9rem; }
+    .theme-toggle { background: none; border: none; cursor: pointer; padding: 0; display: flex; align-items: center; }
+    .toggle-track { width: 48px; height: 24px; border-radius: 12px; background: #bfdbfe; border: 1px solid #93c5fd; position: relative; display: flex; align-items: center; transition: background .35s; }
+    body:not(.light) .toggle-track { background: #1e3358; border-color: #2d4a7a; }
+    .toggle-thumb { position: absolute; left: 2px; width: 20px; height: 20px; border-radius: 50%; background: var(--gradient); transition: transform .35s cubic-bezier(.34,1.56,.64,1); box-shadow: 0 1px 4px rgba(0,0,0,0.3); z-index: 1; }
+    body:not(.light) .toggle-thumb { transform: translateX(24px); }
+    .toggle-icon { position: absolute; font-size: 10px; }
+    .toggle-icon.sun { left: 4px; }
+    .toggle-icon.moon { right: 4px; }
+
+    /* FOOTER */
+    footer { background: var(--card); border-top: 1px solid var(--border); text-align: center; padding: 2.5rem 5%; }
+    .footer-name { font-size: 1.3rem; font-weight: 800; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.4rem; }
+    .footer-copy { color: var(--muted); font-size: 0.8rem; margin-top: 0.5rem; }
+    .footer-back { display: inline-block; margin-top: 0.75rem; color: var(--accent); text-decoration: none; font-size: 0.88rem; }
+    .footer-back:hover { text-decoration: underline; }
+
+    /* SCROLL PROGRESS */
+    #scroll-progress { position: fixed; top: 0; left: 0; z-index: 200; height: 3px; width: 0%; background: var(--gradient); transition: width 0.1s linear; pointer-events: none; }
+
+    /* BACK TO TOP */
+    #back-to-top { position: fixed; bottom: 2rem; right: 2rem; width: 44px; height: 44px; border-radius: 50%; background: var(--gradient); color: #fff; border: none; cursor: pointer; font-size: 1.1rem; font-weight: 700; box-shadow: 0 4px 15px rgba(59,130,246,0.45); display: flex; align-items: center; justify-content: center; opacity: 0; transform: translateY(12px); transition: opacity .3s, transform .3s; z-index: 99; }
+    #back-to-top.visible { opacity: 1; transform: translateY(0); }
+    #back-to-top:hover { transform: translateY(-3px); }
+
+    .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .posts-grid { grid-template-columns: 1fr; }
+      .blog-stats { gap: 1.5rem; }
+      .featured-post { padding: 1.5rem; }
+    }
+    @media (max-width: 480px) {
+      .nav-brand { font-size: 1.1rem; }
+      .blog-hero h1 { font-size: 1.7rem; }
+    }
+  </style>
+</head>
+<body>
+  <div id="scroll-progress"></div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-brand">Satyam Rai</a>
+    <div style="display:flex;align-items:center;gap:0;">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="toggle-track">
+            <span class="toggle-thumb"></span>
+            <span class="toggle-icon moon">🌙</span>
+            <span class="toggle-icon sun">☀️</span>
+          </span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="index.html#about" class="mob-link">About</a></li>
+      <li><a href="index.html#skills" class="mob-link">Skills</a></li>
+      <li><a href="index.html#experience" class="mob-link">Experience</a></li>
+      <li><a href="index.html#projects" class="mob-link">Projects</a></li>
+      <li><a href="blog.html" class="mob-link">Blog</a></li>
+      <li><a href="index.html#contact" class="mob-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- BLOG HERO -->
+  <div class="blog-hero">
+    <span class="hero-badge">Technical Blog</span>
+    <h1>Insights &amp; <span>Tutorials</span></h1>
+    <p>Deep dives into AI Agents, Microsoft Copilot Studio, Azure AI, Power Platform, RPA &amp; Python Automation</p>
+    <div class="blog-stats">
+      <div class="blog-stat"><div class="blog-stat-num">10</div><div class="blog-stat-label">Articles</div></div>
+      <div class="blog-stat"><div class="blog-stat-num">2+</div><div class="blog-stat-label">Years of Posts</div></div>
+      <div class="blog-stat"><div class="blog-stat-num">6</div><div class="blog-stat-label">Topics</div></div>
+    </div>
+  </div>
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar" id="filterBar">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="Copilot Studio">Copilot Studio</button>
+    <button class="filter-btn" data-filter="Azure AI">Azure AI</button>
+    <button class="filter-btn" data-filter="Power Platform">Power Platform</button>
+    <button class="filter-btn" data-filter="Python">Python</button>
+    <button class="filter-btn" data-filter="RPA">RPA</button>
+    <button class="filter-btn" data-filter="AI Architecture">AI Architecture</button>
+  </div>
+
+  <!-- BLOG CONTENT -->
+  <div class="blog-container">
+
+    <!-- FEATURED POST -->
+    <p class="featured-label fade-in">Featured Article</p>
+    <article class="featured-post fade-in" data-category="Copilot Studio">
+      <div class="post-meta">
+        <span class="post-category">Copilot Studio</span>
+        <span class="post-date">28 May 2026</span>
+        <span class="post-read-time">8 min read</span>
+      </div>
+      <h2 class="post-title">Building Your First Autonomous AI Agent with Microsoft Copilot Studio</h2>
+      <p class="post-excerpt">Autonomous AI agents are no longer science fiction — they're being deployed in enterprises today. In this guide, I walk through everything I've learned building production-grade AI agents using Microsoft Copilot Studio: from initial setup and knowledge source configuration to deploying across Microsoft Teams, websites, and custom channels.</p>
+      <details>
+        <summary>Read Full Article</summary>
+        <div class="post-full">
+          <h3>What Is an Autonomous Agent?</h3>
+          <p>Unlike a traditional chatbot that follows a fixed script, an autonomous AI agent can reason, plan, and take actions to accomplish a goal — without being told every step. In Copilot Studio, this means your agent can call APIs, search knowledge bases, trigger Power Automate flows, and loop through multi-step tasks dynamically.</p>
+
+          <h3>Step 1: Create Your Agent in Copilot Studio</h3>
+          <p>Navigate to <code>copilotstudio.microsoft.com</code>, click <strong>Create</strong>, and choose <strong>New agent</strong>. Give it a clear name and a detailed description — this description is used by the AI to understand its purpose and scope. Write it like you're briefing a new employee: what does this agent do, what does it NOT do, and what tone should it take?</p>
+
+          <h3>Step 2: Configure Knowledge Sources</h3>
+          <p>This is where your agent gets its expertise. You can connect:</p>
+          <ul>
+            <li><strong>SharePoint sites</strong> — perfect for company policies, SOPs, and internal docs</li>
+            <li><strong>Public websites</strong> — crawled and indexed automatically</li>
+            <li><strong>Uploaded files</strong> — PDFs, Word docs, Excel files</li>
+            <li><strong>Azure AI Search</strong> — for large-scale, high-performance retrieval</li>
+            <li><strong>Dataverse tables</strong> — structured business data</li>
+          </ul>
+          <p>Pro tip: keep each knowledge source focused. An agent with 3 tightly scoped sources performs far better than one with 20 loosely related ones.</p>
+
+          <h3>Step 3: Build Actions with Power Automate</h3>
+          <p>Actions let your agent DO things — not just answer questions. Connect a Power Automate flow to:</p>
+          <ul>
+            <li>Create tickets in ServiceNow or Jira</li>
+            <li>Send emails or Teams messages</li>
+            <li>Look up data from external APIs</li>
+            <li>Write records back to Dataverse or SharePoint</li>
+          </ul>
+          <p>Always define clear input/output parameters for your flows. The agent uses these descriptions to decide when to call the action and what data to pass.</p>
+
+          <h3>Step 4: Test Thoroughly Before Publishing</h3>
+          <p>Use the built-in test panel to run through at least 20–30 different user intents. Pay special attention to edge cases — what happens when users ask something outside scope? Configure a graceful fallback message rather than letting the agent hallucinate.</p>
+
+          <div class="key-takeaways">
+            <h4>Key Takeaways</h4>
+            <ul>
+              <li>Write a detailed agent description — it directly affects response quality</li>
+              <li>Keep knowledge sources focused and well-structured</li>
+              <li>Test with real users, not just happy-path scenarios</li>
+              <li>Use Power Automate for all write-back and integration actions</li>
+              <li>Monitor conversation transcripts weekly and refine continuously</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+      <div class="post-tags">
+        <span class="post-tag">Copilot Studio</span>
+        <span class="post-tag">AI Agents</span>
+        <span class="post-tag">Microsoft 365</span>
+        <span class="post-tag">Power Automate</span>
+      </div>
+    </article>
+
+    <!-- POSTS GRID -->
+    <div class="posts-grid">
+
+      <!-- POST 2 -->
+      <article class="post-card fade-in" data-category="Copilot Studio">
+        <div class="post-meta">
+          <span class="post-category">Copilot Studio</span>
+          <span class="post-date">10 Apr 2026</span>
+          <span class="post-read-time">6 min read</span>
+        </div>
+        <h2 class="post-title">Advanced Prompt Engineering Techniques for Enterprise AI Agents</h2>
+        <p class="post-excerpt">The difference between an AI agent that frustrates users and one that delights them often comes down to the quality of your prompt engineering. After building 15+ production agents, here are the techniques that consistently improve accuracy, tone, and task completion rates.</p>
+        <details>
+          <summary>Read Full Article</summary>
+          <div class="post-full">
+            <h3>Why Prompts Matter More Than You Think</h3>
+            <p>In Copilot Studio, the <strong>Instructions</strong> field (your system prompt) is the single most powerful tool you have. It shapes every response the agent generates. Most developers write 2–3 lines here. The best agents I've built have 20–30 lines of carefully crafted instructions.</p>
+
+            <h3>Technique 1: Role + Context + Constraints</h3>
+            <p>Structure your system prompt in three layers:</p>
+            <ul>
+              <li><strong>Role:</strong> "You are an expert HR assistant for Acme Corp..."</li>
+              <li><strong>Context:</strong> "You help employees with leave requests, policy questions, and onboarding..."</li>
+              <li><strong>Constraints:</strong> "Never discuss salaries. Always escalate complaints to HR@acme.com..."</li>
+            </ul>
+
+            <h3>Technique 2: Few-Shot Examples in Knowledge</h3>
+            <p>Add a knowledge file with Q&amp;A examples showing exactly how the agent should respond to common queries. Format: <code>Q: [question] A: [ideal response]</code>. This dramatically improves consistency for domain-specific language.</p>
+
+            <h3>Technique 3: Output Format Control</h3>
+            <p>Tell the agent exactly how to format responses: "Always respond in bullet points for lists. Use numbered steps for processes. Keep responses under 200 words unless the user asks for detail." Structured output makes responses scannable and professional.</p>
+
+            <h3>Technique 4: Graceful Scope Management</h3>
+            <p>Add explicit instructions for out-of-scope queries: "If the user asks about topics not related to HR, politely redirect them: 'I specialize in HR queries. For [topic], please contact [department].'" This prevents hallucination on unfamiliar topics.</p>
+
+            <div class="key-takeaways">
+              <h4>Key Takeaways</h4>
+              <ul>
+                <li>Invest 20% of your build time in prompt refinement — it yields 80% of quality improvements</li>
+                <li>Use few-shot examples for domain-specific language and tone</li>
+                <li>Always define what the agent should NOT do, not just what it should do</li>
+                <li>Test prompts with adversarial inputs — users will always surprise you</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+        <div class="post-tags">
+          <span class="post-tag">Prompt Engineering</span>
+          <span class="post-tag">Copilot Studio</span>
+          <span class="post-tag">AI Quality</span>
+        </div>
+      </article>
+
+      <!-- POST 3 -->
+      <article class="post-card fade-in" data-category="Azure AI">
+        <div class="post-meta">
+          <span class="post-category">Azure AI</span>
+          <span class="post-date">15 Feb 2026</span>
+          <span class="post-read-time">10 min read</span>
+        </div>
+        <h2 class="post-title">RAG Architecture: Building Smart Knowledge Bases with Azure AI Search & Copilot Studio</h2>
+        <p class="post-excerpt">Retrieval Augmented Generation (RAG) is the backbone of every reliable enterprise AI agent. Instead of relying on the model's training data, RAG fetches real-time, accurate information from your own data sources. Here's how I architect RAG systems that scale to millions of documents.</p>
+        <details>
+          <summary>Read Full Article</summary>
+          <div class="post-full">
+            <h3>The Problem RAG Solves</h3>
+            <p>LLMs hallucinate when asked about domain-specific or recent information. RAG fixes this by injecting relevant documents into the model's context at query time — so answers are grounded in your actual data, not the model's stale training knowledge.</p>
+
+            <h3>Architecture Overview</h3>
+            <ul>
+              <li><strong>Data ingestion:</strong> SharePoint / Blob Storage → Azure AI Search indexer</li>
+              <li><strong>Embedding:</strong> text-embedding-ada-002 via Azure OpenAI</li>
+              <li><strong>Retrieval:</strong> Hybrid search (vector + BM25 keyword)</li>
+              <li><strong>Generation:</strong> GPT-4o with retrieved chunks as context</li>
+              <li><strong>Interface:</strong> Copilot Studio agent with Azure AI Search action</li>
+            </ul>
+
+            <h3>Chunking Strategy — The Most Overlooked Factor</h3>
+            <p>How you split documents dramatically affects retrieval quality. My recommended approach: chunk by semantic boundary (paragraph breaks), target 500–800 tokens per chunk, with 10% overlap between adjacent chunks. For tables and structured data, keep entire tables as single chunks.</p>
+
+            <h3>Hybrid Search: Best of Both Worlds</h3>
+            <p>Pure vector search misses exact keyword matches. Pure keyword search misses semantic similarity. Azure AI Search's hybrid mode combines both with Reciprocal Rank Fusion (RRF) — I consistently see 15–20% relevance improvement over either approach alone.</p>
+
+            <div class="key-takeaways">
+              <h4>Key Takeaways</h4>
+              <ul>
+                <li>Use hybrid search (vector + keyword) — always outperforms either alone</li>
+                <li>Chunk at semantic boundaries, not arbitrary token counts</li>
+                <li>Add metadata filters (department, date, document type) to improve precision</li>
+                <li>Evaluate with RAGAS metrics: faithfulness, answer relevancy, context recall</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+        <div class="post-tags">
+          <span class="post-tag">RAG</span>
+          <span class="post-tag">Azure AI Search</span>
+          <span class="post-tag">Azure OpenAI</span>
+          <span class="post-tag">Copilot Studio</span>
+        </div>
+      </article>
+
+      <!-- POST 4 -->
+      <article class="post-card fade-in" data-category="Power Platform">
+        <div class="post-meta">
+          <span class="post-category">Power Platform</span>
+          <span class="post-date">20 Nov 2025</span>
+          <span class="post-read-time">7 min read</span>
+        </div>
+        <h2 class="post-title">Power Automate + Copilot Studio: End-to-End Enterprise Automation Patterns</h2>
+        <p class="post-excerpt">The real power of Microsoft's AI stack isn't Copilot Studio or Power Automate alone — it's how they work together. I've built pipelines that combine conversational AI with RPA-grade automation to handle complete business processes end-to-end, with zero human intervention.</p>
+        <details>
+          <summary>Read Full Article</summary>
+          <div class="post-full">
+            <h3>Pattern 1: Agent Triggers Automation</h3>
+            <p>The most common pattern: a user makes a request via Copilot agent → agent extracts intent and entities → calls a Power Automate flow → flow executes the business process → returns confirmation to the agent → agent communicates result to user. This works well for: IT helpdesk tickets, HR leave requests, expense approvals, data lookups.</p>
+
+            <h3>Pattern 2: Automation Triggers Agent Notification</h3>
+            <p>Less common but powerful: a scheduled Power Automate flow runs (e.g., daily invoice processing), detects an anomaly, and proactively messages a user via a Copilot agent in Teams. The agent can then ask follow-up questions and take corrective action. True autonomous operation.</p>
+
+            <h3>Pattern 3: Long-Running Process Orchestration</h3>
+            <p>For multi-step processes that take minutes or hours: use Power Automate's <strong>Do Until</strong> loop with status polling, or Azure Service Bus for event-driven handoffs. The agent initiates the process, stores a job ID, and can be queried for status at any time.</p>
+
+            <h3>Variable Passing — Common Mistakes</h3>
+            <p>Always define input parameters in your flow with clear <code>Display Names</code> and <code>Descriptions</code>. Copilot Studio uses these descriptions to determine what data to pass. Vague parameter names like "input1" lead to incorrect data being sent — I've seen this break production agents silently.</p>
+
+            <div class="key-takeaways">
+              <h4>Key Takeaways</h4>
+              <ul>
+                <li>Design flows as reusable microservices — one flow, one responsibility</li>
+                <li>Always add error handling in flows and return structured error responses to the agent</li>
+                <li>Use child flows for shared logic to avoid duplication</li>
+                <li>Test flows independently before connecting to agents</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+        <div class="post-tags">
+          <span class="post-tag">Power Automate</span>
+          <span class="post-tag">Copilot Studio</span>
+          <span class="post-tag">Enterprise Automation</span>
+        </div>
+      </article>
+
+      <!-- POST 5 -->
+      <article class="post-card fade-in" data-category="AI Architecture">
+        <div class="post-meta">
+          <span class="post-category">AI Architecture</span>
+          <span class="post-date">5 Sep 2025</span>
+          <span class="post-read-time">9 min read</span>
+        </div>
+        <h2 class="post-title">Multi-Agent Orchestration: Building Complex AI Workflows That Actually Work</h2>
+        <p class="post-excerpt">Single agents hit a ceiling. When a task requires multiple specializations — research, analysis, writing, approval — multi-agent orchestration is the answer. Here's the architecture pattern I use to build reliable multi-agent systems in enterprise environments.</p>
+        <details>
+          <summary>Read Full Article</summary>
+          <div class="post-full">
+            <h3>Why Multi-Agent?</h3>
+            <p>A single agent with too many responsibilities becomes unreliable — it confuses context, makes poor routing decisions, and becomes difficult to maintain. Specialized agents perform better, are easier to test, and can be updated independently without breaking the whole system.</p>
+
+            <h3>The Orchestrator Pattern</h3>
+            <p>One <strong>Orchestrator Agent</strong> handles user interaction and delegates tasks to specialized <strong>Worker Agents</strong>:</p>
+            <ul>
+              <li>Orchestrator receives the request, determines intent</li>
+              <li>Routes to: HR Agent, IT Agent, Finance Agent, or Knowledge Agent</li>
+              <li>Worker agent executes its specialized task</li>
+              <li>Orchestrator compiles and presents the final response</li>
+            </ul>
+
+            <h3>Communication Between Agents</h3>
+            <p>In Copilot Studio, agent-to-agent calls are made via Power Automate flows that invoke the target agent's API endpoint. Pass structured JSON payloads and always validate the response schema before using it. Add timeout handling — external agent calls can fail silently.</p>
+
+            <h3>Error Recovery &amp; Fallback</h3>
+            <p>Every agent call must have a fallback. If the IT Agent fails, the Orchestrator should: log the failure, notify the user of the delay, and escalate to a human agent via Teams adaptive card. Never let a failure result in silent termination of the user's request.</p>
+
+            <div class="key-takeaways">
+              <h4>Key Takeaways</h4>
+              <ul>
+                <li>Start with a single agent; extract to multi-agent when complexity demands it</li>
+                <li>Each worker agent should have one clear responsibility</li>
+                <li>Always implement circuit breakers — fail fast, fail visibly</li>
+                <li>Log all agent-to-agent calls for debugging and auditing</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+        <div class="post-tags">
+          <span class="post-tag">Multi-Agent</span>
+          <span class="post-tag">AI Architecture</span>
+          <span class="post-tag">Copilot Studio</span>
+          <span class="post-tag">Enterprise AI</span>
+        </div>
+      </article>
+
+      <!-- POST 6 -->
+      <article class="post-card fade-in" data-category="Azure AI">
+        <div class="post-meta">
+          <span class="post-category">Azure AI</span>
+          <span class="post-date">18 Jul 2025</span>
+          <span class="post-read-time">8 min read</span>
+        </div>
+        <h2 class="post-title">Azure AI Foundry: From Model Deployment to Production in 5 Steps</h2>
+        <p class="post-excerpt">Azure AI Foundry (formerly Azure Machine Learning + Azure OpenAI combined) is Microsoft's unified platform for building, evaluating, and deploying AI applications at scale. After deploying 10+ production AI solutions on it, here's my practical guide to going from zero to production.</p>
+        <details>
+          <summary>Read Full Article</summary>
+          <div class="post-full">
+            <h3>Step 1: Set Up Your AI Foundry Hub</h3>
+            <p>Create an AI Foundry Hub in Azure portal — this is your centralized workspace. Connect it to Azure OpenAI, Azure AI Search, and Azure Blob Storage during setup. Use a dedicated resource group and tag everything consistently — you'll thank yourself during cost reviews.</p>
+
+            <h3>Step 2: Choose and Deploy Your Model</h3>
+            <p>The model catalog has 1,700+ models. For enterprise use cases: <strong>GPT-4o</strong> for reasoning and generation, <strong>text-embedding-3-large</strong> for embeddings, <strong>Phi-3.5</strong> for cost-sensitive high-volume tasks. Deploy as a managed endpoint with auto-scaling enabled.</p>
+
+            <h3>Step 3: Build with Prompt Flow</h3>
+            <p>Prompt Flow is Azure AI Foundry's visual orchestration tool. Chain LLM calls, Python scripts, and API calls into a reusable pipeline. Version-control your flows in Git. This is the layer where RAG, tool calling, and business logic come together.</p>
+
+            <h3>Step 4: Evaluate Before Deploying</h3>
+            <p>Run the built-in evaluation suite: groundedness, relevance, coherence, fluency. Set minimum thresholds (e.g., groundedness ≥ 4.0/5.0) as a CI/CD gate. Never skip evaluation — I've caught critical hallucination issues here that would have reached production.</p>
+
+            <h3>Step 5: Monitor in Production</h3>
+            <p>Enable Azure Monitor and AI Foundry's content safety filters. Set up alerts for: high token usage, low safety scores, latency spikes. Review flagged conversations weekly and feed learnings back into your prompt and evaluation pipeline.</p>
+
+            <div class="key-takeaways">
+              <h4>Key Takeaways</h4>
+              <ul>
+                <li>Use Phi-3.5 for high-volume simple tasks — 10x cheaper than GPT-4o</li>
+                <li>Never deploy without running the evaluation suite</li>
+                <li>Content safety filters are non-negotiable for enterprise deployments</li>
+                <li>Prompt Flow versioning in Git enables rollback when things break</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+        <div class="post-tags">
+          <span class="post-tag">Azure AI Foundry</span>
+          <span class="post-tag">Azure OpenAI</span>
+          <span class="post-tag">Prompt Flow</span>
+          <span class="post-tag">MLOps</span>
+        </div>
+      </article>
+
+      <!-- POST 7 -->
+      <article class="post-card fade-in" data-category="Python">
+        <div class="post-meta">
+          <span class="post-category">Python</span>
+          <span class="post-date">3 May 2025</span>
+          <span class="post-read-time">7 min read</span>
+        </div>
+        <h2 class="post-title">Playwright + Python: Web Scraping at Scale Without Getting Blocked</h2>
+        <p class="post-excerpt">Playwright has replaced Selenium as my go-to scraping framework — it's faster, more reliable, and handles modern JavaScript-heavy sites with ease. But running it at scale requires more than just async calls. Here's the full anti-detection and data pipeline setup I use in production.</p>
+        <details>
+          <summary>Read Full Article</summary>
+          <div class="post-full">
+            <h3>Why Playwright Over Selenium</h3>
+            <p>Playwright offers: native async support, auto-wait for elements (no more <code>time.sleep()</code>), network interception, multiple browser contexts (isolated sessions), and a dramatically better API. For 90% of scraping tasks, Playwright is the correct choice in 2025.</p>
+
+            <h3>Anti-Detection Setup</h3>
+            <pre><code>from playwright.async_api import async_playwright
+import random
+
+async def get_stealth_page(browser):
+    context = await browser.new_context(
+        user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64)...",
+        viewport={"width": 1920, "height": 1080},
+        locale="en-US",
+        timezone_id="Asia/Kolkata",
+        java_script_enabled=True,
+        has_touch=False,
+    )
+    # Remove webdriver flag
+    await context.add_init_script("""
+        Object.defineProperty(navigator, 'webdriver', {get: () => undefined})
+    """)
+    return await context.new_page()</code></pre>
+
+            <h3>Async Scraping Pipeline</h3>
+            <p>Use <code>asyncio.gather()</code> with a semaphore to control concurrency. I run 5–10 concurrent pages per browser instance, with 3–5 browser instances per machine. This gives 15–50x throughput vs sequential scraping while staying under most rate limits.</p>
+
+            <h3>Data Pipeline with Pandas</h3>
+            <p>After scraping, pipe raw data through Pandas for: deduplication (<code>drop_duplicates()</code>), normalization (strip whitespace, standardize formats), validation (dtype checks, range validation), and export to CSV/JSON/Parquet. Always save raw data before transformation — you'll need it when cleaning logic has bugs.</p>
+
+            <div class="key-takeaways">
+              <h4>Key Takeaways</h4>
+              <ul>
+                <li>Always respect <code>robots.txt</code> and rate limit your requests</li>
+                <li>Use rotating residential proxies for large-scale production scraping</li>
+                <li>Save raw HTML before parsing — re-parse without re-scraping</li>
+                <li>Monitor your scraper with Prometheus — know when sites change their structure</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+        <div class="post-tags">
+          <span class="post-tag">Playwright</span>
+          <span class="post-tag">Python</span>
+          <span class="post-tag">Web Scraping</span>
+          <span class="post-tag">Pandas</span>
+        </div>
+      </article>
+
+      <!-- POST 8 -->
+      <article class="post-card fade-in" data-category="RPA">
+        <div class="post-meta">
+          <span class="post-category">RPA</span>
+          <span class="post-date">22 Feb 2025</span>
+          <span class="post-read-time">6 min read</span>
+        </div>
+        <h2 class="post-title">RPA vs AI Agents: A Practical Decision Framework for Enterprise Automation</h2>
+        <p class="post-excerpt">Every week I see teams choosing the wrong tool for their automation problem — either over-engineering with AI where simple RPA would do, or under-investing with RPA where AI agents would deliver 10x the value. Here's the decision framework I use with every client.</p>
+        <details>
+          <summary>Read Full Article</summary>
+          <div class="post-full">
+            <h3>Core Difference</h3>
+            <p><strong>RPA</strong> (Robotic Process Automation) automates structured, rule-based tasks by mimicking human actions on UIs and systems. <strong>AI Agents</strong> understand natural language, reason about intent, and handle unstructured inputs. Both are valuable — they solve different problems.</p>
+
+            <h3>Choose RPA When:</h3>
+            <ul>
+              <li>The process is rule-based with no exceptions</li>
+              <li>Input is always structured (forms, spreadsheets, fixed-format reports)</li>
+              <li>The UI/system doesn't have an API</li>
+              <li>Audit trail and deterministic output are mandatory</li>
+              <li>Examples: invoice data entry, report generation, legacy system integration</li>
+            </ul>
+
+            <h3>Choose AI Agents When:</h3>
+            <ul>
+              <li>Input is unstructured (emails, PDFs, voice, free text)</li>
+              <li>The user needs a conversational interface</li>
+              <li>Decisions require reasoning, not just rule-matching</li>
+              <li>The task varies significantly between executions</li>
+              <li>Examples: HR query handling, document Q&amp;A, intelligent triage</li>
+            </ul>
+
+            <h3>The Hybrid Approach (Usually Best)</h3>
+            <p>Most enterprise workflows benefit from both: an AI Agent handles the conversational front-end and intent extraction, then hands off to a Power Automate RPA flow for the deterministic back-end execution. This gives you natural language UX with reliable, auditable automation.</p>
+
+            <div class="key-takeaways">
+              <h4>Key Takeaways</h4>
+              <ul>
+                <li>RPA = deterministic, structured, rule-based. AI Agents = flexible, reasoning, unstructured</li>
+                <li>Hybrid (AI Agent front-end + RPA back-end) is the most powerful architecture</li>
+                <li>Start with the simplest solution that works — avoid AI for problems RPA solves well</li>
+                <li>Total cost of ownership: RPA is cheaper to maintain for stable processes; AI Agents for evolving ones</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+        <div class="post-tags">
+          <span class="post-tag">RPA</span>
+          <span class="post-tag">AI Agents</span>
+          <span class="post-tag">Power Automate</span>
+          <span class="post-tag">Strategy</span>
+        </div>
+      </article>
+
+      <!-- POST 9 -->
+      <article class="post-card fade-in" data-category="Python">
+        <div class="post-meta">
+          <span class="post-category">Python</span>
+          <span class="post-date">14 Oct 2024</span>
+          <span class="post-read-time">8 min read</span>
+        </div>
+        <h2 class="post-title">FastAPI for Enterprise AI Services: Production Patterns You Need to Know</h2>
+        <p class="post-excerpt">FastAPI has become my default framework for wrapping AI models, ML pipelines, and automation logic as REST APIs. It's fast, type-safe, and self-documenting out of the box. But production-grade FastAPI requires more than just <code>@app.get()</code> decorators — here are the patterns that matter.</p>
+        <details>
+          <summary>Read Full Article</summary>
+          <div class="post-full">
+            <h3>Why FastAPI for AI Services</h3>
+            <p>FastAPI is built on Starlette and Pydantic, giving you: async request handling (critical for I/O-bound AI calls), automatic OpenAPI/Swagger docs, runtime type validation, and native Python type hints. For AI workloads that call external models or databases, async is not optional — it's essential.</p>
+
+            <h3>Async AI Endpoint Pattern</h3>
+            <pre><code>from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
+import httpx
+
+app = FastAPI()
+
+class EmailRequest(BaseModel):
+    sender_id: str
+    password: str
+    to: str
+    subject: str
+    body: str
+
+@app.post("/send-email")
+async def send_email(req: EmailRequest):
+    async with httpx.AsyncClient() as client:
+        # Call external SMTP service asynchronously
+        response = await client.post(
+            "https://api.mailservice.com/send",
+            json=req.model_dump(),
+            timeout=30.0
+        )
+    if response.status_code != 200:
+        raise HTTPException(status_code=502, detail="Mail service error")
+    return {"success": True, "message_id": response.json()["id"]}</code></pre>
+
+            <h3>Authentication with API Keys</h3>
+            <p>Use FastAPI's <code>Security</code> dependency for API key authentication. Store keys in Azure Key Vault, not environment variables, for production. Rotate keys every 90 days and log all authenticated requests for audit trails.</p>
+
+            <h3>Rate Limiting with slowapi</h3>
+            <p>Install <code>slowapi</code> and add <code>@limiter.limit("20/minute")</code> to sensitive endpoints. Rate limiting protects both your infrastructure and your AI model quotas. Always return a <code>429</code> with a <code>Retry-After</code> header so clients can back off gracefully.</p>
+
+            <div class="key-takeaways">
+              <h4>Key Takeaways</h4>
+              <ul>
+                <li>Use <code>async def</code> for all endpoints that make I/O calls — never block the event loop</li>
+                <li>Pydantic models are your first line of input validation — use them for every request/response</li>
+                <li>Add health check endpoints (<code>/health</code>, <code>/ready</code>) for load balancers</li>
+                <li>Deploy with Gunicorn + Uvicorn workers: <code>gunicorn -w 4 -k uvicorn.workers.UvicornWorker</code></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+        <div class="post-tags">
+          <span class="post-tag">FastAPI</span>
+          <span class="post-tag">Python</span>
+          <span class="post-tag">REST API</span>
+          <span class="post-tag">Production</span>
+        </div>
+      </article>
+
+      <!-- POST 10 -->
+      <article class="post-card fade-in" data-category="Power Platform">
+        <div class="post-meta">
+          <span class="post-category">Power Platform</span>
+          <span class="post-date">8 Jul 2024</span>
+          <span class="post-read-time">5 min read</span>
+        </div>
+        <h2 class="post-title">Power Automate: 10 Advanced Patterns Every Developer Must Know</h2>
+        <p class="post-excerpt">After building 50+ Power Automate flows in production, I've compiled the patterns that separate amateur flows from enterprise-grade automation. These aren't beginner tips — they're the techniques that prevent 3am incident calls and make flows maintainable a year after you wrote them.</p>
+        <details>
+          <summary>Read Full Article</summary>
+          <div class="post-full">
+            <h3>1. Scope-Based Error Handling</h3>
+            <p>Wrap every critical section in a <strong>Scope</strong> action. Set the scope to run "has failed", then add error logging and notification logic inside. This gives you try-catch semantics in Power Automate and prevents silent failures.</p>
+
+            <h3>2. Child Flows for Shared Logic</h3>
+            <p>If the same logic (e.g., send Teams notification, log to SharePoint) appears in 3+ flows, extract it to a child flow. Call it via the <strong>Run a Child Flow</strong> action. When you need to update the logic, change it once — all parent flows benefit immediately.</p>
+
+            <h3>3. Concurrency Control</h3>
+            <p>For flows triggered by a list or array, use <strong>Apply to Each</strong> with concurrency enabled (Settings → Concurrency Control → On → Degree: 5–10). This runs iterations in parallel, reducing processing time by 80% for large datasets. But: never use concurrent Apply to Each when items depend on each other.</p>
+
+            <h3>4. Configure Run After for Complex Logic</h3>
+            <p>Every action's "Configure run after" lets you set it to run after success, failure, timeout, or skip. Use this to build branching error paths without nesting If conditions 5 levels deep. Flat flows are readable flows.</p>
+
+            <h3>5. Variables at the Top, Always</h3>
+            <p>Initialize ALL variables at the very start of the flow, even if you don't use them immediately. Power Automate doesn't allow variable initialization inside loops or branches. Moving variables mid-flow is a common source of "Variable not initialized" errors that only surface under specific conditions in production.</p>
+
+            <h3>6–10: Quick Wins</h3>
+            <ul>
+              <li><strong>Use HTTP + Swagger for API calls</strong> — generates typed responses automatically</li>
+              <li><strong>Filter query on Get Items</strong> — always filter at the source, never in Power Automate</li>
+              <li><strong>Retry policy on connectors</strong> — set to "Fixed interval, 3 retries" for transient failures</li>
+              <li><strong>Use Compose to debug</strong> — add temporary Compose actions to inspect expressions</li>
+              <li><strong>Flow checker before saving</strong> — catches 80% of common mistakes before they reach production</li>
+            </ul>
+
+            <div class="key-takeaways">
+              <h4>Key Takeaways</h4>
+              <ul>
+                <li>Every production flow needs scope-based error handling — no exceptions</li>
+                <li>Child flows are the DRY principle for Power Automate</li>
+                <li>Always filter data at the source connector, not in Power Automate logic</li>
+                <li>Test with real data in dev environment before promoting to production</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+        <div class="post-tags">
+          <span class="post-tag">Power Automate</span>
+          <span class="post-tag">Power Platform</span>
+          <span class="post-tag">Best Practices</span>
+          <span class="post-tag">Enterprise</span>
+        </div>
+      </article>
+
+    </div><!-- end posts-grid -->
+  </div><!-- end blog-container -->
+
+  <button id="back-to-top" aria-label="Back to top">&#8593;</button>
+
+  <footer>
+    <div class="footer-name">Satyam Rai</div>
+    <p style="color:var(--muted);font-size:0.85rem;">AI Agent Developer &amp; RPA Expert · Gurugram, India</p>
+    <a href="index.html" class="footer-back">← Back to Portfolio</a>
+    <p class="footer-copy" style="margin-top:1rem;">&copy; 2026 Satyam Rai. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // THEME
+    const body = document.body;
+    if (localStorage.getItem('theme') !== 'dark') body.classList.add('light');
+    document.getElementById('themeToggle').addEventListener('click', () => {
+      body.classList.toggle('light');
+      localStorage.setItem('theme', body.classList.contains('light') ? 'light' : 'dark');
+    });
+
+    // HAMBURGER
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); mobileMenu.classList.toggle('open'); });
+    document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', () => { hamburger.classList.remove('open'); mobileMenu.classList.remove('open'); }));
+    document.addEventListener('click', e => { if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) { hamburger.classList.remove('open'); mobileMenu.classList.remove('open'); } });
+
+    // SCROLL PROGRESS + BACK TO TOP
+    const progressBar = document.getElementById('scroll-progress');
+    const backToTop = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+      progressBar.style.width = pct + '%';
+      backToTop.classList.toggle('visible', window.scrollY > 400);
+    });
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // FADE IN
+    const observer = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // FILTER
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('article[data-category]').forEach(article => {
+          article.style.display = (filter === 'all' || article.dataset.category === filter) ? '' : 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
