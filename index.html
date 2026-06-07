@@ -343,7 +343,7 @@
     .hero-glow {
       position: absolute; top: 50%; left: 50%;
       transform: translate(-50%,-50%);
-      width: 550px; height: 550px; border-radius: 50%;
+      width: min(550px, 90vw); height: min(550px, 90vw); border-radius: 50%;
       background: radial-gradient(circle, rgba(96,165,250,0.2) 0%, rgba(59,130,246,0.1) 30%, rgba(124,58,237,0.05) 55%, transparent 72%);
       pointer-events: none; z-index: 0;
       animation: glow-breathe 4s ease-in-out infinite;
@@ -359,12 +359,9 @@
       position: absolute; top: 50%; left: 50%;
       transform: translate(-50%,-50%);
       z-index: 0; pointer-events: none; opacity: 0.18;
-      width: 80vh; height: 80vh;
-      min-width: 500px; min-height: 500px;
+      width: min(80vh, 85vw); height: min(80vh, 85vw);
     }
-    .hero-brain-wrap svg {
-      width: 100%; height: 100%;
-    }
+    .hero-brain-wrap svg { width: 100%; height: 100%; }
     body.light .hero-brain-wrap { opacity: 0.2; }
     .hero-brain-svg {
       filter: drop-shadow(0 0 40px #7c3aed) drop-shadow(0 0 80px #3b82f6);
@@ -654,6 +651,14 @@
       .hero-stats { justify-content: center; gap: 1.8rem; }
       .hero-location { justify-content: center; }
 
+      /* background elements on mobile */
+      .hero-brain-wrap { opacity: 0.22; }
+      body.light .hero-brain-wrap { opacity: 0.18; }
+      .hero-ring:nth-child(3) { display: none; }
+      .hero-ring:nth-child(4) { display: none; }
+      .hero-badge, .freelance-badge { font-size: 0.72rem; padding: 3px 10px; }
+      .freelance-badge { margin-left: 0.3rem; }
+
       section { padding: 60px 4%; }
       .about-grid { grid-template-columns: 1fr; }
       .cert-edu-grid { grid-template-columns: 1fr; }
@@ -681,6 +686,14 @@
       .stat-label { font-size: 0.68rem; }
       .hero-cta { flex-direction: column; align-items: center; }
       .btn { width: 100%; max-width: 260px; text-align: center; padding: 11px 20px; font-size: 0.88rem; }
+
+      /* background: only smallest ring on tiny phones */
+      .hero-ring:nth-child(2) { display: none; }
+      .hero-brain-wrap { opacity: 0.25; }
+      .hero-glow { display: none; }
+      /* badges wrap to two lines neatly */
+      .hero-badge { display: block; margin-bottom: 0.4rem; }
+      .freelance-badge { display: inline-flex; margin-left: 0; }
 
       section { padding: 48px 4%; }
       .timeline-card { padding: 1.2rem; }
