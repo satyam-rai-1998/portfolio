@@ -339,7 +339,14 @@
       top: 50%; left: 50%;
       transform: translate(-50%, -50%);
     }
-    body.light .hero-ring { border-color: rgba(109,40,217,0.2); }
+    body.light .hero-ring { border-color: rgba(109,40,217,0.06); }
+    body.light .hero-brain-wrap { opacity: 0.12; }
+    body.light .hero-glow {
+      background: radial-gradient(circle,
+        rgba(109,40,217,0.08) 0%,
+        rgba(124,58,237,0.04) 35%,
+        transparent 65%);
+    }
     .hero-glow {
       position: absolute; top: 50%; left: 50%;
       transform: translate(-50%, -50%);
