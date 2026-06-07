@@ -355,8 +355,8 @@
     }
     body.light .hero-glow {
       background: radial-gradient(circle,
-        rgba(109,40,217,0.18) 0%,
-        rgba(124,58,237,0.1) 30%,
+        rgba(109,40,217,0.12) 0%,
+        rgba(124,58,237,0.07) 30%,
         transparent 65%);
     }
     @keyframes glow-breathe {
@@ -366,15 +366,16 @@
     .hero-brain-wrap {
       position: absolute; top: 50%; left: 50%;
       transform: translate(-50%, -50%);
-      z-index: 2; pointer-events: none;
+      z-index: 1; pointer-events: none;
+      opacity: 0.45;
     }
     .hero-brain-svg {
-      filter: drop-shadow(0 0 22px #7c3aed) drop-shadow(0 0 55px #3b82f6) drop-shadow(0 0 90px rgba(96,165,250,0.5));
+      filter: drop-shadow(0 0 28px #7c3aed) drop-shadow(0 0 60px #3b82f6);
       animation: brain-pulse 3s ease-in-out infinite;
     }
     @keyframes brain-pulse {
-      0%,100% { filter: drop-shadow(0 0 22px #7c3aed) drop-shadow(0 0 55px #3b82f6) drop-shadow(0 0 90px rgba(96,165,250,0.4)); transform: scale(1); }
-      50%      { filter: drop-shadow(0 0 35px #a855f7) drop-shadow(0 0 75px #60a5fa) drop-shadow(0 0 120px rgba(96,165,250,0.6)); transform: scale(1.05); }
+      0%,100% { filter: drop-shadow(0 0 28px #7c3aed) drop-shadow(0 0 60px #3b82f6); transform: scale(1); }
+      50%      { filter: drop-shadow(0 0 42px #a855f7) drop-shadow(0 0 85px #60a5fa); transform: scale(1.06); }
     }
     @keyframes hero-ripple {
       0%   { transform: translate(-50%,-50%) scale(0.7); opacity: 0.6; }
@@ -916,7 +917,7 @@
 
     <!-- brain SVG centered in background -->
     <div class="hero-brain-wrap">
-      <svg class="hero-brain-svg" width="130" height="130" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg class="hero-brain-svg" width="260" height="260" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="hb-bg1" x1="0" y1="0" x2="110" y2="110" gradientUnits="userSpaceOnUse">
             <stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#2563eb"/>
@@ -929,8 +930,8 @@
             <stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/>
           </radialGradient>
         </defs>
-        <circle cx="55" cy="55" r="52" fill="url(#hb-glow1)" opacity="0.4"/>
-        <circle cx="55" cy="55" r="50" fill="#0d0d2b" stroke="url(#hb-bg1)" stroke-width="1.5"/>
+        <circle cx="55" cy="55" r="52" fill="url(#hb-glow1)" opacity="0.3"/>
+        <circle cx="55" cy="55" r="50" fill="rgba(13,13,43,0.15)" stroke="url(#hb-bg1)" stroke-width="1.5"/>
         <path d="M55 28 C48 28 40 30 36 37 C32 44 33 50 35 55 C32 58 31 63 33 68 C35 73 40 76 45 76 C48 80 52 82 55 82" fill="none" stroke="url(#hb-gline)" stroke-width="2.2" stroke-linecap="round"/>
         <path d="M55 28 C62 28 70 30 74 37 C78 44 77 50 75 55 C78 58 79 63 77 68 C75 73 70 76 65 76 C62 80 58 82 55 82" fill="none" stroke="url(#hb-gline)" stroke-width="2.2" stroke-linecap="round"/>
         <line x1="55" y1="28" x2="55" y2="82" stroke="#6d28d9" stroke-width="1" stroke-dasharray="3 3"/>
