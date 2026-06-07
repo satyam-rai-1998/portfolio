@@ -223,7 +223,19 @@
     .blog-stat-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
 
     /* FILTER TAGS */
-    .filter-bar { display: flex; gap: 0.6rem; flex-wrap: wrap; justify-content: center; padding: 0 5% 2.5rem; }
+    .filter-bar {
+      display: flex; gap: 0.6rem; flex-wrap: wrap;
+      justify-content: center; padding: 0 5% 2.5rem;
+    }
+    @media (max-width: 768px) {
+      .filter-bar {
+        flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start;
+        padding: 0 4% 1.5rem; scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+      }
+      .filter-bar::-webkit-scrollbar { display: none; }
+      .filter-btn { white-space: nowrap; flex-shrink: 0; }
+    }
     .filter-btn { background: var(--card); border: 1px solid var(--border); color: var(--muted); padding: 6px 16px; border-radius: 20px; font-size: 0.82rem; cursor: pointer; transition: all .2s; }
     .filter-btn:hover, .filter-btn.active { background: rgba(59,130,246,0.15); border-color: var(--accent); color: var(--accent); }
 
@@ -318,10 +330,20 @@
       .posts-grid { grid-template-columns: 1fr; }
       .blog-stats { gap: 1.5rem; }
       .featured-post { padding: 1.5rem; }
+      .featured-post::before { top: 1rem; right: 1rem; font-size: 0.65rem; padding: 2px 8px; }
+      .featured-post .post-title { font-size: 1.15rem; }
+      .post-meta { gap: 0.5rem; }
+      .post-read-time::before { margin-right: 0.5rem; }
     }
     @media (max-width: 480px) {
       .nav-brand { font-size: 1.1rem; }
       .blog-hero h1 { font-size: 1.7rem; }
+      .featured-post { padding: 1.1rem; }
+      .featured-post .post-title { font-size: 1.05rem; }
+      .featured-post::before { font-size: 0.6rem; padding: 2px 6px; top: 0.8rem; right: 0.8rem; }
+      .posts-grid { gap: 1rem; }
+      .post-card { padding: 1.1rem; }
+      .blog-container { padding: 0 4% 60px; }
     }
   </style>
 </head>
@@ -400,7 +422,7 @@
         <span class="post-category" style="background:rgba(168,85,247,0.15);color:#a855f7;border-color:rgba(168,85,247,0.3);">AI Research</span>
         <time class="post-date" datetime="2026-06-07">7 Jun 2026</time>
         <span class="post-read-time">7 min read</span>
-        <span style="background:rgba(34,197,94,0.15);color:#22c55e;border:1px solid rgba(34,197,94,0.3);border-radius:20px;padding:2px 10px;font-size:0.75rem;font-weight:600;">🆕 New</span>
+        <span style="background:rgba(34,197,94,0.15);color:#22c55e;border:1px solid rgba(34,197,94,0.3);border-radius:20px;padding:2px 10px;font-size:0.72rem;font-weight:700;display:inline-flex;align-items:center;gap:4px;"><span style="width:6px;height:6px;border-radius:50%;background:#22c55e;display:inline-block;"></span>New</span>
       </div>
       <h2 class="post-title">OpenAI Solves an 80-Year-Old Math Problem: What It Means for AI and the World</h2>
       <p class="post-excerpt">For decades, some of the greatest mathematical minds on Earth couldn't crack it. Then an AI did. OpenAI's latest reasoning model recently achieved what mathematicians had been unable to accomplish in over eight decades — solving a complex mathematical conjecture that had stumped the field since the 1940s. Here's what happened, why it matters, and what it means for the future of AI and human intelligence.</p>
