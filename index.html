@@ -1546,5 +1546,27 @@
       });
     }
   </script>
+  <script>
+    // ── CIRCULAR FAVICON ──
+    (function() {
+      const img = new Image();
+      img.onload = function() {
+        const c = document.createElement('canvas');
+        c.width = c.height = 64;
+        const ctx = c.getContext('2d');
+        ctx.beginPath();
+        ctx.arc(32, 32, 32, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.clip();
+        ctx.drawImage(img, 0, 0, 64, 64);
+        document.querySelectorAll("link[rel*='icon']").forEach(el => el.remove());
+        const link = document.createElement('link');
+        link.rel = 'icon';
+        link.href = c.toDataURL('image/png');
+        document.head.appendChild(link);
+      };
+      img.src = 'photo.jpeg';
+    })();
+  </script>
 </body>
 </html>
