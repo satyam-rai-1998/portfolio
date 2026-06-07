@@ -246,6 +246,9 @@
     /* FEATURED POST */
     .featured-post { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 2.5rem; margin-bottom: 2rem; position: relative; overflow: hidden; }
     .featured-post::before { content: 'FEATURED'; position: absolute; top: 1.5rem; right: 1.5rem; background: var(--gradient); color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; padding: 3px 10px; border-radius: 10px; }
+    @media (max-width: 600px) {
+      .featured-post::before { top: auto; bottom: 1rem; right: 1rem; }
+    }
     .featured-post:hover { border-color: var(--accent); }
 
     /* POST GRID */
@@ -296,7 +299,7 @@
     body.light .post-title { color: #0f172a; }
 
     /* THEME TOGGLE */
-    .nav-right { display: flex; align-items: center; gap: 0.9rem; }
+    .nav-right { display: flex; align-items: center; gap: 0.9rem; margin-left: 2rem; }
     .theme-toggle { background: none; border: none; cursor: pointer; padding: 0; display: flex; align-items: center; }
     .toggle-track { width: 48px; height: 24px; border-radius: 12px; background: #bfdbfe; border: 1px solid #93c5fd; position: relative; display: flex; align-items: center; transition: background .35s; }
     body:not(.light) .toggle-track { background: #1e3358; border-color: #2d4a7a; }
