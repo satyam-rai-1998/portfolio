@@ -393,133 +393,104 @@
   <!-- BLOG CONTENT -->
   <div class="blog-container">
 
-    <!-- FEATURED POST -->
-    <p class="featured-label fade-in">Featured Article</p>
-    <article class="featured-post fade-in" data-category="Copilot Studio">
+    <!-- FEATURED POST — always latest -->
+    <p class="featured-label fade-in">Latest Article</p>
+    <article class="featured-post fade-in" data-category="AI Research">
       <div class="post-meta">
-        <span class="post-category">Copilot Studio</span>
-        <time class="post-date" datetime="2026-05-28">28 May 2026</time>
-        <span class="post-read-time">8 min read</span>
+        <span class="post-category" style="background:rgba(168,85,247,0.15);color:#a855f7;border-color:rgba(168,85,247,0.3);">AI Research</span>
+        <time class="post-date" datetime="2026-06-07">7 Jun 2026</time>
+        <span class="post-read-time">7 min read</span>
+        <span style="background:rgba(34,197,94,0.15);color:#22c55e;border:1px solid rgba(34,197,94,0.3);border-radius:20px;padding:2px 10px;font-size:0.75rem;font-weight:600;">🆕 New</span>
       </div>
-      <h2 class="post-title">Building Your First Autonomous AI Agent with Microsoft Copilot Studio</h2>
-      <p class="post-excerpt">Autonomous AI agents are no longer science fiction — they're being deployed in enterprises today. In this guide, I walk through everything I've learned building production-grade AI agents using Microsoft Copilot Studio: from initial setup and knowledge source configuration to deploying across Microsoft Teams, websites, and custom channels.</p>
+      <h2 class="post-title">OpenAI Solves an 80-Year-Old Math Problem: What It Means for AI and the World</h2>
+      <p class="post-excerpt">For decades, some of the greatest mathematical minds on Earth couldn't crack it. Then an AI did. OpenAI's latest reasoning model recently achieved what mathematicians had been unable to accomplish in over eight decades — solving a complex mathematical conjecture that had stumped the field since the 1940s. Here's what happened, why it matters, and what it means for the future of AI and human intelligence.</p>
       <details>
         <summary>Read Full Article</summary>
         <div class="post-full">
-          <h3>What Is an Autonomous Agent?</h3>
-          <p>Unlike a traditional chatbot that follows a fixed script, an autonomous AI agent can reason, plan, and take actions to accomplish a goal — without being told every step. In Copilot Studio, this means your agent can call APIs, search knowledge bases, trigger Power Automate flows, and loop through multi-step tasks dynamically.</p>
-
-          <h3>Step 1: Create Your Agent in Copilot Studio</h3>
-          <p>Navigate to <code>copilotstudio.microsoft.com</code>, click <strong>Create</strong>, and choose <strong>New agent</strong>. Give it a clear name and a detailed description — this description is used by the AI to understand its purpose and scope. Write it like you're briefing a new employee: what does this agent do, what does it NOT do, and what tone should it take?</p>
-
-          <h3>Step 2: Configure Knowledge Sources</h3>
-          <p>This is where your agent gets its expertise. You can connect:</p>
+          <h3>The Problem That Stumped Humanity for 80 Years</h3>
+          <p>Mathematics has a long history of problems that look deceptively simple but resist solution for generations. Fermat's Last Theorem took 358 years to prove. The Poincaré Conjecture resisted 98 years before Perelman cracked it in 2003. Now, AI has joined this hall of giants — not by brute force, but by reasoning.</p>
+          <p>OpenAI's advanced reasoning model tackled a deep problem in combinatorics and number theory that had remained open since the 1940s. Without revealing exact technical details that remain under peer review, the model generated a novel proof pathway that human mathematicians had not explored — a genuinely new mathematical insight, not a retrieval of known results.</p>
+          <h3>How AI Approaches Math Differently Than Humans</h3>
+          <p>Human mathematicians are constrained by cognitive bandwidth, specialization, and decades of entrenched assumptions. AI reasoning models like OpenAI's o-series have a different profile:</p>
           <ul>
-            <li><strong>SharePoint sites</strong> — perfect for company policies, SOPs, and internal docs</li>
-            <li><strong>Public websites</strong> — crawled and indexed automatically</li>
-            <li><strong>Uploaded files</strong> — PDFs, Word docs, Excel files</li>
-            <li><strong>Azure AI Search</strong> — for large-scale, high-performance retrieval</li>
-            <li><strong>Dataverse tables</strong> — structured business data</li>
+            <li><strong>No prior bias:</strong> Explores proof paths humans would dismiss as "unlikely"</li>
+            <li><strong>Scale of search:</strong> Evaluates thousands of mathematical directions simultaneously</li>
+            <li><strong>Formal verification:</strong> Pairs with proof assistants like Lean 4 for machine-precise verification</li>
+            <li><strong>Cross-domain synthesis:</strong> Draws connections across algebra, topology, combinatorics simultaneously</li>
           </ul>
-          <p>Pro tip: keep each knowledge source focused. An agent with 3 tightly scoped sources performs far better than one with 20 loosely related ones.</p>
-
-          <h3>Step 3: Build Actions with Power Automate</h3>
-          <p>Actions let your agent DO things — not just answer questions. Connect a Power Automate flow to:</p>
-          <ul>
-            <li>Create tickets in ServiceNow or Jira</li>
-            <li>Send emails or Teams messages</li>
-            <li>Look up data from external APIs</li>
-            <li>Write records back to Dataverse or SharePoint</li>
-          </ul>
-          <p>Always define clear input/output parameters for your flows. The agent uses these descriptions to decide when to call the action and what data to pass.</p>
-
-          <h3>Step 4: Test Thoroughly Before Publishing</h3>
-          <p>Use the built-in test panel to run through at least 20–30 different user intents. Pay special attention to edge cases — what happens when users ask something outside scope? Configure a graceful fallback message rather than letting the agent hallucinate.</p>
-
+          <h3>The Role of Formal Proof Systems</h3>
+          <p>The proof was written in Lean 4 — a formal proof assistant — meaning every single logical step was machine-verified. This combination of AI intuition + formal verification is the new paradigm. Google DeepMind's AlphaProof demonstrated this at IMO 2024, solving problems at silver-medal level. OpenAI has now pushed further into open research problems.</p>
+          <h3>Why This Matters for AI Developers</h3>
+          <p><strong>Better reasoning in production AI:</strong> These capabilities are being distilled into everyday models — Copilot Studio, Azure OpenAI — meaning fewer hallucinations and more reliable outputs in enterprise workflows.</p>
+          <p><strong>AI agents that verify their own logic:</strong> Future agents won't just propose answers — they'll prove their reasoning is correct before acting. This is the path to truly trustworthy autonomous systems.</p>
+          <h3>Are We at an Inflection Point?</h3>
+          <p>Yes. AI solving 80-year-old mathematical problems signals that AI reasoning has crossed from "impressive pattern matching" to "genuine cognitive contribution." The question is no longer "can AI think?" — it's "what should humans focus on now?" My answer: defining meaningful problems, ensuring ethical deployment, and translating AI capability into real human benefit. That's exactly what I do as a Microsoft Copilot Studio Consultant — and it's never been more exciting.</p>
           <div class="key-takeaways">
             <h4>Key Takeaways</h4>
             <ul>
-              <li>Write a detailed agent description — it directly affects response quality</li>
-              <li>Keep knowledge sources focused and well-structured</li>
-              <li>Test with real users, not just happy-path scenarios</li>
-              <li>Use Power Automate for all write-back and integration actions</li>
-              <li>Monitor conversation transcripts weekly and refine continuously</li>
+              <li>OpenAI solved a mathematical conjecture open since the 1940s — formally verified in Lean 4</li>
+              <li>AI + formal verification is the new paradigm for mathematical discovery</li>
+              <li>The same reasoning improvements will make enterprise AI agents more reliable</li>
+              <li>We are at a genuine inflection point in AI capability</li>
             </ul>
           </div>
         </div>
       </details>
       <div class="post-tags">
-        <span class="post-tag">Copilot Studio</span>
-        <span class="post-tag">AI Agents</span>
-        <span class="post-tag">Microsoft 365</span>
-        <span class="post-tag">Power Automate</span>
+        <span class="post-tag">OpenAI</span>
+        <span class="post-tag">AI Research</span>
+        <span class="post-tag">Mathematics</span>
+        <span class="post-tag">Formal Verification</span>
+        <span class="post-tag">Future of AI</span>
       </div>
     </article>
 
     <!-- POSTS GRID -->
     <div class="posts-grid">
 
-      <!-- POST 11 — LATEST -->
-      <article class="post-card fade-in" data-category="AI Research">
+      <!-- POST 1 (previously featured) -->
+      <article class="post-card fade-in" data-category="Copilot Studio">
         <div class="post-meta">
-          <span class="post-category" style="background:rgba(168,85,247,0.15);color:#a855f7;border-color:rgba(168,85,247,0.3);">AI Research</span>
-          <time class="post-date" datetime="2026-06-07">7 Jun 2026</time>
-          <span class="post-read-time">7 min read</span>
-          <span class="post-read-time" style="background:rgba(34,197,94,0.15);color:#22c55e;border:1px solid rgba(34,197,94,0.3);border-radius:20px;padding:2px 8px;font-size:0.72rem;">🆕 Latest</span>
+          <span class="post-category">Copilot Studio</span>
+          <time class="post-date" datetime="2026-05-28">28 May 2026</time>
+          <span class="post-read-time">8 min read</span>
         </div>
-        <h2 class="post-title">OpenAI Solves an 80-Year-Old Math Problem: What It Means for AI and the World</h2>
-        <p class="post-excerpt">For decades, some of the greatest mathematical minds on Earth couldn't crack it. Then an AI did. OpenAI's latest reasoning model recently achieved what mathematicians had been unable to accomplish in over eight decades — solving a complex mathematical conjecture that had stumped the field since the 1940s. Here's what happened, why it matters, and what it means for the future of AI and human intelligence.</p>
+        <h2 class="post-title">Building Your First Autonomous AI Agent with Microsoft Copilot Studio</h2>
+        <p class="post-excerpt">Autonomous AI agents are no longer science fiction — they're being deployed in enterprises today. In this guide, I walk through everything I've learned building production-grade AI agents using Microsoft Copilot Studio: from initial setup and knowledge source configuration to deploying across Microsoft Teams, websites, and custom channels.</p>
         <details>
           <summary>Read Full Article</summary>
           <div class="post-full">
-            <h3>The Problem That Stumped Humanity for 80 Years</h3>
-            <p>Mathematics has a long history of problems that look deceptively simple but resist solution for generations. Fermat's Last Theorem took 358 years to prove. The Poincaré Conjecture resisted 98 years before Perelman cracked it in 2003. Now, AI has joined this hall of giants — not by brute force, but by reasoning.</p>
-            <p>OpenAI's advanced reasoning model tackled a deep problem in combinatorics and number theory that had remained open since the 1940s. Without revealing exact technical details that remain under peer review, the model generated a novel proof pathway that human mathematicians had not explored — a genuinely new mathematical insight, not a retrieval of known results.</p>
-            <h3>How AI Approaches Math Differently Than Humans</h3>
-            <p>Human mathematicians are constrained by cognitive bandwidth, specialization, and decades of entrenched assumptions. We tend to approach problems through the lens of what we've seen before. AI reasoning models like OpenAI's o-series have a different profile:</p>
+            <h3>What Is an Autonomous Agent?</h3>
+            <p>Unlike a traditional chatbot that follows a fixed script, an autonomous AI agent can reason, plan, and take actions to accomplish a goal. In Copilot Studio, your agent can call APIs, search knowledge bases, trigger Power Automate flows, and loop through multi-step tasks dynamically.</p>
+            <h3>Step 1: Create Your Agent</h3>
+            <p>Navigate to <code>copilotstudio.microsoft.com</code>, click <strong>Create</strong> → <strong>New agent</strong>. Write a detailed description — it directly shapes response quality.</p>
+            <h3>Step 2: Configure Knowledge Sources</h3>
             <ul>
-              <li><strong>No prior bias:</strong> The model explores proof paths humans would dismiss as "unlikely" — and sometimes those paths are exactly right</li>
-              <li><strong>Scale of search:</strong> It can evaluate thousands of mathematical directions in the time a human evaluates ten</li>
-              <li><strong>Formal verification:</strong> Modern AI pairs with proof assistants like Lean 4 to verify each logical step with machine precision</li>
-              <li><strong>Cross-domain synthesis:</strong> It draws connections across algebra, topology, combinatorics, and analysis simultaneously</li>
+              <li><strong>SharePoint sites</strong> — policies, SOPs, internal docs</li>
+              <li><strong>Public websites</strong> — crawled automatically</li>
+              <li><strong>Azure AI Search</strong> — large-scale retrieval</li>
+              <li><strong>Dataverse tables</strong> — structured business data</li>
             </ul>
-            <h3>The Role of Formal Proof Systems</h3>
-            <p>What makes this different from an AI "hallucinating" a solution is the integration with formal verification systems. The proof was written in Lean 4 — a formal proof assistant — meaning every single logical step was machine-verified. This is not the AI claiming something is true; this is the AI writing a proof that a computer can verify line by line, leaving zero ambiguity.</p>
-            <p>This combination — AI intuition + formal verification — is the breakthrough paradigm. Google DeepMind's AlphaProof demonstrated this approach at the International Mathematical Olympiad 2024, solving problems at silver-medal level. OpenAI has now pushed this frontier further into open research problems.</p>
-            <h3>What This Means for Mathematics as a Field</h3>
-            <p>The implications are profound and somewhat unsettling for the academic community:</p>
-            <ul>
-              <li><strong>Acceleration of discovery:</strong> Problems that might take a career to solve could now be cracked in months. The pace of mathematical progress will fundamentally change.</li>
-              <li><strong>New collaboration model:</strong> Mathematicians are shifting from "solvers" to "problem proposers and verifiers" — directing AI toward meaningful questions</li>
-              <li><strong>Democratization of research:</strong> A PhD student with access to these tools now has capabilities that rivaled a tenured professor's research output a decade ago</li>
-              <li><strong>Risk of missing the "why":</strong> A verified proof doesn't always give human insight. The community is debating whether a proof no human can intuitively understand is scientifically satisfying</li>
-            </ul>
-            <h3>Why This Matters for AI Developers Like Me</h3>
-            <p>As someone who builds AI agents and automation systems professionally, this breakthrough has direct implications for my work:</p>
-            <p><strong>Better reasoning in production AI:</strong> The same reasoning capabilities that solved this math problem are being distilled into models we use daily. Copilot Studio, Azure OpenAI, and enterprise AI systems will inherit significantly stronger logical reasoning — meaning fewer hallucinations and more reliable outputs in high-stakes workflows.</p>
-            <p><strong>AI agents that can verify their own logic:</strong> The formal verification angle is fascinating for agentic systems. Future AI agents won't just propose an answer — they'll prove their reasoning is correct before acting. This is the path to truly trustworthy autonomous agents in enterprise environments.</p>
-            <p><strong>New opportunities in AI consulting:</strong> As AI becomes capable of tackling expert-level problems, businesses will need specialists who understand both the AI capabilities and the domain. This is not a threat to AI professionals — it's a massive expansion of value.</p>
-            <h3>The Bigger Picture: Are We at an Inflection Point?</h3>
-            <p>I believe we are. The history of technology shows clear inflection points — the printing press, electricity, the internet, the smartphone. Each created entirely new categories of work and human capability. AI solving 80-year-old mathematical problems isn't just a party trick — it's a signal that AI reasoning has crossed a threshold from "impressive pattern matching" to "genuine cognitive contribution."</p>
-            <p>My answer: the work of defining meaningful problems, ensuring ethical deployment, and building systems that translate AI capability into real human benefit. That's exactly what I do every day as a Microsoft Copilot Studio Consultant and AI developer — and it's never been more exciting.</p>
+            <h3>Step 3: Build Actions with Power Automate</h3>
+            <p>Actions let your agent DO things — create tickets, send Teams messages, look up external APIs, write back to Dataverse. Always define clear input/output parameters.</p>
+            <h3>Step 4: Test Thoroughly</h3>
+            <p>Run 20–30 different user intents through the test panel. Pay attention to edge cases and configure graceful fallback messages.</p>
             <div class="key-takeaways">
               <h4>Key Takeaways</h4>
               <ul>
-                <li>OpenAI's reasoning model solved a mathematical conjecture open since the 1940s — verified using formal proof systems</li>
-                <li>AI + formal verification (Lean 4) is the new paradigm for mathematical discovery</li>
-                <li>This isn't about AI replacing mathematicians — it's about 10x-ing mathematical discovery speed</li>
-                <li>The same reasoning improvements will make enterprise AI agents more reliable and trustworthy</li>
-                <li>We are at a genuine inflection point: AI is contributing original cognitive work, not just pattern matching</li>
+                <li>Write a detailed agent description — it directly affects response quality</li>
+                <li>Keep knowledge sources focused and well-structured</li>
+                <li>Use Power Automate for all write-back and integration actions</li>
+                <li>Monitor conversation transcripts weekly and refine continuously</li>
               </ul>
             </div>
           </div>
         </details>
         <div class="post-tags">
-          <span class="post-tag">OpenAI</span>
-          <span class="post-tag">AI Research</span>
-          <span class="post-tag">Mathematics</span>
-          <span class="post-tag">Formal Verification</span>
-          <span class="post-tag">Future of AI</span>
+          <span class="post-tag">Copilot Studio</span>
+          <span class="post-tag">AI Agents</span>
+          <span class="post-tag">Microsoft 365</span>
+          <span class="post-tag">Power Automate</span>
         </div>
       </article>
 
