@@ -345,7 +345,7 @@
       transform: translate(-50%,-50%);
       width: 550px; height: 550px; border-radius: 50%;
       background: radial-gradient(circle, rgba(96,165,250,0.2) 0%, rgba(59,130,246,0.1) 30%, rgba(124,58,237,0.05) 55%, transparent 72%);
-      pointer-events: none; z-index: 1;
+      pointer-events: none; z-index: 0;
       animation: glow-breathe 4s ease-in-out infinite;
     }
     body.light .hero-glow {
@@ -358,7 +358,7 @@
     .hero-brain-wrap {
       position: absolute; top: 50%; left: 50%;
       transform: translate(-50%,-50%);
-      z-index: 2; pointer-events: none; opacity: 0.45;
+      z-index: 0; pointer-events: none; opacity: 0.45;
     }
     body.light .hero-brain-wrap { opacity: 0.4; }
     .hero-brain-svg {
