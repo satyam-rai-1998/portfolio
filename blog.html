@@ -1006,7 +1006,7 @@ async def send_email(req: EmailRequest):
   <script>
     // THEME
     const body = document.body;
-    if (localStorage.getItem('theme') !== 'dark') body.classList.add('light');
+    if (localStorage.getItem('theme') === 'light') body.classList.add('light');
     document.getElementById('themeToggle').addEventListener('click', () => {
       body.classList.toggle('light');
       localStorage.setItem('theme', body.classList.contains('light') ? 'light' : 'dark');
