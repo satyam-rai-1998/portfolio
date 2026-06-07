@@ -246,8 +246,8 @@
     /* FEATURED POST */
     .featured-post { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 2.5rem; margin-bottom: 2rem; position: relative; overflow: hidden; }
     .featured-post::before { content: 'FEATURED'; position: absolute; top: 1.5rem; right: 1.5rem; background: var(--gradient); color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; padding: 3px 10px; border-radius: 10px; }
-    @media (max-width: 600px) {
-      .featured-post::before { top: auto; bottom: 1rem; right: 1rem; }
+    @media (max-width: 768px) {
+      .featured-post::before { display: none; }
     }
     .featured-post:hover { border-color: var(--accent); }
 
