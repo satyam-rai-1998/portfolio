@@ -358,19 +358,21 @@
     .hero-brain-wrap {
       position: absolute; top: 50%; left: 50%;
       transform: translate(-50%,-50%);
-      z-index: 0; pointer-events: none; opacity: 0.45;
+      z-index: 0; pointer-events: none; opacity: 0.18;
+      width: 80vh; height: 80vh;
+      min-width: 500px; min-height: 500px;
     }
-    body.light .hero-brain-wrap { opacity: 0.4; }
+    .hero-brain-wrap svg {
+      width: 100%; height: 100%;
+    }
+    body.light .hero-brain-wrap { opacity: 0.2; }
     .hero-brain-svg {
-      filter: drop-shadow(0 0 28px #7c3aed) drop-shadow(0 0 60px #3b82f6);
-      animation: hbrain-pulse 3s ease-in-out infinite;
-    }
-    body.light .hero-brain-svg {
-      filter: drop-shadow(0 0 22px #7c3aed) drop-shadow(0 0 45px #3b82f6);
+      filter: drop-shadow(0 0 40px #7c3aed) drop-shadow(0 0 80px #3b82f6);
+      animation: hbrain-pulse 4s ease-in-out infinite;
     }
     @keyframes hbrain-pulse {
-      0%,100% { transform: scale(1);    filter: drop-shadow(0 0 28px #7c3aed) drop-shadow(0 0 60px #3b82f6); }
-      50%      { transform: scale(1.05); filter: drop-shadow(0 0 42px #a855f7) drop-shadow(0 0 80px #60a5fa); }
+      0%,100% { opacity: 1; }
+      50%      { opacity: 0.75; }
     }
     @keyframes hero-ripple {
       0%   { transform: translate(-50%,-50%) scale(0.7); opacity: 0.6; }
@@ -912,7 +914,7 @@
 
     <!-- brain SVG background -->
     <div class="hero-brain-wrap">
-      <svg class="hero-brain-svg" width="260" height="260" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg class="hero-brain-svg" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="hb-bg1" x1="0" y1="0" x2="110" y2="110" gradientUnits="userSpaceOnUse">
             <stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#2563eb"/>
