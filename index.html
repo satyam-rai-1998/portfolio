@@ -320,18 +320,33 @@
       min-height: 100vh;
       display: flex; align-items: center; justify-content: center;
       padding: 80px 5% 60px;
-      background: radial-gradient(ellipse at 70% 40%, rgba(59,130,246,0.12) 0%, transparent 60%),
-                  radial-gradient(ellipse at 20% 80%, rgba(6,182,212,0.08) 0%, transparent 50%);
+      background: radial-gradient(ellipse at 50% 40%, #0d0d2e 0%, #08081a 60%, #0f172a 100%);
       position: relative; overflow: hidden;
     }
-    .hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233b82f6' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+    body.light .hero {
+      background: radial-gradient(ellipse at 50% 40%, #ede9fe 0%, #eef2ff 60%, #f8faff 100%);
+    }
+    #hero-canvas {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 0; pointer-events: none;
+    }
+    .hero-ring {
+      position: absolute; border-radius: 50%;
+      border: 1px solid rgba(124,58,237,0.18);
+      animation: hero-ripple 6s linear infinite;
+      pointer-events: none; z-index: 0;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    body.light .hero-ring { border-color: rgba(109,40,217,0.2); }
+    @keyframes hero-ripple {
+      0%   { transform: translate(-50%,-50%) scale(0.7); opacity: 0.6; }
+      100% { transform: translate(-50%,-50%) scale(1.5); opacity: 0; }
     }
     .hero-content {
       display: flex; align-items: center; gap: 5rem;
-      max-width: 1100px; width: 100%; position: relative;
+      max-width: 1100px; width: 100%; position: relative; z-index: 1;
     }
     .hero-photo {
       flex-shrink: 0;
@@ -806,6 +821,10 @@
 
   <!-- HERO -->
   <div class="hero" id="home">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-ring" style="width:280px;height:280px;animation-delay:0s;"></div>
+    <div class="hero-ring" style="width:480px;height:480px;animation-delay:2s;"></div>
+    <div class="hero-ring" style="width:680px;height:680px;animation-delay:4s;"></div>
     <div class="hero-content">
       <div class="hero-photo">
         <img src="photo.jpeg" alt="Satyam Rai — AI Agent Developer and RPA Expert based in Gurugram, India" loading="eager" fetchpriority="high" />
@@ -1547,6 +1566,117 @@
     }
   </script>
   <script>
+    // ── HERO AI ANIMATION ──
+    (function() {
+      const canvas = document.getElementById('hero-canvas');
+      const ctx = canvas.getContext('2d');
+      const hero = document.getElementById('home');
+      let W, H, particles, nodes, raf;
+
+      function isLight() { return document.body.classList.contains('light'); }
+
+      function rand(a, b) { return a + Math.random() * (b - a); }
+
+      function resize() {
+        W = canvas.width  = hero.offsetWidth;
+        H = canvas.height = hero.offsetHeight;
+        init();
+      }
+
+      function init() {
+        const light = isLight();
+        particles = Array.from({length: 90}, () => ({
+          x: rand(0, W), y: rand(0, H),
+          vx: rand(-0.3, 0.3), vy: rand(-0.5, -0.1),
+          r: rand(1, 2.5),
+          alpha: rand(0.2, light ? 0.6 : 0.8),
+          color: Math.random() > 0.5 ? 0 : 1,
+          life: rand(0, 1), speed: rand(0.003, 0.008)
+        }));
+        nodes = Array.from({length: 25}, () => ({
+          x: rand(20, W - 20), y: rand(20, H - 20),
+          r: rand(1.5, 3.5),
+          alpha: rand(0.3, light ? 0.55 : 0.7),
+          pulse: rand(0, Math.PI * 2)
+        }));
+      }
+
+      function colors() {
+        return isLight()
+          ? { p0: '109,40,217', p1: '37,99,235', conn0: '109,40,217', conn1: '37,99,235' }
+          : { p0: '124,58,237', p1: '59,130,246', conn0: '124,58,237', conn1: '59,130,246' };
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, W, H);
+        const c = colors();
+
+        // connections
+        for (let i = 0; i < nodes.length; i++) {
+          for (let j = i + 1; j < nodes.length; j++) {
+            const dx = nodes[i].x - nodes[j].x, dy = nodes[i].y - nodes[j].y;
+            const dist = Math.sqrt(dx*dx + dy*dy);
+            if (dist < 150) {
+              const a = (1 - dist / 150) * (isLight() ? 0.18 : 0.25);
+              const g = ctx.createLinearGradient(nodes[i].x, nodes[i].y, nodes[j].x, nodes[j].y);
+              g.addColorStop(0, `rgba(${c.conn0},${a})`);
+              g.addColorStop(1, `rgba(${c.conn1},${a})`);
+              ctx.beginPath();
+              ctx.moveTo(nodes[i].x, nodes[i].y);
+              ctx.lineTo(nodes[j].x, nodes[j].y);
+              ctx.strokeStyle = g;
+              ctx.lineWidth = 0.8;
+              ctx.stroke();
+            }
+          }
+        }
+
+        // nodes
+        nodes.forEach(n => {
+          n.pulse += 0.03;
+          const s = 0.85 + Math.sin(n.pulse) * 0.15;
+          const nc = Math.sin(n.pulse) > 0 ? c.p0 : c.p1;
+          ctx.beginPath();
+          ctx.arc(n.x, n.y, n.r * s, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(${nc},${n.alpha})`;
+          ctx.fill();
+          ctx.beginPath();
+          ctx.arc(n.x, n.y, n.r * s + 5, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(${nc},${n.alpha * 0.18})`;
+          ctx.fill();
+        });
+
+        // particles
+        particles.forEach(p => {
+          p.life += p.speed;
+          if (p.life > 1) {
+            p.life = 0; p.x = rand(0, W); p.y = H + 10;
+            p.vx = rand(-0.3, 0.3); p.vy = rand(-0.5, -0.15);
+          }
+          p.x += p.vx; p.y += p.vy;
+          const a = p.alpha * Math.sin(p.life * Math.PI);
+          const pc = p.color === 0 ? c.p0 : c.p1;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(${pc},${a})`;
+          ctx.fill();
+        });
+
+        raf = requestAnimationFrame(draw);
+      }
+
+      resize();
+      draw();
+      window.addEventListener('resize', resize);
+
+      // re-init on theme toggle so colours update immediately
+      document.getElementById('themeToggle').addEventListener('click', () => {
+        cancelAnimationFrame(raf);
+        init();
+        draw();
+      });
+    })();
+
     // ── CIRCULAR FAVICON ──
     (function() {
       const img = new Image();
