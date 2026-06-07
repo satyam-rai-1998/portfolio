@@ -340,6 +340,42 @@
       transform: translate(-50%, -50%);
     }
     body.light .hero-ring { border-color: rgba(109,40,217,0.2); }
+    .hero-glow {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle,
+        rgba(96,165,250,0.22) 0%,
+        rgba(59,130,246,0.14) 25%,
+        rgba(124,58,237,0.06) 55%,
+        transparent 72%);
+      pointer-events: none; z-index: 1;
+      animation: glow-breathe 4s ease-in-out infinite;
+    }
+    body.light .hero-glow {
+      background: radial-gradient(circle,
+        rgba(109,40,217,0.18) 0%,
+        rgba(124,58,237,0.1) 30%,
+        transparent 65%);
+    }
+    @keyframes glow-breathe {
+      0%,100% { transform: translate(-50%,-50%) scale(1);   opacity: 1; }
+      50%      { transform: translate(-50%,-50%) scale(1.1); opacity: 0.75; }
+    }
+    .hero-brain-wrap {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2; pointer-events: none;
+    }
+    .hero-brain-svg {
+      filter: drop-shadow(0 0 22px #7c3aed) drop-shadow(0 0 55px #3b82f6) drop-shadow(0 0 90px rgba(96,165,250,0.5));
+      animation: brain-pulse 3s ease-in-out infinite;
+    }
+    @keyframes brain-pulse {
+      0%,100% { filter: drop-shadow(0 0 22px #7c3aed) drop-shadow(0 0 55px #3b82f6) drop-shadow(0 0 90px rgba(96,165,250,0.4)); transform: scale(1); }
+      50%      { filter: drop-shadow(0 0 35px #a855f7) drop-shadow(0 0 75px #60a5fa) drop-shadow(0 0 120px rgba(96,165,250,0.6)); transform: scale(1.05); }
+    }
     @keyframes hero-ripple {
       0%   { transform: translate(-50%,-50%) scale(0.7); opacity: 0.6; }
       100% { transform: translate(-50%,-50%) scale(1.5); opacity: 0; }
@@ -874,9 +910,57 @@
   <!-- HERO -->
   <div class="hero" id="home">
     <canvas id="hero-canvas"></canvas>
-    <div class="hero-ring" style="width:280px;height:280px;animation-delay:0s;"></div>
-    <div class="hero-ring" style="width:480px;height:480px;animation-delay:2s;"></div>
-    <div class="hero-ring" style="width:680px;height:680px;animation-delay:4s;"></div>
+
+    <!-- centre glow halo -->
+    <div class="hero-glow"></div>
+
+    <!-- brain SVG centered in background -->
+    <div class="hero-brain-wrap">
+      <svg class="hero-brain-svg" width="130" height="130" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="hb-bg1" x1="0" y1="0" x2="110" y2="110" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#2563eb"/>
+          </linearGradient>
+          <linearGradient id="hb-gline" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#a78bfa"/><stop offset="100%" stop-color="#60a5fa"/>
+          </linearGradient>
+          <radialGradient id="hb-glow1" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="55" cy="55" r="52" fill="url(#hb-glow1)" opacity="0.4"/>
+        <circle cx="55" cy="55" r="50" fill="#0d0d2b" stroke="url(#hb-bg1)" stroke-width="1.5"/>
+        <path d="M55 28 C48 28 40 30 36 37 C32 44 33 50 35 55 C32 58 31 63 33 68 C35 73 40 76 45 76 C48 80 52 82 55 82" fill="none" stroke="url(#hb-gline)" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M55 28 C62 28 70 30 74 37 C78 44 77 50 75 55 C78 58 79 63 77 68 C75 73 70 76 65 76 C62 80 58 82 55 82" fill="none" stroke="url(#hb-gline)" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="55" y1="28" x2="55" y2="82" stroke="#6d28d9" stroke-width="1" stroke-dasharray="3 3"/>
+        <circle cx="55" cy="38" r="3.5" fill="#a78bfa" opacity="0.9"/>
+        <circle cx="43" cy="48" r="3" fill="#60a5fa" opacity="0.85"/>
+        <circle cx="67" cy="48" r="3" fill="#60a5fa" opacity="0.85"/>
+        <circle cx="40" cy="62" r="2.5" fill="#818cf8" opacity="0.8"/>
+        <circle cx="70" cy="62" r="2.5" fill="#818cf8" opacity="0.8"/>
+        <circle cx="50" cy="70" r="2.5" fill="#a78bfa" opacity="0.8"/>
+        <circle cx="60" cy="70" r="2.5" fill="#a78bfa" opacity="0.8"/>
+        <circle cx="55" cy="55" r="4" fill="#c4b5fd"/>
+        <line x1="55" y1="38" x2="43" y2="48" stroke="#7c3aed" stroke-width="1" opacity="0.6"/>
+        <line x1="55" y1="38" x2="67" y2="48" stroke="#3b82f6" stroke-width="1" opacity="0.6"/>
+        <line x1="43" y1="48" x2="55" y2="55" stroke="#7c3aed" stroke-width="1" opacity="0.5"/>
+        <line x1="67" y1="48" x2="55" y2="55" stroke="#3b82f6" stroke-width="1" opacity="0.5"/>
+        <line x1="55" y1="55" x2="40" y2="62" stroke="#818cf8" stroke-width="1" opacity="0.5"/>
+        <line x1="55" y1="55" x2="70" y2="62" stroke="#818cf8" stroke-width="1" opacity="0.5"/>
+        <line x1="40" y1="62" x2="50" y2="70" stroke="#7c3aed" stroke-width="1" opacity="0.5"/>
+        <line x1="70" y1="62" x2="60" y2="70" stroke="#3b82f6" stroke-width="1" opacity="0.5"/>
+        <circle cx="55" cy="55" r="7" fill="none" stroke="#a78bfa" stroke-width="1" opacity="0.5">
+          <animate attributeName="r" values="5;10;5" dur="2.5s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.6;0;0.6" dur="2.5s" repeatCount="indefinite"/>
+        </circle>
+      </svg>
+    </div>
+
+    <div class="hero-ring" style="width:220px;height:220px;animation-delay:0s;"></div>
+    <div class="hero-ring" style="width:380px;height:380px;animation-delay:2s;"></div>
+    <div class="hero-ring" style="width:560px;height:560px;animation-delay:4s;"></div>
+
     <div class="hero-content">
       <div class="hero-photo">
         <img src="photo.jpeg" alt="Satyam Rai — AI Agent Developer and RPA Expert based in Gurugram, India" loading="eager" fetchpriority="high" />
