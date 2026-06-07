@@ -806,6 +806,114 @@
     .form-submit:hover { opacity: 0.88; transform: translateY(-1px); }
     .form-note { font-size: 0.78rem; color: var(--muted); margin-top: 0.75rem; text-align: center; }
 
+    /* ── CUSTOM CURSOR (desktop only) ── */
+    @media (pointer: fine) {
+      * { cursor: none !important; }
+      #cursor-dot {
+        position: fixed; width: 8px; height: 8px; border-radius: 50%;
+        background: #3b82f6; pointer-events: none; z-index: 99999;
+        transform: translate(-50%,-50%);
+        transition: width .15s, height .15s, background .15s;
+        box-shadow: 0 0 8px #3b82f6, 0 0 16px rgba(59,130,246,0.5);
+      }
+      #cursor-ring {
+        position: fixed; width: 34px; height: 34px; border-radius: 50%;
+        border: 1.5px solid rgba(59,130,246,0.6); pointer-events: none; z-index: 99998;
+        transform: translate(-50%,-50%);
+        transition: transform .08s linear, width .2s, height .2s, border-color .2s;
+      }
+      #cursor-dot.clicking { width: 5px; height: 5px; background: #a78bfa; }
+      #cursor-ring.clicking { width: 44px; height: 44px; border-color: #a78bfa; }
+    }
+
+    /* ── AI CHAT WIDGET ── */
+    #ai-chat-btn {
+      position: fixed; bottom: 5rem; right: 1.5rem; z-index: 999;
+      width: 58px; height: 58px; border-radius: 50%; border: none;
+      background: linear-gradient(135deg,#7c3aed,#3b82f6);
+      box-shadow: 0 4px 20px rgba(124,58,237,0.55);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; animation: chat-pulse 2.5s ease-in-out infinite;
+      transition: transform .2s;
+    }
+    #ai-chat-btn:hover { transform: scale(1.1); }
+    @keyframes chat-pulse {
+      0%,100% { box-shadow: 0 4px 20px rgba(124,58,237,0.55); }
+      50%      { box-shadow: 0 4px 32px rgba(59,130,246,0.8); }
+    }
+    #ai-chat-btn svg { width: 28px; height: 28px; color: #fff; }
+    #ai-chat-window {
+      position: fixed; bottom: 9.5rem; right: 1.5rem; z-index: 999;
+      width: 320px; max-height: 440px;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px; box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+      display: flex; flex-direction: column; overflow: hidden;
+      transform: scale(0.85) translateY(20px); opacity: 0;
+      pointer-events: none; transform-origin: bottom right;
+      transition: transform .25s cubic-bezier(.34,1.56,.64,1), opacity .2s;
+    }
+    #ai-chat-window.open { transform: scale(1) translateY(0); opacity: 1; pointer-events: all; }
+    .chat-head {
+      background: linear-gradient(135deg,#7c3aed,#3b82f6);
+      padding: 0.9rem 1rem; display: flex; align-items: center; gap: 0.6rem;
+    }
+    .chat-head-avatar {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center;
+    }
+    .chat-head-avatar svg { width: 18px; height: 18px; color: #fff; }
+    .chat-head-info { flex:1; }
+    .chat-head-name { color: #fff; font-weight: 700; font-size: 0.9rem; }
+    .chat-head-status { color: rgba(255,255,255,0.75); font-size: 0.72rem; display: flex; align-items: center; gap: 4px; }
+    .chat-online-dot { width: 6px; height: 6px; border-radius: 50%; background: #4ade80; animation: blink 1.5s infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.4} }
+    .chat-close-btn { background: none; border: none; color: rgba(255,255,255,0.8); cursor: pointer; font-size: 1.2rem; padding: 0 4px; }
+    .chat-msgs {
+      flex: 1; overflow-y: auto; padding: 1rem; display: flex;
+      flex-direction: column; gap: 0.65rem; max-height: 280px;
+    }
+    .chat-msgs::-webkit-scrollbar { width: 4px; }
+    .chat-msgs::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+    .chat-bubble {
+      max-width: 85%; padding: 0.55rem 0.85rem; border-radius: 12px;
+      font-size: 0.83rem; line-height: 1.45; animation: bubble-in .2s ease;
+    }
+    @keyframes bubble-in { from { opacity:0; transform: translateY(6px); } to { opacity:1; transform:none; } }
+    .chat-bubble.ai { background: rgba(124,58,237,0.12); color: var(--text); border-bottom-left-radius: 4px; align-self: flex-start; }
+    .chat-bubble.user { background: linear-gradient(135deg,#7c3aed,#3b82f6); color:#fff; border-bottom-right-radius:4px; align-self:flex-end; }
+    .chat-typing { display: flex; gap: 4px; align-items: center; padding: 0.55rem 0.85rem; }
+    .chat-typing span { width: 6px; height: 6px; border-radius: 50%; background: var(--muted); animation: typing-dot 1.2s infinite; }
+    .chat-typing span:nth-child(2) { animation-delay: .2s; }
+    .chat-typing span:nth-child(3) { animation-delay: .4s; }
+    @keyframes typing-dot { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-5px)} }
+    .chat-suggestions { display: flex; flex-wrap: wrap; gap: 0.4rem; padding: 0 1rem 0.6rem; }
+    .chat-chip {
+      font-size: 0.72rem; padding: 4px 10px; border-radius: 20px; border: 1px solid rgba(124,58,237,0.4);
+      color: #a78bfa; background: rgba(124,58,237,0.08); cursor: pointer; transition: background .15s;
+    }
+    .chat-chip:hover { background: rgba(124,58,237,0.2); }
+    .chat-input-row { display: flex; gap: 0.5rem; padding: 0.75rem 1rem; border-top: 1px solid var(--border); }
+    .chat-input-row input {
+      flex: 1; background: var(--primary); border: 1px solid var(--border);
+      border-radius: 8px; padding: 7px 10px; color: var(--text);
+      font-size: 0.82rem; outline: none; font-family: inherit;
+    }
+    .chat-input-row input:focus { border-color: #7c3aed; }
+    .chat-send-btn {
+      width: 34px; height: 34px; border-radius: 8px; border: none;
+      background: linear-gradient(135deg,#7c3aed,#3b82f6); color:#fff;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      flex-shrink:0; transition: opacity .15s;
+    }
+    .chat-send-btn:hover { opacity: 0.85; }
+    .chat-send-btn svg { width: 15px; height: 15px; }
+    @media (max-width: 480px) {
+      #ai-chat-window { width: calc(100vw - 2rem); right: 1rem; }
+    }
+
+    /* ── 3D TILT CARDS ── */
+    .project-card { transform-style: preserve-3d; will-change: transform; }
+
     /* ── SENT MODAL ── */
     .sent-overlay {
       position: fixed; inset: 0; z-index: 9999;
@@ -1608,6 +1716,50 @@
   </section>
 
   <!-- BACK TO TOP -->
+  <!-- CUSTOM CURSOR -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- AI CHAT WIDGET -->
+  <button id="ai-chat-btn" aria-label="Chat with AI Satyam" title="Ask AI Satyam">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M12 2a9 9 0 0 1 9 9c0 4.97-4.03 9-9 9a9 9 0 0 1-9-9 9 9 0 0 1 9-9z"/>
+      <circle cx="9" cy="10" r="1.2" fill="currentColor" stroke="none"/>
+      <circle cx="12" cy="8" r="1" fill="currentColor" stroke="none"/>
+      <circle cx="15" cy="10" r="1.2" fill="currentColor" stroke="none"/>
+      <circle cx="10" cy="13" r="1" fill="currentColor" stroke="none"/>
+      <circle cx="14" cy="13" r="1" fill="currentColor" stroke="none"/>
+      <line x1="9" y1="10" x2="12" y2="8"/><line x1="12" y1="8" x2="15" y2="10"/>
+      <line x1="9" y1="10" x2="10" y2="13"/><line x1="15" y1="10" x2="14" y2="13"/>
+    </svg>
+  </button>
+  <div id="ai-chat-window">
+    <div class="chat-head">
+      <div class="chat-head-avatar">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a5 5 0 1 1 0 10A5 5 0 0 1 12 2zm0 12c5.33 0 8 2.67 8 4v2H4v-2c0-1.33 2.67-4 8-4z"/></svg>
+      </div>
+      <div class="chat-head-info">
+        <div class="chat-head-name">AI Satyam</div>
+        <div class="chat-head-status"><span class="chat-online-dot"></span> Online — Ask me anything!</div>
+      </div>
+      <button class="chat-close-btn" onclick="toggleChat()">✕</button>
+    </div>
+    <div class="chat-msgs" id="chatMsgs"></div>
+    <div class="chat-suggestions" id="chatChips">
+      <span class="chat-chip" onclick="sendChip(this)">Skills</span>
+      <span class="chat-chip" onclick="sendChip(this)">Experience</span>
+      <span class="chat-chip" onclick="sendChip(this)">Hire you?</span>
+      <span class="chat-chip" onclick="sendChip(this)">Projects</span>
+      <span class="chat-chip" onclick="sendChip(this)">Copilot Studio</span>
+    </div>
+    <div class="chat-input-row">
+      <input id="chatInput" placeholder="Type a question…" onkeydown="if(event.key==='Enter') sendChat()" />
+      <button class="chat-send-btn" onclick="sendChat()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </div>
+  </div>
+
   <button id="back-to-top" aria-label="Back to top">&#8593;</button>
 
   <!-- SENT MODAL -->
@@ -1892,6 +2044,118 @@
         draw();
       });
     })();
+
+    // ── CUSTOM CURSOR ──
+    (function(){
+      const dot = document.getElementById('cursor-dot');
+      const ring = document.getElementById('cursor-ring');
+      if (!dot || !ring || window.matchMedia('(pointer:coarse)').matches) return;
+      let mx=0, my=0, rx=0, ry=0;
+      document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; dot.style.left=mx+'px'; dot.style.top=my+'px'; });
+      document.addEventListener('mousedown', () => { dot.classList.add('clicking'); ring.classList.add('clicking'); });
+      document.addEventListener('mouseup',   () => { dot.classList.remove('clicking'); ring.classList.remove('clicking'); });
+      (function animRing(){ rx+=(mx-rx)*0.12; ry+=(my-ry)*0.12; ring.style.left=rx+'px'; ring.style.top=ry+'px'; requestAnimationFrame(animRing); })();
+    })();
+
+    // ── AI CHAT WIDGET ──
+    let chatOpen = false;
+    const chatWin = document.getElementById('ai-chat-window');
+    const chatMsgs = document.getElementById('chatMsgs');
+
+    function toggleChat(){
+      chatOpen = !chatOpen;
+      chatWin.classList.toggle('open', chatOpen);
+      if(chatOpen && chatMsgs.children.length === 0) {
+        setTimeout(()=> addAIMsg("Hi! I'm AI Satyam 👋 I can answer questions about Satyam's skills, experience, and how to hire him. What would you like to know?"), 300);
+      }
+    }
+    document.getElementById('ai-chat-btn').addEventListener('click', toggleChat);
+
+    function addAIMsg(text){
+      const el = document.createElement('div');
+      el.className = 'chat-bubble ai'; el.textContent = text;
+      chatMsgs.appendChild(el);
+      chatMsgs.scrollTop = chatMsgs.scrollHeight;
+    }
+    function addUserMsg(text){
+      const el = document.createElement('div');
+      el.className = 'chat-bubble user'; el.textContent = text;
+      chatMsgs.appendChild(el); chatMsgs.scrollTop = chatMsgs.scrollHeight;
+    }
+    function showTyping(){
+      const el = document.createElement('div');
+      el.className = 'chat-bubble ai chat-typing'; el.id = 'typing-ind';
+      el.innerHTML = '<span></span><span></span><span></span>';
+      chatMsgs.appendChild(el); chatMsgs.scrollTop = chatMsgs.scrollHeight;
+      return el;
+    }
+
+    const aiAnswers = [
+      { keys:['skill','tech','stack','know','expert','language','tools'],
+        ans:"My core skills include:\n🔹 Microsoft Copilot Studio\n🔹 Azure AI Foundry & Azure OpenAI\n🔹 Power Automate & Power Apps\n🔹 Python, FastAPI, LangChain\n🔹 Selenium & Playwright\n🔹 RAG pipelines & Prompt Engineering" },
+      { keys:['copilot','studio','chatbot','virtual agent','bot','ms copilot'],
+        ans:"I'm a Microsoft Copilot Studio Consultant with 5+ years of hands-on experience. I build enterprise AI chatbots and virtual agents integrated with Microsoft Teams, SharePoint, Azure OpenAI, and Dataverse. It's my primary specialization!" },
+      { keys:['rpa','automate','power automate','automation','workflow'],
+        ans:"I specialize in RPA automation using Power Automate (Desktop + Cloud flows). I've automated 15+ enterprise processes, saving clients 60%+ in manual effort across HR, Finance, and Operations departments." },
+      { keys:['experience','year','background','career','work','job'],
+        ans:"I have 5+ years of professional experience in AI and automation. I currently work at Hollister Incorporated as an AI/RPA Developer. Before that, I've delivered solutions for enterprises in manufacturing, healthcare, and finance." },
+      { keys:['project','built','portfolio','example','demo','case'],
+        ans:"Key projects I've built:\n🤖 Intelligent Customer Service Copilot (40% query reduction)\n⚙️ Enterprise RPA Suite (15+ processes automated)\n🌐 Web Intelligence Platform (95% data accuracy)\n📄 AI Document Processor (Azure Form Recognizer)" },
+      { keys:['hire','freelance','available','work with','contact','rate','cost','price','engag'],
+        ans:"Yes, I'm open to freelance & remote work globally! 🌍\n📧 Email: satyamraisatya@gmail.com\n💼 LinkedIn: linkedin.com/in/raisatyam\n📱 Phone: +91-9793924928\nI typically respond within 24 hours." },
+      { keys:['azure','openai','llm','gpt','ai','foundry','cloud'],
+        ans:"I work extensively with Azure AI Foundry, Azure OpenAI Service, and LangChain. I build RAG (Retrieval-Augmented Generation) pipelines that connect LLMs to enterprise data sources like SharePoint, SQL, and Dataverse." },
+      { keys:['python','code','developer','programming','fastapi','selenium'],
+        ans:"On the Python side, I build FastAPI backends, web scraping systems with Selenium & Playwright, and data automation pipelines with Pandas. I integrate these with AI models and enterprise APIs." },
+      { keys:['location','where','country','india','gurugram','remote','based'],
+        ans:"I'm based in Gurugram, Haryana, India 📍 but I work with clients globally — fully remote friendly! I'm in IST timezone (GMT+5:30)." },
+      { keys:['certif','qualif','edu','degree','microsoft cert'],
+        ans:"I hold a B.Tech from Dr. A.P.J. Abdul Kalam Technical University, plus Microsoft Certifications in Azure AI and Power Platform. I also have HackerRank SQL (Intermediate) certification." },
+      { keys:['hello','hi','hey','namaste','hola','howdy','good'],
+        ans:"Hello! 👋 Great to meet you! I'm AI Satyam — ask me anything about Satyam's skills, experience, projects, or how to hire him for your project!" },
+    ];
+
+    function getAIResponse(text){
+      const t = text.toLowerCase();
+      for(const item of aiAnswers){
+        if(item.keys.some(k => t.includes(k))) return item.ans;
+      }
+      return "Great question! For specific details, you can reach Satyam directly:\n📧 satyamraisatya@gmail.com\n💼 linkedin.com/in/raisatyam\n\nOr try asking about: skills, Copilot Studio, projects, experience, or hiring!";
+    }
+
+    function sendChat(){
+      const inp = document.getElementById('chatInput');
+      const text = inp.value.trim(); if(!text) return;
+      inp.value = '';
+      addUserMsg(text);
+      const typing = showTyping();
+      setTimeout(()=>{
+        typing.remove();
+        addAIMsg(getAIResponse(text));
+      }, 900 + Math.random()*400);
+    }
+    function sendChip(el){
+      const text = el.textContent;
+      addUserMsg(text);
+      const typing = showTyping();
+      setTimeout(()=>{ typing.remove(); addAIMsg(getAIResponse(text)); }, 900);
+    }
+
+    // ── 3D TILT ON PROJECT CARDS ──
+    document.querySelectorAll('.project-card').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const r = card.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width;
+        const y = (e.clientY - r.top) / r.height;
+        const tx = (y - 0.5) * 14, ty = (0.5 - x) * 14;
+        card.style.transform = `perspective(700px) rotateX(${tx}deg) rotateY(${ty}deg) translateY(-6px) scale(1.02)`;
+        card.style.boxShadow = `0 20px 40px rgba(59,130,246,0.2)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+        card.style.boxShadow = '';
+      });
+    });
 
     // ── BADGE → CONTACT SCROLL ──
     document.querySelectorAll('.hero-badge, .freelance-badge').forEach(el => {
