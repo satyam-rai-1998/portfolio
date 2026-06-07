@@ -1,4 +1,4 @@
-const CACHE = 'satyam-portfolio-v1';
+const CACHE = 'satyam-portfolio-v4';
 const ASSETS = [
   '/portfolio/',
   '/portfolio/index.html',
@@ -14,6 +14,7 @@ self.addEventListener('install', e => {
 });
 
 self.addEventListener('activate', e => {
+  // delete ALL old caches
   e.waitUntil(
     caches.keys().then(keys =>
       Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))
@@ -23,9 +24,15 @@ self.addEventListener('activate', e => {
 });
 
 self.addEventListener('fetch', e => {
+  // network-first: always try network, fallback to cache only when offline
   e.respondWith(
-    caches.match(e.request).then(cached =>
-      cached || fetch(e.request).catch(() => caches.match('/portfolio/'))
-    )
+    fetch(e.request)
+      .then(response => {
+        // update cache with fresh response
+        const clone = response.clone();
+        caches.open(CACHE).then(c => c.put(e.request, clone));
+        return response;
+      })
+      .catch(() => caches.match(e.request).then(cached => cached || caches.match('/portfolio/')))
   );
 });
