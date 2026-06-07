@@ -339,50 +339,38 @@
       top: 50%; left: 50%;
       transform: translate(-50%, -50%);
     }
-    body.light .hero-ring { border-color: rgba(109,40,217,0.06); }
-    body.light .hero-brain-wrap { display: none; }
-    body.light .hero-glow {
-      background: radial-gradient(circle,
-        rgba(109,40,217,0.08) 0%,
-        rgba(124,58,237,0.04) 35%,
-        transparent 65%);
-    }
+    body.light .hero-ring { border-color: rgba(109,40,217,0.12); }
     .hero-glow {
       position: absolute; top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 600px; height: 600px;
-      border-radius: 50%;
-      background: radial-gradient(circle,
-        rgba(96,165,250,0.22) 0%,
-        rgba(59,130,246,0.14) 25%,
-        rgba(124,58,237,0.06) 55%,
-        transparent 72%);
+      transform: translate(-50%,-50%);
+      width: 550px; height: 550px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(96,165,250,0.2) 0%, rgba(59,130,246,0.1) 30%, rgba(124,58,237,0.05) 55%, transparent 72%);
       pointer-events: none; z-index: 1;
       animation: glow-breathe 4s ease-in-out infinite;
     }
     body.light .hero-glow {
-      background: radial-gradient(circle,
-        rgba(109,40,217,0.12) 0%,
-        rgba(124,58,237,0.07) 30%,
-        transparent 65%);
+      background: radial-gradient(circle, rgba(109,40,217,0.2) 0%, rgba(124,58,237,0.1) 35%, transparent 65%);
     }
     @keyframes glow-breathe {
-      0%,100% { transform: translate(-50%,-50%) scale(1);   opacity: 1; }
-      50%      { transform: translate(-50%,-50%) scale(1.1); opacity: 0.75; }
+      0%,100% { transform: translate(-50%,-50%) scale(1);    opacity:1; }
+      50%      { transform: translate(-50%,-50%) scale(1.08); opacity:0.8; }
     }
     .hero-brain-wrap {
       position: absolute; top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 1; pointer-events: none;
-      opacity: 0.45;
+      transform: translate(-50%,-50%);
+      z-index: 2; pointer-events: none; opacity: 0.45;
     }
+    body.light .hero-brain-wrap { opacity: 0.4; }
     .hero-brain-svg {
       filter: drop-shadow(0 0 28px #7c3aed) drop-shadow(0 0 60px #3b82f6);
-      animation: brain-pulse 3s ease-in-out infinite;
+      animation: hbrain-pulse 3s ease-in-out infinite;
     }
-    @keyframes brain-pulse {
-      0%,100% { filter: drop-shadow(0 0 28px #7c3aed) drop-shadow(0 0 60px #3b82f6); transform: scale(1); }
-      50%      { filter: drop-shadow(0 0 42px #a855f7) drop-shadow(0 0 85px #60a5fa); transform: scale(1.06); }
+    body.light .hero-brain-svg {
+      filter: drop-shadow(0 0 22px #7c3aed) drop-shadow(0 0 45px #3b82f6);
+    }
+    @keyframes hbrain-pulse {
+      0%,100% { transform: scale(1);    filter: drop-shadow(0 0 28px #7c3aed) drop-shadow(0 0 60px #3b82f6); }
+      50%      { transform: scale(1.05); filter: drop-shadow(0 0 42px #a855f7) drop-shadow(0 0 80px #60a5fa); }
     }
     @keyframes hero-ripple {
       0%   { transform: translate(-50%,-50%) scale(0.7); opacity: 0.6; }
@@ -919,10 +907,10 @@
   <div class="hero" id="home">
     <canvas id="hero-canvas"></canvas>
 
-    <!-- centre glow halo -->
+    <!-- centre glow -->
     <div class="hero-glow"></div>
 
-    <!-- brain SVG centered in background -->
+    <!-- brain SVG background -->
     <div class="hero-brain-wrap">
       <svg class="hero-brain-svg" width="260" height="260" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
