@@ -11,6 +11,9 @@
   <link rel="canonical" href="https://satyam-rai-1998.github.io/portfolio/blog.html" />
   <link rel="author" href="https://linkedin.com/in/raisatyam" />
   <link rel="preconnect" href="https://www.googletagmanager.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" />
   <meta name="theme-color" content="#3b82f6" />
 
   <!-- Open Graph -->
@@ -209,10 +212,27 @@
       --primary: #0f172a; --accent: #3b82f6; --accent2: #06b6d4;
       --text: #e2e8f0; --muted: #94a3b8; --card: #1e293b;
       --border: #334155; --gradient: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+      --font-display: 'Space Grotesk', 'Segoe UI', system-ui, -apple-system, sans-serif;
+      --font-body: 'DM Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: var(--primary); color: var(--text); line-height: 1.6; }
+    h1, h2, h3, h4, .nav-brand { font-family: var(--font-display); }
+
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
+      outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+    body { font-family: var(--font-body); background: var(--primary); color: var(--text); line-height: 1.6; }
 
     /* NAV */
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(15,23,42,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 5%; display: flex; justify-content: space-between; align-items: center; height: 60px; }
@@ -220,7 +240,7 @@
     .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; transition: color .2s; }
     .nav-links a:hover, .nav-links a.active { color: var(--accent); }
-    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; position: relative; }
     .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: all .3s; }
     .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .hamburger.open span:nth-child(2) { opacity: 0; }
@@ -312,21 +332,27 @@
     .post-tag { background: rgba(6,182,212,0.08); border: 1px solid rgba(6,182,212,0.2); color: var(--accent2); padding: 2px 9px; border-radius: 10px; font-size: 0.72rem; }
 
     /* LIGHT MODE */
-    body.light { --primary: #f1f5f9; --text: #0f172a; --muted: #64748b; --card: #ffffff; --border: #e2e8f0; }
+    body.light { --primary: #f1f5f9; --text: #0f172a; --muted: #475569; --card: #ffffff; --border: #e2e8f0; }
     body.light nav { background: rgba(241,245,249,0.95); }
     body.light .post-full pre { background: #1e293b; }
     body.light .post-title { color: #0f172a; }
 
     /* THEME TOGGLE */
     .nav-right { display: flex; align-items: center; gap: 0.9rem; margin-left: 2rem; }
-    .theme-toggle { background: none; border: none; cursor: pointer; padding: 0; display: flex; align-items: center; }
+    .theme-toggle { background: none; border: none; cursor: pointer; padding: 0; display: flex; align-items: center; position: relative; }
+    .theme-toggle::after, .hamburger::after {
+      content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      width: 44px; height: 44px;
+    }
     .toggle-track { width: 48px; height: 24px; border-radius: 12px; background: #bfdbfe; border: 1px solid #93c5fd; position: relative; display: flex; align-items: center; transition: background .35s; }
     body:not(.light) .toggle-track { background: #1e3358; border-color: #2d4a7a; }
     .toggle-thumb { position: absolute; left: 2px; width: 20px; height: 20px; border-radius: 50%; background: var(--gradient); transition: transform .35s cubic-bezier(.34,1.56,.64,1); box-shadow: 0 1px 4px rgba(0,0,0,0.3); z-index: 1; }
     body:not(.light) .toggle-thumb { transform: translateX(24px); }
-    .toggle-icon { position: absolute; font-size: 10px; }
+    .toggle-icon { position: absolute; line-height: 1; color: #1e3a8a; }
+    .toggle-icon svg { width: 12px; height: 12px; display: block; }
     .toggle-icon.sun { left: 4px; }
     .toggle-icon.moon { right: 4px; }
+    body:not(.light) .toggle-icon { color: #cbd5e1; }
 
     /* FOOTER */
     footer { background: var(--card); border-top: 1px solid var(--border); text-align: center; padding: 2.5rem 5%; }
@@ -388,8 +414,8 @@
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
           <span class="toggle-track">
             <span class="toggle-thumb"></span>
-            <span class="toggle-icon moon">🌙</span>
-            <span class="toggle-icon sun">☀️</span>
+            <span class="toggle-icon moon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 14.5A9 9 0 0 1 9.5 2.5a9 9 0 1 0 12 12Z"/></svg></span>
+            <span class="toggle-icon sun" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5v2.5M12 19v2.5M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2.5 12H5M19 12h2.5M4.2 19.8L6 18M18 6l1.8-1.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
           </span>
         </button>
         <button class="hamburger" id="hamburger" aria-label="Menu">
