@@ -1086,7 +1086,7 @@
             <div class="stat-label">Years Exp.</div>
           </div>
           <div class="stat-item">
-            <div class="stat-num">9+</div>
+            <div class="stat-num">10+</div>
             <div class="stat-label">Projects</div>
           </div>
           <div class="stat-item">
@@ -1405,6 +1405,25 @@
     <h2 class="section-title">Key Projects</h2>
     <div class="section-divider"></div>
     <div class="projects-grid">
+
+      <div class="project-card" id="gisp-auto">
+        <div class="project-header">
+          <h3 class="project-title">GISP-Auto — Scheduled Supply Planning Reports</h3>
+          <span class="project-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="3"/></svg></span>
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">Microsoft Copilot Studio</span>
+          <span class="project-tag">Power Automate</span>
+          <span class="project-tag">Microsoft Fabric Data Agent</span>
+          <span class="project-tag">Microsoft Teams</span>
+        </div>
+        <p class="project-desc">Built an autonomous Copilot Studio agent that sends supply planning reports on a recurring schedule. Each Power Automate flow supplies a preset prompt for its plant, such as Ballina or Bawal.</p>
+        <ul class="project-highlights">
+          <li>Queries a connected Microsoft Fabric data agent for the plant’s inventory, backorders and service risks.</li>
+          <li>Checks the responses, retries failed queries and combines the results into an HTML report that preserves the tables and flags exceptions.</li>
+          <li>Emails the report to configured recipients and posts it to the Teams group chat for that report’s plant scope.</li>
+        </ul>
+      </div>
 
       <div class="project-card" id="gisp-assistant">
         <div class="project-header">
@@ -2036,6 +2055,8 @@
     }
 
     const aiAnswers = [
+      { keys:['gisp-auto','gisp auto','gisp autonomous','scheduled supply planning','scheduled plant report'],
+        ans:"GISP-Auto sends scheduled supply planning reports. Power Automate triggers Copilot Studio with a preset plant prompt. The agent queries a Microsoft Fabric data agent, formats the results as HTML, then sends the report by email and to the appropriate Teams group chat." },
       { keys:['gisp','fabric','supply planning','supply chain','inventory planning'],
         ans:"I built the GISP Assistant for global inventory and supply planning. Its Copilot Studio interface calls a Microsoft Fabric data agent I built on Power BI semantic models. Planners can ask which materials carry the highest backorder value and check whether those materials have production planned." },
       { keys:['skill','tech','stack','know','expert','language','tools'],

@@ -4,6 +4,7 @@
 
 ## Selected work
 
+- [GISP-Auto — Scheduled Supply Planning Reports](https://satyam-rai-1998.github.io/portfolio/#gisp-auto) runs on recurring Power Automate triggers with plant-specific prompts. The Copilot Studio agent retrieves data from a Microsoft Fabric data agent and delivers HTML reports by email and to the appropriate Teams group chat.
 - [GISP Assistant — Global Inventory and Supply Planning](https://satyam-rai-1998.github.io/portfolio/#gisp-assistant) gives planners a Copilot Studio interface to a Microsoft Fabric data agent built on the global supply chain report’s Power BI semantic models. It supports questions about backorders, inventory across countries, planned production and capacity.
 - [Fit for Growth Requirements & Traceability Assistant](https://satyam-rai-1998.github.io/portfolio/#ffg-assistant) helps SAP S/4HANA project teams trace requirements to test cases and defects. It uses an Excel export for coverage reports and Azure DevOps MCP for read-only checks of individual work items.
 - [IBPedia](https://satyam-rai-1998.github.io/portfolio/#ibpedia) filters incoming SAP IBP emails for relevance and duplicates, then writes structured questions and answers to an Excel knowledge base.
