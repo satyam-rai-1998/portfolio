@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GISP Assistant for supply planning | Satyam Rai</title>
+  <meta name="description" content="See how Satyam Rai connected Copilot Studio to a Microsoft Fabric data agent to compare backorders with production plans in Power BI.">
+  <link rel="canonical" href="https://satyam-rai-1998.github.io/portfolio/case-studies/gisp-assistant.html">
+  <link rel="stylesheet" href="../articles/article.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to case study</a>
+  <nav aria-label="Portfolio"><a href="../">Satyam Rai</a><a href="../#projects">Projects</a><a href="../#contact">Contact</a></nav>
+  <main id="main">
+    <article>
+      <p class="category">Case study · GISP Assistant for supply planning</p>
+      <h1>How can a supply planner check backorders with Copilot Studio?</h1>
+      <p class="intro">A planner asks GISP Assistant which materials have the largest backorders at a plant. Copilot Studio passes the question to the Microsoft Fabric data agent I built on the Power BI semantic models behind the global supply chain report. The planner can then ask which of those materials have production scheduled.</p>
+      <h2>How does the question reach the report?</h2>
+      <figure><figcaption>From a planner’s question to a grounded answer</figcaption><ol class="route"><li>Planner asks in Copilot Studio</li><li>Fabric data agent queries Power BI measures</li><li>Copilot Studio returns the result</li></ol></figure>
+      <p>I built the data agent and connected it to the conversational agent. The service model supplies backorder value, inventory and available-to-promise status. The production model supplies forecasts, targets and work orders. For a question with two parts, the assistant can identify the affected materials first and use that list to look up production coverage.</p>
+      <h2>Which backordered material needs a closer look?</h2>
+      <p><strong>Example question.</strong> “At Plant A, which material has the highest backorder value this week, and is production planned for it?”</p>
+      <p><strong>Illustrative answer using fictional data.</strong> Material M-101 has $24,000 in backorders, ahead of M-204 at $16,000. The sample production plan shows a work order for M-204 this week and none for M-101. A planner could follow up by asking whether another plant holds inventory for M-101.</p>
+      <h2>How does GISP-Auto deliver the scheduled version?</h2>
+      <p>GISP Assistant starts with a planner’s question. For recurring updates, I built <a href="../#gisp-auto">GISP-Auto</a>. A Power Automate schedule supplies a plant-specific prompt. The agent retrieves the figures through Fabric, validates and combines the results, formats the report as HTML and delivers it by email and to the appropriate Teams group.</p>
+    </article>
+  </main>
+  <footer><a href="../articles/copilot-studio-agents.html">Copilot Studio agent guide</a><a href="../#contact">Contact Satyam</a></footer>
+</body>
+</html>

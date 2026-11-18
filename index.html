@@ -365,6 +365,8 @@
     }
     .photo-placeholder svg { width: 48px; height: 48px; opacity: 0.4; }
     .hero-text { flex: 1; }
+    .hero-intro { max-width: 65ch; margin: 1rem auto 1rem 0; line-height: 1.55; }
+    .hero-intro a, .project-title a { color: inherit; text-decoration: underline; text-underline-offset: .18em; }
     .hero-badge {
       display: inline-block;
       background: rgba(59,130,246,0.15);
@@ -1049,7 +1051,8 @@
       </div>
       <div class="hero-text">
         <a class="freelance-badge" href="#contact"><span class="pulse-dot"></span>Open to freelance work</a>
-        <h1>Hi, I'm <span>Satyam Rai</span></h1>
+        <h1><span>Satyam Rai</span> — AI Agent Developer &amp; Microsoft Copilot Studio Consultant</h1>
+        <p class="hero-intro">I build AI agents and automation workflows with Microsoft Copilot Studio, Microsoft Fabric, and Power Automate. My projects include a <a href="case-studies/gisp-assistant.html">supply-planning assistant</a> that answers backorder questions and an <a href="case-studies/invoice-automation.html">invoice workflow</a> that extracts data with Azure AI Document Intelligence.</p>
         <p class="hero-sub">AI Agent Developer | Agentic Automation Engineer | RPA Developer | AI Engineer</p>
         <p class="hero-location">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
@@ -1091,8 +1094,8 @@
     <div class="about-grid">
       <div class="about-text">
         <p>I’m Satyam Rai, an AI agent developer and automation engineer based in Gurugram, India. I have <strong>5+ years of experience across IT and automation</strong> and work at Hollister Incorporated as an RPA Developer II / AI Agent Developer.</p>
-        <p>I build agents around the questions people ask at work. With the <a href="#gisp-assistant">GISP Assistant</a>, a supply planner can ask which materials have the highest backorder value and whether production is planned. Copilot Studio routes the question to a Microsoft Fabric data agent that reads the Power BI semantic models. For recurring reports, <a href="#gisp-auto">GISP-Auto</a> runs on a Power Automate schedule and delivers each plant’s results through email and Teams.</p>
-        <p>My <a href="#ffg-assistant">Fit for Growth assistant</a> helps SAP project teams trace requirements to tests and defects in Azure DevOps. On the RPA side, my <a href="#invoice-automation">invoice workflow</a> uses Azure AI Document Intelligence and Power Automate to extract data from 500+ invoices a week at 95% accuracy.</p>
+        <p>I build agents around the questions people ask at work. With the <a href="case-studies/gisp-assistant.html">GISP Assistant</a>, a supply planner can ask which materials have the highest backorder value and whether production is planned. Copilot Studio routes the question to a Microsoft Fabric data agent that reads the Power BI semantic models. For recurring reports, <a href="#gisp-auto">GISP-Auto</a> runs on a Power Automate schedule and delivers each plant’s results through email and Teams.</p>
+        <p>My <a href="#ffg-assistant">Fit for Growth assistant</a> helps SAP project teams trace requirements to tests and defects in Azure DevOps. On the RPA side, my <a href="case-studies/invoice-automation.html">invoice workflow</a> uses Azure AI Document Intelligence and Power Automate to extract data from 500+ invoices a week at 95% accuracy.</p>
         <div class="about-contact">
           <div class="contact-item">
             <div class="contact-icon">
@@ -1287,7 +1290,7 @@
         <dt>Autonomous agents for scheduled reporting</dt>
         <dd>I built <a href="#gisp-auto">GISP-Auto</a> in Copilot Studio to deliver supply planning reports on a schedule. Power Automate starts each run with a plant-specific prompt. The agent queries a Microsoft Fabric data agent, formats the results as HTML, and sends the report by email and to the appropriate Teams group chat.</dd>
         <dt>Building data agents on Power BI semantic models</dt>
-        <dd>For the <a href="#gisp-assistant">GISP Assistant</a>, I connected a Fabric data agent to Copilot Studio so planners can ask follow-up questions about inventory and production using the measures in their Power BI report.</dd>
+        <dd>For the <a href="case-studies/gisp-assistant.html">GISP Assistant</a>, I connected a Fabric data agent to Copilot Studio so planners can ask follow-up questions about inventory and production using the measures in their Power BI report.</dd>
         <dt>Knowledge ingestion and structured outputs</dt>
         <dd><a href="#ibpedia">IBPedia</a> checks incoming emails for relevance and duplicates, then writes new questions and answers to an Excel knowledge base.</dd>
         <dt>Conversational actions and API integration</dt>
@@ -1415,7 +1418,7 @@
 
       <div class="project-card" id="gisp-assistant">
         <div class="project-header">
-          <h3 class="project-title">GISP Assistant — Global Inventory and Supply Planning</h3>
+          <h3 class="project-title"><a href="case-studies/gisp-assistant.html">GISP Assistant — Global Inventory and Supply Planning</a></h3>
           <span class="project-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
         </div>
         <div class="project-tags">
@@ -1510,7 +1513,7 @@
 
       <div class="project-card" id="invoice-automation">
         <div class="project-header">
-          <h3 class="project-title">Enterprise Process Automation Suite</h3>
+          <h3 class="project-title"><a href="case-studies/invoice-automation.html">Invoice Automation</a> · Enterprise Process Automation Suite</h3>
           <span class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
         </div>
         <div class="project-tags">

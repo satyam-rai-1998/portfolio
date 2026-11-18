@@ -21,3 +21,9 @@ code { font-size: .92em; }
 .key-takeaways { border-left: 3px solid var(--link); padding-left: 1rem; }
 .skip { position: absolute; top: -5rem; }
 .skip:focus { top: 0; background: var(--bg); }
+figure { margin: 1.4rem 0; }
+figcaption { color: var(--muted); }
+.route { display: flex; gap: .75rem; padding: 0; counter-reset: step; list-style: none; }
+.route li { flex: 1; padding: .8rem; border: 1px solid var(--line); border-radius: .4rem; counter-increment: step; }
+.route li::before { content: counter(step) ". "; font-weight: bold; }
+@media (max-width: 36rem) { .route { flex-direction: column; } }
