@@ -281,10 +281,6 @@
     /* SCROLL PROGRESS */
     #scroll-progress { position: fixed; top: 0; left: 0; z-index: 200; height: 3px; width: 0%; background: var(--gradient); transition: width 0.1s linear; pointer-events: none; }
 
-    /* BACK TO TOP */
-    #back-to-top { position: fixed; bottom: 2rem; right: 2rem; width: 44px; height: 44px; border-radius: 50%; background: var(--gradient); color: #fff; border: none; cursor: pointer; font-size: 1.1rem; font-weight: 700; box-shadow: 0 4px 15px rgba(59,130,246,0.45); display: flex; align-items: center; justify-content: center; opacity: 0; transform: translateY(12px); transition: opacity .3s, transform .3s; z-index: 99; }
-    #back-to-top.visible { opacity: 1; transform: translateY(0); }
-    #back-to-top:hover { transform: translateY(-3px); }
 
 
     @media (max-width: 768px) {
@@ -315,11 +311,10 @@
 
     .skip-link { position: fixed; top: .5rem; left: .5rem; z-index: 100000; padding: .65rem 1rem; background: var(--card); color: var(--text); transform: translateY(-160%); }
     .skip-link:focus { transform: none; }
-    #back-to-top:not(.visible) { visibility: hidden; }
     .read-article { display: inline-block; align-self: flex-start; color: var(--text); text-decoration-color: var(--accent); text-underline-offset: .2em; }
   </style>
   <noscript><style>
-    .hamburger, .theme-toggle, .filter-bar, #ai-chat-btn, #back-to-top { display: none; }
+    .hamburger, .theme-toggle, .filter-bar, #ai-chat-btn { display: none; }
     @media (max-width: 768px) {
       nav { position: static; height: auto; flex-wrap: wrap; gap: .5rem; }
       nav .nav-links { display: flex; flex-wrap: wrap; gap: .5rem .8rem; }
@@ -640,7 +635,6 @@
   </div><!-- end blog-container -->
   </main>
 
-  <button id="back-to-top" aria-label="Back to top">&#8593;</button>
 
   <footer>
     <div class="footer-name">Satyam Rai</div>
@@ -677,15 +671,12 @@
       }
     });
 
-    // SCROLL PROGRESS + BACK TO TOP
+    // SCROLL PROGRESS
     const progressBar = document.getElementById('scroll-progress');
-    const backToTop = document.getElementById('back-to-top');
     window.addEventListener('scroll', () => {
       const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
       progressBar.style.width = pct + '%';
-      backToTop.classList.toggle('visible', window.scrollY > 400);
     });
-    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
     // FILTER
     document.querySelectorAll('.filter-btn').forEach(btn => {

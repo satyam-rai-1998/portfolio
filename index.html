@@ -109,7 +109,7 @@
         "RPA Development",
         "Microsoft Copilot Studio",
         "Microsoft Power Platform",
-        "Azure AI Foundry",
+        "Microsoft Foundry",
         "Azure OpenAI",
         "Power Automate",
         "Power Apps",
@@ -178,7 +178,7 @@
             "name": "India"
           }
         },
-        "skills": "Microsoft Copilot Studio, Azure AI Foundry, Power Platform, Power Automate, RPA, Python, FastAPI, Selenium, Playwright, LangChain"
+        "skills": "Microsoft Copilot Studio, Microsoft Foundry, Power Platform, Power Automate, RPA, Python, FastAPI, Selenium, Playwright, LangChain"
       },
       "knowsLanguage": [
         "en",
@@ -725,21 +725,6 @@
     .about-text p a, .skill-evidence a { color: var(--text); text-decoration-color: var(--accent); text-underline-offset: .18em; }
     #agent-engineering, .project-card[id] { scroll-margin-top: 6rem; }
 
-    /* ── BACK TO TOP ── */
-    #back-to-top {
-      position: fixed; bottom: 2rem; right: 2rem;
-      width: 44px; height: 44px; border-radius: 50%;
-      background: var(--gradient); color: #fff;
-      border: none; cursor: pointer; font-size: 1.1rem; font-weight: 700;
-      box-shadow: 0 4px 15px rgba(59,130,246,0.45);
-      display: flex; align-items: center; justify-content: center;
-      opacity: 0; transform: translateY(12px);
-      transition: opacity .3s, transform .3s;
-      z-index: 99;
-    }
-    #back-to-top.visible { opacity: 1; transform: translateY(0); }
-    #back-to-top:hover { transform: translateY(-3px); box-shadow: 0 6px 22px rgba(59,130,246,0.6); }
-
     /* ── CONTACT FORM LAYOUT ── */
     .contact-layout { display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem; align-items: start; }
     .contact-cards { display: grid; gap: 1rem; }
@@ -939,12 +924,10 @@
 
     @media (max-width: 768px) {
       .contact-layout { grid-template-columns: 1fr; }
-      #back-to-top { bottom: 1.2rem; right: 1.2rem; width: 40px; height: 40px; font-size: 1rem; }
       .contact-2col { grid-template-columns: 1fr !important; }
     }
     .skip-link { position: fixed; top: .5rem; left: .5rem; z-index: 100000; padding: .65rem 1rem; background: var(--card); color: var(--text); transform: translateY(-160%); }
     .skip-link:focus { transform: none; }
-    #back-to-top:not(.visible) { visibility: hidden; }
     @media (max-width: 480px) {
       .cert-item:has(.cert-preview) .cert-badge { display: none; }
     }
@@ -953,7 +936,7 @@
     @media (min-width: 769px) { .projects-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); } }
   </style>
   <noscript><style>
-    .hamburger, .theme-toggle, .filter-bar, #ai-chat-btn, #back-to-top { display: none; }
+    .hamburger, .theme-toggle, .filter-bar, #ai-chat-btn { display: none; }
     @media (max-width: 768px) {
       nav { position: static; height: auto; flex-wrap: wrap; gap: .5rem; }
       nav .nav-links { display: flex; flex-wrap: wrap; gap: .5rem .8rem; }
@@ -1136,7 +1119,7 @@
           <span class="highlight-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="7" r="3"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="9" cy="16" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="16" r="1" fill="currentColor" stroke="none"/></svg></span>
           <div>
             <h4>AI Agent Development</h4>
-            <p>Building conversational &amp; autonomous AI agents using Microsoft Copilot Studio and Azure AI Foundry</p>
+            <p>Building conversational &amp; autonomous AI agents using Microsoft Copilot Studio and Microsoft Foundry</p>
           </div>
         </div>
         <div class="highlight-card">
@@ -1187,7 +1170,7 @@
           <span class="skill-tag">Microsoft Fabric Data Agent</span>
           <span class="skill-tag">Model Context Protocol (MCP)</span>
           <span class="skill-tag">AI Builder</span>
-          <span class="skill-tag">Azure AI Foundry</span>
+          <span class="skill-tag">Microsoft Foundry</span>
           <span class="skill-tag">Azure OpenAI</span>
           <span class="skill-tag">Azure AI Search</span>
           <span class="skill-tag">LangChain</span>
@@ -1766,7 +1749,6 @@
     </div>
   </div>
 
-  <button id="back-to-top" aria-label="Back to top">&#8593;</button>
 
   <!-- SENT MODAL -->
   <div class="sent-overlay" id="sentModal">
@@ -1871,15 +1853,13 @@
       }
     });
 
-    // ── SCROLL PROGRESS BAR + BACK TO TOP ──
+    // ── SCROLL PROGRESS BAR ──
     const progressBar = document.getElementById('scroll-progress');
-    const backToTop = document.getElementById('back-to-top');
 
     window.addEventListener('scroll', () => {
       const scrolled = window.scrollY;
       const total = document.body.scrollHeight - window.innerHeight;
       progressBar.style.width = (total > 0 ? (scrolled / total) * 100 : 0) + '%';
-      backToTop.classList.toggle('visible', scrolled > 400);
 
       // Active nav highlight
       let current = '';
@@ -1890,8 +1870,6 @@
         link.style.color = link.getAttribute('href') === '#' + current ? 'var(--accent)' : '';
       });
     });
-
-    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
     // ── PWA SERVICE WORKER ──
     if ('serviceWorker' in navigator) {
@@ -2060,7 +2038,7 @@
       { keys:['gisp','fabric','supply planning','supply chain','inventory planning'],
         ans:"I built the GISP Assistant for global inventory and supply planning. Its Copilot Studio interface calls a Microsoft Fabric data agent I built on Power BI semantic models. Planners can ask which materials carry the highest backorder value and check whether those materials have production planned." },
       { keys:['skill','tech','stack','know','expert','language','tools'],
-        ans:"My core skills include:\n🔹 Microsoft Copilot Studio\n🔹 Microsoft Fabric Data Agent & Power BI semantic models\n🔹 Azure AI Foundry & Azure OpenAI\n🔹 Power Automate & Power Apps\n🔹 Python, FastAPI, LangChain\n🔹 Selenium & Playwright\n🔹 RAG pipelines & Prompt Engineering" },
+        ans:"My core skills include:\n🔹 Microsoft Copilot Studio\n🔹 Microsoft Fabric Data Agent & Power BI semantic models\n🔹 Microsoft Foundry & Azure OpenAI\n🔹 Power Automate & Power Apps\n🔹 Python, FastAPI, LangChain\n🔹 Selenium & Playwright\n🔹 RAG pipelines & Prompt Engineering" },
       { keys:['copilot','studio','chatbot','virtual agent','bot','ms copilot'],
         ans:"I build Copilot Studio agents for Microsoft Teams and enterprise workflows. My projects include a support agent that handles HR and IT tickets and IBPedia, an email-driven knowledge agent." },
       { keys:['rpa','automate','power automate','automation','workflow'],
@@ -2072,7 +2050,7 @@
       { keys:['hire','freelance','available','work with','contact','rate','cost','price','engag','email'],
         ans:"Yes, I'm open to freelance & remote work globally! 🌍\n📧 Email: satyamraisatya@gmail.com\n💼 LinkedIn: linkedin.com/in/raisatyam\n📱 Phone: +91-9793924928\nI typically respond within 24 hours." },
       { keys:['azure','openai','llm','gpt','foundry','cloud'],
-        ans:"I work extensively with Azure AI Foundry, Azure OpenAI Service, and LangChain. I build RAG (Retrieval-Augmented Generation) pipelines that connect LLMs to enterprise data sources like SharePoint, SQL, and Dataverse." },
+        ans:"I work extensively with Microsoft Foundry, Azure OpenAI Service, and LangChain. I build RAG (Retrieval-Augmented Generation) pipelines that connect LLMs to enterprise data sources like SharePoint, SQL, and Dataverse." },
       { keys:['python','code','developer','programming','fastapi','selenium'],
         ans:"On the Python side, I build FastAPI backends, web scraping systems with Selenium & Playwright, and data automation pipelines with Pandas. I integrate these with AI models and enterprise APIs." },
       { keys:['location','where','country','india','gurugram','remote','based'],
