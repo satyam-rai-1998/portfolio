@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TokenEconomizer helps coding agents stop paying to relearn a repository | Satyam Rai</title>
+  <meta name="description" content="In a 277-task study, TokenEconomizer lowered average coding-agent costs by 18.4–30.9%. The interesting part is how it decides which lessons to keep.">
+  <meta name="author" content="Satyam Rai">
+  <link rel="canonical" href="https://satyam-rai-1998.github.io/portfolio/articles/tokeneconomizer-coding-agent-costs.html">
+  <link rel="stylesheet" href="article.css">
+  <link rel="icon" href="../icon-192.png?v=5fc0261772">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://satyam-rai-1998.github.io/portfolio/articles/tokeneconomizer-coding-agent-costs.html">
+  <meta property="og:title" content="TokenEconomizer helps coding agents stop paying to relearn a repository">
+  <meta property="og:description" content="In a 277-task study, TokenEconomizer lowered average coding-agent costs by 18.4–30.9%. The interesting part is how it decides which lessons to keep.">
+  <meta property="og:image" content="https://satyam-rai-1998.github.io/portfolio/photo.jpeg?v=3e246dc63a">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "TokenEconomizer helps coding agents stop paying to relearn a repository",
+  "datePublished": "2026-11-18",
+  "dateModified": "2026-11-18",
+  "author": {
+    "@type": "Person",
+    "name": "Satyam Rai",
+    "url": "https://satyam-rai-1998.github.io/portfolio/",
+    "@id": "https://satyam-rai-1998.github.io/portfolio/#person"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Satyam Rai"
+  },
+  "description": "In a 277-task study, TokenEconomizer lowered average coding-agent costs by 18.4–30.9%. The interesting part is how it decides which lessons to keep.",
+  "keywords": "Coding agents, Token costs",
+  "url": "https://satyam-rai-1998.github.io/portfolio/articles/tokeneconomizer-coding-agent-costs.html",
+  "inLanguage": "en-US",
+  "@id": "https://satyam-rai-1998.github.io/portfolio/articles/tokeneconomizer-coding-agent-costs.html#article",
+  "isPartOf": {
+    "@id": "https://satyam-rai-1998.github.io/portfolio/blog.html#blog"
+  },
+  "mainEntityOfPage": "https://satyam-rai-1998.github.io/portfolio/articles/tokeneconomizer-coding-agent-costs.html",
+  "image": "https://satyam-rai-1998.github.io/portfolio/photo.jpeg?v=3e246dc63a",
+  "articleSection": "AI News",
+  "citation": "https://www.microsoft.com/en-us/research/blog/tokeneconomizer-learning-from-experience-to-make-ai-coding-agents-more-efficient/"
+}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#article">Skip to article</a>
+  <nav aria-label="Site navigation"><a href="../">Satyam Rai</a><a href="../blog.html">All articles</a><a href="../#projects">Projects</a></nav>
+  <main id="article">
+    <article>
+      <header>
+        <span class="category">AI News</span>
+        <h1>TokenEconomizer helps coding agents stop paying to relearn a repository</h1>
+        <p class="byline">By <a href="../#about">Satyam Rai</a> · <time datetime="2026-11-18">November 18, 2026</time></p>
+        <p class="intro">A coding agent can spend its first few minutes rediscovering which test command works. Start a fresh session tomorrow and the same search can appear on the bill again.</p>
+      </header>
+      <h2>What the researchers measured</h2>
+      <p>On November 16, 2026, Microsoft Research described TokenEconomizer, an open-source project with UC Berkeley and Microsoft Security. The team evaluated 277 bug-fixing tasks across six repositories and five agent–model combinations. It reported average cost reductions of 18.4–30.9% with broadly similar success rates. The researchers included the controller’s own model calls in the cost calculation. <a href="https://www.microsoft.com/en-us/research/blog/tokeneconomizer-learning-from-experience-to-make-ai-coding-agents-more-efficient/">Microsoft Research’s methods and results</a>.</p>
+      <h2>Which lessons earn a place in memory?</h2>
+      <p>The controller looks for patterns across completed sessions. Repeated evidence can earn a short repository-specific note a place in the next session’s context. Later evidence can retire it. The controller also trims the tools initially presented to the agent and can intervene when repeated attempts at a task stop making progress. <a href="https://www.microsoft.com/en-us/research/blog/tokeneconomizer-learning-from-experience-to-make-ai-coding-agents-more-efficient/">Microsoft Research’s methods and results</a>.</p>
+      <h2>A fair test on your own codebase</h2>
+      <p>Pick a repository with recurring maintenance work and an independent test suite. Compare a sequence of fixes with and without remembered guidance. Keep failed fixes in the denominator. Track cumulative cost as well as cost per accepted fix: the first few sessions have little history to learn from. A revealing test is to change the test command halfway through and see how long the old instruction survives.</p>
+    </article>
+  </main>
+  <footer><a href="../blog.html#tokeneconomizer-coding-agent-costs">Back to articles</a><a href="../#contact">Contact Satyam</a></footer>
+</body>
+</html>

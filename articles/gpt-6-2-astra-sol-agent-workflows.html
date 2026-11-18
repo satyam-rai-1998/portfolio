@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Choosing between GPT-6.2 Astra and Sol for an agent workflow | Satyam Rai</title>
+  <meta name="description" content="OpenAI released GPT-6.2 Astra and Sol on November 17. A two-part support-ticket test shows how to compare model quality, tool use and cost.">
+  <meta name="author" content="Satyam Rai">
+  <link rel="canonical" href="https://satyam-rai-1998.github.io/portfolio/articles/gpt-6-2-astra-sol-agent-workflows.html">
+  <link rel="stylesheet" href="article.css">
+  <link rel="icon" href="../icon-192.png?v=5fc0261772">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://satyam-rai-1998.github.io/portfolio/articles/gpt-6-2-astra-sol-agent-workflows.html">
+  <meta property="og:title" content="Choosing between GPT-6.2 Astra and Sol for an agent workflow">
+  <meta property="og:description" content="OpenAI released GPT-6.2 Astra and Sol on November 17. A two-part support-ticket test shows how to compare model quality, tool use and cost.">
+  <meta property="og:image" content="https://satyam-rai-1998.github.io/portfolio/photo.jpeg?v=3e246dc63a">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Choosing between GPT-6.2 Astra and Sol for an agent workflow",
+  "datePublished": "2026-11-18",
+  "dateModified": "2026-11-18",
+  "author": {
+    "@type": "Person",
+    "name": "Satyam Rai",
+    "url": "https://satyam-rai-1998.github.io/portfolio/",
+    "@id": "https://satyam-rai-1998.github.io/portfolio/#person"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Satyam Rai"
+  },
+  "description": "OpenAI released GPT-6.2 Astra and Sol on November 17. A two-part support-ticket test shows how to compare model quality, tool use and cost.",
+  "keywords": "GPT-6.2, Agent evaluation",
+  "url": "https://satyam-rai-1998.github.io/portfolio/articles/gpt-6-2-astra-sol-agent-workflows.html",
+  "inLanguage": "en-US",
+  "@id": "https://satyam-rai-1998.github.io/portfolio/articles/gpt-6-2-astra-sol-agent-workflows.html#article",
+  "isPartOf": {
+    "@id": "https://satyam-rai-1998.github.io/portfolio/blog.html#blog"
+  },
+  "mainEntityOfPage": "https://satyam-rai-1998.github.io/portfolio/articles/gpt-6-2-astra-sol-agent-workflows.html",
+  "image": "https://satyam-rai-1998.github.io/portfolio/photo.jpeg?v=3e246dc63a",
+  "articleSection": "AI News",
+  "citation": "https://developers.openai.com/api/docs/changelog"
+}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#article">Skip to article</a>
+  <nav aria-label="Site navigation"><a href="../">Satyam Rai</a><a href="../blog.html">All articles</a><a href="../#projects">Projects</a></nav>
+  <main id="article">
+    <article>
+      <header>
+        <span class="category">AI News</span>
+        <h1>Choosing between GPT-6.2 Astra and Sol for an agent workflow</h1>
+        <p class="byline">By <a href="../#about">Satyam Rai</a> · <time datetime="2026-11-18">November 18, 2026</time></p>
+        <p class="intro">Two agents can produce equally fluent answers while taking very different routes to get there. OpenAI’s November release gives developers a reason to measure the route as well as the reply.</p>
+      </header>
+      <h2>What changed for developers</h2>
+      <p>OpenAI released GPT-6.2 Astra and Sol on November 17, 2026. It positions Astra for demanding reasoning and coding, and Sol for everyday coding and agent tasks. Both can generate responses through Chat Completions or the Responses API. Developers using these models to call tools need the Responses API. <a href="https://developers.openai.com/api/docs/changelog">OpenAI’s November 17 API release notes</a>.</p>
+      <h2>Give both models the same messy ticket</h2>
+      <p>Imagine a support ticket that says an order is overdue. A later note says the customer accepted a new delivery date. First, ask each model to summarize the case from the same fixed record. Check whether it includes the revised date and identifies who agreed to it. Then give each a read-only order lookup and ask whether the ticket needs escalation. Check which order it fetched and whether the final answer follows from that result.</p>
+      <h2>Measure the cost of a correct decision</h2>
+      <p>Record the tool calls, elapsed time, total cost and reviewer verdict for each case. A cheaper request that needs repeated lookups or a human rewrite can cost more to finish. Keeping the documents and tool results fixed also makes it possible to rerun the comparison when the next model arrives.</p>
+    </article>
+  </main>
+  <footer><a href="../blog.html#gpt-6-2-astra-sol-agent-workflows">Back to articles</a><a href="../#contact">Contact Satyam</a></footer>
+</body>
+</html>

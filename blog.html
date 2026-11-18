@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Satyam Rai Blog | AI Agents, Copilot Studio, Azure AI & Power Platform Tutorials</title>
-  <meta name="description" content="Tutorials by Satyam Rai on Copilot Studio actions, retrieval-augmented generation with Azure AI Search, agent evaluation, Power Automate and Python." />
+  <meta name="description" content="AI agent news and technical guides by Satyam Rai, covering Copilot Studio, model releases, agent evaluation, enterprise automation and Python." />
   <meta name="author" content="Satyam Rai" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
   <link rel="canonical" href="https://satyam-rai-1998.github.io/portfolio/blog.html" />
@@ -19,7 +19,7 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Satyam Rai Blog | AI Agents, Copilot Studio & Azure AI Tutorials" />
-  <meta property="og:description" content="Tutorials by Satyam Rai on Copilot Studio actions, retrieval-augmented generation with Azure AI Search, agent evaluation, Power Automate and Python." />
+  <meta property="og:description" content="AI agent news and technical guides by Satyam Rai, covering Copilot Studio, model releases, agent evaluation, enterprise automation and Python." />
   <meta property="og:url" content="https://satyam-rai-1998.github.io/portfolio/blog.html" />
   <meta property="og:image" content="https://satyam-rai-1998.github.io/portfolio/photo.jpeg?v=3e246dc63a" />
   <meta property="og:image:alt" content="Satyam Rai — AI Agent Developer Blog" />
@@ -28,7 +28,7 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Satyam Rai Blog | Copilot Studio, Azure AI & Power Platform" />
-  <meta name="twitter:description" content="Tutorials by Satyam Rai on Copilot Studio actions, retrieval-augmented generation with Azure AI Search, agent evaluation, Power Automate and Python." />
+  <meta name="twitter:description" content="AI agent news and technical guides by Satyam Rai, covering Copilot Studio, model releases, agent evaluation, enterprise automation and Python." />
   <meta name="twitter:image" content="https://satyam-rai-1998.github.io/portfolio/photo.jpeg?v=3e246dc63a" />
   <meta name="twitter:creator" content="@satyamrai" />
 
@@ -41,7 +41,7 @@
       "@id": "https://satyam-rai-1998.github.io/portfolio/blog.html#blog",
       "name": "Satyam Rai — AI Agent & Automation Blog",
       "url": "https://satyam-rai-1998.github.io/portfolio/blog.html",
-      "description": "Technical blog covering Microsoft Copilot Studio, AI Agent development, Azure AI, Power Platform, RPA, and Python automation — written from real production experience.",
+      "description": "AI agent news and technical guides by Satyam Rai, covering Copilot Studio, model releases, agent evaluation, enterprise automation and Python.",
       "inLanguage": "en-US",
       "author": {
         "@type": "Person",
@@ -53,6 +53,21 @@
         "@id": "https://satyam-rai-1998.github.io/portfolio/#person"
       },
       "blogPost": [
+        {
+          "@id": "https://satyam-rai-1998.github.io/portfolio/articles/copilot-autopilot-recurring-work.html#article"
+        },
+        {
+          "@id": "https://satyam-rai-1998.github.io/portfolio/articles/gpt-6-2-astra-sol-agent-workflows.html#article"
+        },
+        {
+          "@id": "https://satyam-rai-1998.github.io/portfolio/articles/tokeneconomizer-coding-agent-costs.html#article"
+        },
+        {
+          "@id": "https://satyam-rai-1998.github.io/portfolio/articles/claude-meetings-live-artifacts.html#article"
+        },
+        {
+          "@id": "https://satyam-rai-1998.github.io/portfolio/articles/multimodal-knowledge-agent-benchmark.html#article"
+        },
         {
           "@id": "https://satyam-rai-1998.github.io/portfolio/articles/copilot-studio-agents.html#article"
         },
@@ -359,16 +374,17 @@
   <div class="blog-hero">
     <span class="hero-badge">Technical Blog</span>
     <h1>AI agents &amp; <span>automation</span></h1>
-    <p>Technical guides by Satyam Rai on building Copilot Studio agents, retrieving enterprise knowledge and automating workflows with Power Platform and Python.</p>
+    <p>AI agent news and technical guides by Satyam Rai, covering Copilot Studio, model releases, agent evaluation, enterprise automation and Python.</p>
     <div class="blog-stats">
-      <div class="blog-stat"><div class="blog-stat-num">11</div><div class="blog-stat-label">Articles</div></div>
-      <div class="blog-stat"><div class="blog-stat-num">7</div><div class="blog-stat-label">Topics</div></div>
+      <div class="blog-stat"><div class="blog-stat-num">16</div><div class="blog-stat-label">Articles</div></div>
+      <div class="blog-stat"><div class="blog-stat-num">8</div><div class="blog-stat-label">Topics</div></div>
     </div>
   </div>
 
   <!-- FILTER BAR -->
   <div class="filter-bar" id="filterBar">
     <button class="filter-btn active" aria-pressed="true" data-filter="all">All</button>
+    <button class="filter-btn" aria-pressed="false" data-filter="AI News">AI News</button>
     <button class="filter-btn" aria-pressed="false" data-filter="Copilot Studio">Copilot Studio</button>
     <button class="filter-btn" aria-pressed="false" data-filter="Azure AI">Azure AI</button>
     <button class="filter-btn" aria-pressed="false" data-filter="Power Platform">Power Platform</button>
@@ -383,19 +399,74 @@
 
     <!-- FEATURED POST — always latest -->
     <p class="featured-label fade-in">Latest Article</p>
-    <article id="unit-distance-problem" class="featured-post fade-in" data-category="AI Research">
+    <article id="copilot-autopilot-recurring-work" class="featured-post fade-in" data-category="AI News">
       <div class="post-meta">
-        <span class="post-category" style="background:rgba(168,85,247,0.15);color:#a855f7;border-color:rgba(168,85,247,0.3);">AI Research</span>
-        <time class="post-date" datetime="2026-06-07">7 Jun 2026</time>
+        <span class="post-category">AI News</span>
+        <time class="post-date" datetime="2026-11-18">18 Nov 2026</time>
       </div>
-      <h2 class="post-title"><a href="articles/unit-distance-problem.html">What an AI model found in the Erdős unit distance problem</a></h2>
-      <p class="post-excerpt">A reasoning model found arrangements of points with more unit-distance pairs than mathematicians had expected. The result gives agent developers a concrete example of how to check a generated answer.</p>
-      <a class="read-article" href="articles/unit-distance-problem.html" aria-label="Read What an AI model found in the Erdős unit distance problem">Read article →</a>
-      <div class="post-tags"><span class="post-tag">AI reasoning</span><span class="post-tag">Evaluation</span></div>
+      <h2 class="post-title"><a href="articles/copilot-autopilot-recurring-work.html">Copilot Autopilot gets its own identity for recurring work</a></h2>
+      <p class="post-excerpt">Microsoft is rolling out Autopilot to Frontier customers. Its agent identity, named manager and action history matter for recurring Teams and Outlook workflows.</p>
+      <a class="read-article" href="articles/copilot-autopilot-recurring-work.html" aria-label="Read Copilot Autopilot gets its own identity for recurring work">Read article →</a>
+      <div class="post-tags"><span class="post-tag">Microsoft 365 Copilot</span><span class="post-tag">Agent identity</span></div>
     </article>
 
     <!-- POSTS GRID -->
     <div class="posts-grid">
+
+      <article id="gpt-6-2-astra-sol-agent-workflows" class="post-card fade-in" data-category="AI News">
+        <div class="post-meta">
+          <span class="post-category">AI News</span>
+          <time class="post-date" datetime="2026-11-18">18 Nov 2026</time>
+        </div>
+        <h2 class="post-title"><a href="articles/gpt-6-2-astra-sol-agent-workflows.html">Choosing between GPT-6.2 Astra and Sol for an agent workflow</a></h2>
+        <p class="post-excerpt">OpenAI released GPT-6.2 Astra and Sol on November 17. A two-part support-ticket test shows how to compare model quality, tool use and cost.</p>
+        <a class="read-article" href="articles/gpt-6-2-astra-sol-agent-workflows.html" aria-label="Read Choosing between GPT-6.2 Astra and Sol for an agent workflow">Read article →</a>
+        <div class="post-tags"><span class="post-tag">GPT-6.2</span><span class="post-tag">Agent evaluation</span></div>
+      </article>
+
+      <article id="tokeneconomizer-coding-agent-costs" class="post-card fade-in" data-category="AI News">
+        <div class="post-meta">
+          <span class="post-category">AI News</span>
+          <time class="post-date" datetime="2026-11-18">18 Nov 2026</time>
+        </div>
+        <h2 class="post-title"><a href="articles/tokeneconomizer-coding-agent-costs.html">TokenEconomizer helps coding agents stop paying to relearn a repository</a></h2>
+        <p class="post-excerpt">In a 277-task study, TokenEconomizer lowered average coding-agent costs by 18.4–30.9%. The interesting part is how it decides which lessons to keep.</p>
+        <a class="read-article" href="articles/tokeneconomizer-coding-agent-costs.html" aria-label="Read TokenEconomizer helps coding agents stop paying to relearn a repository">Read article →</a>
+        <div class="post-tags"><span class="post-tag">Coding agents</span><span class="post-tag">Token costs</span></div>
+      </article>
+
+      <article id="claude-meetings-live-artifacts" class="post-card fade-in" data-category="AI News">
+        <div class="post-meta">
+          <span class="post-category">AI News</span>
+          <time class="post-date" datetime="2026-11-18">18 Nov 2026</time>
+        </div>
+        <h2 class="post-title"><a href="articles/claude-meetings-live-artifacts.html">Claude Meetings brings a working draft into the meeting itself</a></h2>
+        <p class="post-excerpt">Anthropic’s Claude Meetings beta brings a visible agent into Google Meet. Here’s a practical way to evaluate its live documents and decision notes.</p>
+        <a class="read-article" href="articles/claude-meetings-live-artifacts.html" aria-label="Read Claude Meetings brings a working draft into the meeting itself">Read article →</a>
+        <div class="post-tags"><span class="post-tag">Claude Meetings</span><span class="post-tag">Collaboration</span></div>
+      </article>
+
+      <article id="multimodal-knowledge-agent-benchmark" class="post-card fade-in" data-category="AI News">
+        <div class="post-meta">
+          <span class="post-category">AI News</span>
+          <time class="post-date" datetime="2026-11-18">18 Nov 2026</time>
+        </div>
+        <h2 class="post-title"><a href="articles/multimodal-knowledge-agent-benchmark.html">Can a document agent read the chart as well as the caption?</a></h2>
+        <p class="post-excerpt">Google and Artificial Analysis introduced a 200-task benchmark for agents working with visual files. Its design offers a practical test for document assistants.</p>
+        <a class="read-article" href="articles/multimodal-knowledge-agent-benchmark.html" aria-label="Read Can a document agent read the chart as well as the caption?">Read article →</a>
+        <div class="post-tags"><span class="post-tag">Multimodal agents</span><span class="post-tag">Document evaluation</span></div>
+      </article>
+
+      <article id="unit-distance-problem" class="post-card fade-in" data-category="AI Research">
+        <div class="post-meta">
+          <span class="post-category" style="background:rgba(168,85,247,0.15);color:#a855f7;border-color:rgba(168,85,247,0.3);">AI Research</span>
+          <time class="post-date" datetime="2026-06-07">7 Jun 2026</time>
+        </div>
+        <h2 class="post-title"><a href="articles/unit-distance-problem.html">What an AI model found in the Erdős unit distance problem</a></h2>
+        <p class="post-excerpt">A reasoning model found arrangements of points with more unit-distance pairs than mathematicians had expected. The result gives agent developers a concrete example of how to check a generated answer.</p>
+        <a class="read-article" href="articles/unit-distance-problem.html" aria-label="Read What an AI model found in the Erdős unit distance problem">Read article →</a>
+        <div class="post-tags"><span class="post-tag">AI reasoning</span><span class="post-tag">Evaluation</span></div>
+      </article>
 
       <!-- POST 1 (previously featured) -->
       <article id="copilot-studio-agents" class="post-card fade-in" data-category="Copilot Studio">
@@ -623,7 +694,7 @@
         btn.classList.add('active');
         document.querySelectorAll('.filter-btn').forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
         const filter = btn.dataset.filter;
-        document.querySelector('.featured-label').hidden = filter !== 'all' && filter !== 'AI Research';
+        document.querySelector('.featured-label').hidden = filter !== 'all' && filter !== document.querySelector('.featured-post').dataset.category;
         document.querySelectorAll('article[data-category]').forEach(article => {
           article.style.display = (filter === 'all' || article.dataset.category === filter) ? '' : 'none';
         });
