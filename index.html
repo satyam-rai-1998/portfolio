@@ -1084,7 +1084,7 @@
             <div class="stat-label">Years Exp.</div>
           </div>
           <div class="stat-item">
-            <div class="stat-num">7+</div>
+            <div class="stat-num">8+</div>
             <div class="stat-label">Projects</div>
           </div>
           <div class="stat-item">
@@ -1184,6 +1184,7 @@
           <span class="skill-tag">Prompt Engineering</span>
           <span class="skill-tag">Retrieval-augmented generation (RAG)</span>
           <span class="skill-tag">Function Calling / Tool Use</span>
+          <span class="skill-tag">Model Context Protocol (MCP)</span>
           <span class="skill-tag">AI Builder</span>
           <span class="skill-tag">Azure AI Foundry</span>
           <span class="skill-tag">Azure OpenAI</span>
@@ -1399,6 +1400,25 @@
     <h2 class="section-title">Key Projects</h2>
     <div class="section-divider"></div>
     <div class="projects-grid">
+
+      <div class="project-card" id="ffg-assistant">
+        <div class="project-header">
+          <h3 class="project-title">Fit for Growth (FFG) Requirements &amp; Traceability Assistant</h3>
+          <span class="project-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="5" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="7" r="2"/><path d="M5 7v10m0-3h6a8 8 0 0 0 8-5"/></svg></span>
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">Microsoft Copilot Studio</span>
+          <span class="project-tag">Azure DevOps MCP</span>
+          <span class="project-tag">SharePoint</span>
+          <span class="project-tag">SAP S/4HANA</span>
+        </div>
+        <p class="project-desc">Built a read-only agent for an SAP S/4HANA transformation. Project teams can ask which tests cover a requirement, which defects are linked to it, and what needs review when a business process changes.</p>
+        <ul class="project-highlights">
+          <li>Traces links from business processes through requirements and user stories to test cases and defects. Flags requirements that have no linked tests.</li>
+          <li>Uses an Excel export for workstream summaries and coverage reports. Checks individual work items in live Azure DevOps through the Model Context Protocol (MCP).</li>
+          <li>Cites work item IDs and identifies the source of each answer so reviewers can distinguish current records from the exported snapshot.</li>
+        </ul>
+      </div>
 
       <div class="project-card" id="resume-screening">
         <div class="project-header">
@@ -2002,7 +2022,7 @@
       { keys:['experience','year','background','career','work','job'],
         ans:"I have 5+ years across IT and automation. I currently work at Hollister Incorporated as an RPA Developer II / AI Agent Developer. My earlier roles include Microsoft 365 and Power Platform development at Areness and IT engineering at KIPM." },
       { keys:['project','built','portfolio','example','demo','case'],
-        ans:"IBPedia turns email into searchable SAP IBP questions and answers. My HR and IT agent reduced support resolution time by 50%, and my invoice workflow processes 500+ invoices weekly at 95% extraction accuracy." },
+        ans:"The FFG Assistant traces SAP requirements to tests and defects using Copilot Studio and Azure DevOps MCP. IBPedia turns email into searchable SAP IBP questions and answers. My HR and IT agent reduced support resolution time by 50%, and my invoice workflow processes 500+ invoices weekly at 95% extraction accuracy." },
       { keys:['hire','freelance','available','work with','contact','rate','cost','price','engag','email'],
         ans:"Yes, I'm open to freelance & remote work globally! 🌍\n📧 Email: satyamraisatya@gmail.com\n💼 LinkedIn: linkedin.com/in/raisatyam\n📱 Phone: +91-9793924928\nI typically respond within 24 hours." },
       { keys:['azure','openai','llm','gpt','foundry','cloud'],

@@ -4,6 +4,7 @@
 
 ## Selected work
 
+- [Fit for Growth Requirements & Traceability Assistant](https://satyam-rai-1998.github.io/portfolio/#ffg-assistant) helps SAP S/4HANA project teams trace requirements to test cases and defects. It uses an Excel export for coverage reports and Azure DevOps MCP for read-only checks of individual work items.
 - [IBPedia](https://satyam-rai-1998.github.io/portfolio/#ibpedia) filters incoming SAP IBP emails for relevance and duplicates, then writes structured questions and answers to an Excel knowledge base.
 - [HR and IT support agent](https://satyam-rai-1998.github.io/portfolio/#hr-it-agent) integrates Copilot Studio, Microsoft Teams and Graph API for ticket management. The project reduced support resolution time by 50%.
 - [Invoice automation](https://satyam-rai-1998.github.io/portfolio/#invoice-automation) uses Azure AI Document Intelligence and Power Automate to extract data from 500+ invoices per week at 95% accuracy.
