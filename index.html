@@ -103,6 +103,8 @@
         "https://learn.microsoft.com/en-us/users/satyamrai-5727/"
       ],
       "knowsAbout": [
+        "Microsoft Fabric Data Agent",
+        "Power BI semantic models",
         "AI Agent Development",
         "RPA Development",
         "Microsoft Copilot Studio",
@@ -1084,7 +1086,7 @@
             <div class="stat-label">Years Exp.</div>
           </div>
           <div class="stat-item">
-            <div class="stat-num">8+</div>
+            <div class="stat-num">9+</div>
             <div class="stat-label">Projects</div>
           </div>
           <div class="stat-item">
@@ -1184,6 +1186,7 @@
           <span class="skill-tag">Prompt Engineering</span>
           <span class="skill-tag">Retrieval-augmented generation (RAG)</span>
           <span class="skill-tag">Function Calling / Tool Use</span>
+          <span class="skill-tag">Microsoft Fabric Data Agent</span>
           <span class="skill-tag">Model Context Protocol (MCP)</span>
           <span class="skill-tag">AI Builder</span>
           <span class="skill-tag">Azure AI Foundry</span>
@@ -1295,6 +1298,8 @@
     <div class="skill-evidence">
       <h3>Agent engineering in practice</h3>
       <dl>
+        <dt>Building data agents on Power BI semantic models</dt>
+        <dd>For the <a href="#gisp-assistant">GISP Assistant</a>, I connected a Fabric data agent to Copilot Studio so planners can ask follow-up questions about inventory and production using the measures in their Power BI report.</dd>
         <dt>Knowledge ingestion and structured outputs</dt>
         <dd><a href="#ibpedia">IBPedia</a> checks incoming emails for relevance and duplicates, then writes new questions and answers to an Excel knowledge base.</dd>
         <dt>Conversational actions and API integration</dt>
@@ -1400,6 +1405,24 @@
     <h2 class="section-title">Key Projects</h2>
     <div class="section-divider"></div>
     <div class="projects-grid">
+
+      <div class="project-card" id="gisp-assistant">
+        <div class="project-header">
+          <h3 class="project-title">GISP Assistant — Global Inventory and Supply Planning</h3>
+          <span class="project-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">Microsoft Copilot Studio</span>
+          <span class="project-tag">Microsoft Fabric Data Agent</span>
+          <span class="project-tag">Power BI semantic models</span>
+        </div>
+        <p class="project-desc">Built a conversational assistant for supply network planners. The Copilot Studio agent handles the conversation and calls a Microsoft Fabric data agent I built on the Power BI semantic models behind the global supply chain report.</p>
+        <ul class="project-highlights">
+          <li>Lets a planner ask, “Which materials have the highest backorder value, and do they have production planned?”</li>
+          <li>Connects service measures such as backorder value and available-to-promise status with production targets, forecasts and work orders.</li>
+          <li>Supports follow-up questions about spare inventory in other countries and capacity constraints at individual plants.</li>
+        </ul>
+      </div>
 
       <div class="project-card" id="ffg-assistant">
         <div class="project-header">
@@ -2013,8 +2036,10 @@
     }
 
     const aiAnswers = [
+      { keys:['gisp','fabric','supply planning','supply chain','inventory planning'],
+        ans:"I built the GISP Assistant for global inventory and supply planning. Its Copilot Studio interface calls a Microsoft Fabric data agent I built on Power BI semantic models. Planners can ask which materials carry the highest backorder value and check whether those materials have production planned." },
       { keys:['skill','tech','stack','know','expert','language','tools'],
-        ans:"My core skills include:\n🔹 Microsoft Copilot Studio\n🔹 Azure AI Foundry & Azure OpenAI\n🔹 Power Automate & Power Apps\n🔹 Python, FastAPI, LangChain\n🔹 Selenium & Playwright\n🔹 RAG pipelines & Prompt Engineering" },
+        ans:"My core skills include:\n🔹 Microsoft Copilot Studio\n🔹 Microsoft Fabric Data Agent & Power BI semantic models\n🔹 Azure AI Foundry & Azure OpenAI\n🔹 Power Automate & Power Apps\n🔹 Python, FastAPI, LangChain\n🔹 Selenium & Playwright\n🔹 RAG pipelines & Prompt Engineering" },
       { keys:['copilot','studio','chatbot','virtual agent','bot','ms copilot'],
         ans:"I build Copilot Studio agents for Microsoft Teams and enterprise workflows. My projects include a support agent that handles HR and IT tickets and IBPedia, an email-driven knowledge agent." },
       { keys:['rpa','automate','power automate','automation','workflow'],
