@@ -723,7 +723,7 @@
     .skill-evidence dt { margin-top: 1rem; font-weight: 700; }
     .skill-evidence dd { margin: .25rem 0 0; max-width: 76ch; color: var(--muted); }
     .about-text p a, .skill-evidence a { color: var(--text); text-decoration-color: var(--accent); text-underline-offset: .18em; }
-    .project-card[id] { scroll-margin-top: 6rem; }
+    #agent-engineering, .project-card[id] { scroll-margin-top: 6rem; }
 
     /* ── BACK TO TOP ── */
     #back-to-top {
@@ -1295,9 +1295,11 @@
 
     </div>
 
-    <div class="skill-evidence">
+    <div class="skill-evidence" id="agent-engineering">
       <h3>Agent engineering in practice</h3>
       <dl>
+        <dt>Autonomous agents for scheduled reporting</dt>
+        <dd>I built <a href="#gisp-auto">GISP-Auto</a> in Copilot Studio to deliver supply planning reports on a schedule. Power Automate starts each run with a plant-specific prompt. The agent queries a Microsoft Fabric data agent, formats the results as HTML, and sends the report by email and to the appropriate Teams group chat.</dd>
         <dt>Building data agents on Power BI semantic models</dt>
         <dd>For the <a href="#gisp-assistant">GISP Assistant</a>, I connected a Fabric data agent to Copilot Studio so planners can ask follow-up questions about inventory and production using the measures in their Power BI report.</dd>
         <dt>Knowledge ingestion and structured outputs</dt>
