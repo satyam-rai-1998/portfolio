@@ -15,7 +15,7 @@
   <!-- ═══ PERFORMANCE HINTS ═══ -->
   <link rel="preconnect" href="https://www.googletagmanager.com" />
   <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-  <link rel="preload" href="photo.jpeg" as="image" fetchpriority="high" />
+  <link rel="preload" href="photo.jpeg?v=3e246dc63a" as="image" fetchpriority="high" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" />
@@ -37,8 +37,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Satyam Rai" />
   <link rel="manifest" href="manifest.json" />
-  <link rel="icon" type="image/png" href="icon-192.png" />
-  <link rel="apple-touch-icon" href="icon-192.png" />
+  <link rel="icon" type="image/png" href="icon-192.png?v=5fc0261772" />
+  <link rel="apple-touch-icon" href="icon-192.png?v=5fc0261772" />
 
   <!-- ═══ GEO / LANGUAGE ═══ -->
   <meta name="geo.region" content="IN-HR" />
@@ -56,7 +56,7 @@
   <meta property="og:title" content="Satyam Rai | Microsoft Copilot Studio Consultant & AI Agent Developer" />
   <meta property="og:description" content="Satyam Rai builds Copilot Studio agents, Teams support bots and Power Automate workflows. Explore his projects, technical guides and Microsoft credential." />
   <meta property="og:url" content="https://satyam-rai-1998.github.io/portfolio/" />
-  <meta property="og:image" content="https://satyam-rai-1998.github.io/portfolio/photo.jpeg" />
+  <meta property="og:image" content="https://satyam-rai-1998.github.io/portfolio/photo.jpeg?v=3e246dc63a" />
   <meta property="og:image:alt" content="Satyam Rai — AI Agent Developer and RPA Expert based in Gurugram, India" />
   <meta property="og:site_name" content="Satyam Rai | AI Agent Developer Portfolio" />
   <meta property="og:locale" content="en_US" />
@@ -70,7 +70,7 @@
   <meta name="twitter:creator" content="@satyamrai" />
   <meta name="twitter:title" content="Satyam Rai | Microsoft Copilot Studio Consultant & AI Agent Developer" />
   <meta name="twitter:description" content="Satyam Rai builds Copilot Studio agents, Teams support bots and Power Automate workflows. Explore his projects, technical guides and Microsoft credential." />
-  <meta name="twitter:image" content="https://satyam-rai-1998.github.io/portfolio/photo.jpeg" />
+  <meta name="twitter:image" content="https://satyam-rai-1998.github.io/portfolio/photo.jpeg?v=3e246dc63a" />
   <meta name="twitter:image:alt" content="Satyam Rai — AI Agent Developer and RPA Expert" />
 
   <!-- ═══ SCHEMA.ORG STRUCTURED DATA (JSON-LD) ═══ -->
@@ -87,7 +87,7 @@
       "jobTitle": "Microsoft Copilot Studio Consultant & AI Agent Developer",
       "description": "AI agent developer and Microsoft Copilot Studio consultant based in Gurugram, India. Satyam builds Teams support agents, knowledge workflows and document automation with Power Automate.",
       "url": "https://satyam-rai-1998.github.io/portfolio/",
-      "image": "https://satyam-rai-1998.github.io/portfolio/photo.jpeg",
+      "image": "https://satyam-rai-1998.github.io/portfolio/photo.jpeg?v=3e246dc63a",
       "email": "satyamraisatya@gmail.com",
       "telephone": "+91-9793924928",
       "address": {
@@ -783,7 +783,8 @@
       0%,100% { box-shadow: 0 4px 20px rgba(124,58,237,0.55); }
       50%      { box-shadow: 0 4px 32px rgba(59,130,246,0.8); }
     }
-    #ai-chat-btn svg { width: 28px; height: 28px; color: #fff; }
+    #ai-chat-btn img { width: 90%; height: 90%; border-radius: 50%; }
+    #ai-chat-btn svg { position: absolute; right: -2px; bottom: -1px; width: 21px; height: 21px; padding: 3px; color: #fff; background: #4338ca; border-radius: 50%; }
     #ai-chat-window {
       position: fixed; bottom: 9.5rem; right: 1.5rem; z-index: 999;
       width: 320px; max-height: 440px;
@@ -799,11 +800,7 @@
       background: linear-gradient(135deg,#7c3aed,#3b82f6);
       padding: 0.9rem 1rem; display: flex; align-items: center; gap: 0.6rem;
     }
-    .chat-head-avatar {
-      width: 32px; height: 32px; border-radius: 50%;
-      background: rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center;
-    }
-    .chat-head-avatar svg { width: 18px; height: 18px; color: #fff; }
+    .chat-head-avatar { width: 32px; height: 32px; border-radius: 50%; }
     .chat-head-info { flex:1; }
     .chat-head-name { color: #fff; font-weight: 700; font-size: 0.9rem; }
     .chat-head-status { color: rgba(255,255,255,0.75); font-size: 0.72rem; display: flex; align-items: center; gap: 4px; }
@@ -1065,7 +1062,7 @@
 
     <div class="hero-content">
       <div class="hero-photo">
-        <img src="photo.jpeg" alt="Satyam Rai — AI Agent Developer and RPA Expert based in Gurugram, India" loading="eager" fetchpriority="high" />
+        <img src="photo.jpeg?v=3e246dc63a" alt="Satyam Rai — AI Agent Developer and RPA Expert based in Gurugram, India" loading="eager" fetchpriority="high" />
       </div>
       <div class="hero-text">
         <a class="freelance-badge" href="#contact"><span class="pulse-dot"></span>Open to freelance work</a>
@@ -1679,22 +1676,12 @@
   <!-- BACK TO TOP -->
   <!-- AI CHAT WIDGET -->
   <button id="ai-chat-btn" aria-expanded="false" aria-controls="ai-chat-window" aria-label="Chat with AI Satyam" title="Ask AI Satyam">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-      <path d="M12 2a9 9 0 0 1 9 9c0 4.97-4.03 9-9 9a9 9 0 0 1-9-9 9 9 0 0 1 9-9z"/>
-      <circle cx="9" cy="10" r="1.2" fill="currentColor" stroke="none"/>
-      <circle cx="12" cy="8" r="1" fill="currentColor" stroke="none"/>
-      <circle cx="15" cy="10" r="1.2" fill="currentColor" stroke="none"/>
-      <circle cx="10" cy="13" r="1" fill="currentColor" stroke="none"/>
-      <circle cx="14" cy="13" r="1" fill="currentColor" stroke="none"/>
-      <line x1="9" y1="10" x2="12" y2="8"/><line x1="12" y1="8" x2="15" y2="10"/>
-      <line x1="9" y1="10" x2="10" y2="13"/><line x1="15" y1="10" x2="14" y2="13"/>
-    </svg>
+    <img src="icon-192.png?v=5fc0261772" width="52" height="52" alt="" />
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 11a8 8 0 0 1-8 8H7l-4 3 1-6a8 8 0 1 1 16-5Z"/></svg>
   </button>
   <div id="ai-chat-window" inert>
     <div class="chat-head">
-      <div class="chat-head-avatar">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a5 5 0 1 1 0 10A5 5 0 0 1 12 2zm0 12c5.33 0 8 2.67 8 4v2H4v-2c0-1.33 2.67-4 8-4z"/></svg>
-      </div>
+      <img class="chat-head-avatar" src="icon-192.png?v=5fc0261772" width="32" height="32" alt="" />
       <div class="chat-head-info">
         <div class="chat-head-name">AI Satyam</div>
         <div class="chat-head-status"><span class="chat-online-dot"></span> Answers from this portfolio</div>
