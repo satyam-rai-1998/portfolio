@@ -613,6 +613,16 @@
     .cert-info p { font-size: 0.8rem; color: var(--muted); }
     .cert-info a { color: var(--accent); font-size: 0.78rem; text-decoration: none; }
     .cert-info a:hover { text-decoration: underline; }
+    .cert-info--with-preview { flex: 1; min-width: 0; }
+    /* Frame the white certificate panel within the original 1332 x 710 image. */
+    .cert-preview {
+      display: block; position: relative; aspect-ratio: 1173 / 550;
+      overflow: hidden; margin: 0.75rem 0; border-radius: 8px; background: #fff;
+    }
+    .cert-preview img {
+      position: absolute; top: -15.09%; left: -6.82%;
+      width: 113.55%; max-width: none; height: auto;
+    }
     .edu-card {
       background: var(--card); border: 1px solid var(--border); border-radius: 12px;
       padding: 1.5rem; transition: border-color .2s;
@@ -1670,12 +1680,13 @@
         <h3>Certifications</h3>
         <div class="cert-item">
           <div class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0V4Z"/><path d="M7 5H4a1 1 0 0 0-1 1v1a4 4 0 0 0 4 4M17 5h3a1 1 0 0 1 1 1v1a4 4 0 0 1-4 4"/></svg></div>
-          <div class="cert-info">
+          <div class="cert-info cert-info--with-preview">
             <h4>Microsoft Applied Skills: Build an agent in Microsoft Copilot Studio</h4>
             <p>Earned <time datetime="2026-09-18">September 18, 2026</time></p>
-            <a href="https://learn.microsoft.com/en-us/users/satyamrai-5727/credentials/e936c80468e9d92" target="_blank" rel="noopener">Verify on Microsoft Learn</a>
-            <span aria-hidden="true"> &middot; </span>
-            <a href="e936c80468e9d92.png" target="_blank" rel="noopener">View Certificate Image</a>
+            <a class="cert-preview" href="e936c80468e9d92.png" target="_blank" rel="noopener" aria-label="Open full Microsoft Applied Skills certificate">
+              <img src="e936c80468e9d92.png" width="1332" height="710" loading="lazy" alt="Microsoft Applied Skills certificate awarded to Satyam Rai" />
+            </a>
+            <a href="https://learn.microsoft.com/en-us/users/satyamrai-5727/credentials/e936c80468e9d92" target="_blank" rel="noopener">Verify Online</a>
           </div>
         </div>
         <div class="cert-item">
