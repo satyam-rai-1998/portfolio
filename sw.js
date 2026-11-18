@@ -1,6 +1,6 @@
-const CACHE = 'satyam-portfolio-v6';
+const CACHE = 'satyam-portfolio-v7';
 const scope = self.registration.scope;
-const assets = ['./', 'index.html', 'blog.html', 'photo.jpeg?v=3e246dc63a', 'icon-192.png?v=5fc0261772', 'icon-512.png?v=8dd1829b44', 'manifest.json', 'e936c80468e9d92.png'];
+const assets = ['./', 'index.html', 'blog.html', 'photo.jpeg?v=3e246dc63a', 'icon-192.png?v=cf686446a2', 'icon-512.png?v=a8b7995ba4', 'manifest.json', 'e936c80468e9d92.png'];
 
 self.addEventListener('install', event => {
   event.waitUntil((async () => {
