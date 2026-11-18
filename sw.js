@@ -1,38 +1,43 @@
-const CACHE = 'satyam-portfolio-v4';
-const ASSETS = [
-  '/portfolio/',
-  '/portfolio/index.html',
-  '/portfolio/photo.jpeg',
-  '/portfolio/manifest.json'
-];
+const CACHE = 'satyam-portfolio-v5';
+const scope = self.registration.scope;
+const assets = ['./', 'index.html', 'blog.html', 'photo.jpeg', 'manifest.json', 'e936c80468e9d92.png'];
 
-self.addEventListener('install', e => {
-  e.waitUntil(
-    caches.open(CACHE).then(c => c.addAll(ASSETS))
-  );
-  self.skipWaiting();
+self.addEventListener('install', event => {
+  event.waitUntil((async () => {
+    const cache = await caches.open(CACHE);
+    await cache.addAll(assets.map(path => new Request(new URL(path, scope), { cache: 'reload' })));
+    await self.skipWaiting();
+  })());
 });
 
-self.addEventListener('activate', e => {
-  // delete ALL old caches
-  e.waitUntil(
-    caches.keys().then(keys =>
-      Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))
-    )
-  );
-  self.clients.claim();
+self.addEventListener('activate', event => {
+  event.waitUntil((async () => {
+    const keys = await caches.keys();
+    await Promise.all(keys.filter(key => key.startsWith('satyam-portfolio-') && key !== CACHE)
+      .map(key => caches.delete(key)));
+    await self.clients.claim();
+  })());
 });
 
-self.addEventListener('fetch', e => {
-  // network-first: always try network, fallback to cache only when offline
-  e.respondWith(
-    fetch(e.request)
-      .then(response => {
-        // update cache with fresh response
-        const clone = response.clone();
-        caches.open(CACHE).then(c => c.put(e.request, clone));
-        return response;
-      })
-      .catch(() => caches.match(e.request).then(cached => cached || caches.match('/portfolio/')))
-  );
+self.addEventListener('fetch', event => {
+  const request = event.request;
+  if (request.method !== 'GET' || !request.url.startsWith(scope)) return;
+
+  event.respondWith((async () => {
+    const cache = await caches.open(CACHE);
+    const navigation = request.mode === 'navigate';
+    try {
+      const response = await fetch(request, navigation ? { cache: 'no-cache' } : {});
+      if (response.ok && response.status === 200) {
+        try {
+          await cache.put(request, response.clone());
+        } catch {
+          // A full cache must not prevent delivery of a successful response.
+        }
+      }
+      return response;
+    } catch {
+      return await cache.match(request, { ignoreSearch: navigation }) || Response.error();
+    }
+  })());
 });

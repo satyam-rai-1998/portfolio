@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Power Automate + Copilot Studio: End-to-End Enterprise Automation Patterns | Satyam Rai</title>
+  <meta name="description" content="Three enterprise automation patterns combining Copilot Studio and Power Automate — from agent-triggered flows to proactive notifications and long-running process orchestration.">
+  <meta name="author" content="Satyam Rai">
+  <link rel="canonical" href="https://satyam-rai-1998.github.io/portfolio/articles/power-automate-agent-actions.html">
+  <link rel="stylesheet" href="article.css">
+  <link rel="icon" href="../icon-192.png">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://satyam-rai-1998.github.io/portfolio/articles/power-automate-agent-actions.html">
+  <meta property="og:title" content="Power Automate + Copilot Studio: End-to-End Enterprise Automation Patterns">
+  <meta property="og:description" content="Three enterprise automation patterns combining Copilot Studio and Power Automate — from agent-triggered flows to proactive notifications and long-running process orchestration.">
+  <meta property="og:image" content="https://satyam-rai-1998.github.io/portfolio/photo.jpeg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Power Automate + Copilot Studio: End-to-End Enterprise Automation Patterns",
+  "datePublished": "2025-11-20",
+  "dateModified": "2025-11-20",
+  "author": {
+    "@type": "Person",
+    "name": "Satyam Rai",
+    "url": "https://satyam-rai-1998.github.io/portfolio/",
+    "@id": "https://satyam-rai-1998.github.io/portfolio/#person"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Satyam Rai"
+  },
+  "description": "Three enterprise automation patterns combining Copilot Studio and Power Automate — from agent-triggered flows to proactive notifications and long-running process orchestration.",
+  "keywords": "Power Automate, Copilot Studio, enterprise automation, RPA, Power Platform",
+  "url": "https://satyam-rai-1998.github.io/portfolio/articles/power-automate-agent-actions.html",
+  "inLanguage": "en-US",
+  "timeRequired": "PT7M",
+  "@id": "https://satyam-rai-1998.github.io/portfolio/articles/power-automate-agent-actions.html#article",
+  "isPartOf": {
+    "@id": "https://satyam-rai-1998.github.io/portfolio/blog.html#blog"
+  },
+  "mainEntityOfPage": "https://satyam-rai-1998.github.io/portfolio/articles/power-automate-agent-actions.html",
+  "image": "https://satyam-rai-1998.github.io/portfolio/photo.jpeg"
+}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#article">Skip to article</a>
+  <nav aria-label="Site navigation"><a href="../">Satyam Rai</a><a href="../blog.html">All articles</a><a href="../#projects">Projects</a></nav>
+  <main id="article">
+    <article>
+      <header>
+        <span class="category">Power Platform</span>
+        <h1>Power Automate + Copilot Studio: End-to-End Enterprise Automation Patterns</h1>
+        <p class="byline">By <a href="../#about">Satyam Rai</a> · <time datetime="2025-11-20">2025-11-20</time></p>
+        <p class="intro">The real power of Microsoft's AI stack isn't Copilot Studio or Power Automate alone — it's how they work together. I've built pipelines that combine conversational AI with RPA-grade automation to handle complete business processes end-to-end, with zero human intervention.</p>
+      </header>
+      <h2>Pattern 1: Agent Triggers Automation</h2>
+            <p>The most common pattern: a user makes a request via Copilot agent → agent extracts intent and entities → calls a Power Automate flow → flow executes the business process → returns confirmation to the agent → agent communicates result to user. This works well for: IT helpdesk tickets, HR leave requests, expense approvals, data lookups.</p>
+
+            <h2>Pattern 2: Automation Triggers Agent Notification</h2>
+            <p>Less common but powerful: a scheduled Power Automate flow runs (e.g., daily invoice processing), detects an anomaly, and proactively messages a user via a Copilot agent in Teams. The agent can then ask follow-up questions and take corrective action. True autonomous operation.</p>
+
+            <h2>Pattern 3: Long-Running Process Orchestration</h2>
+            <p>For multi-step processes that take minutes or hours: use Power Automate's <strong>Do Until</strong> loop with status polling, or Azure Service Bus for event-driven handoffs. The agent initiates the process, stores a job ID, and can be queried for status at any time.</p>
+
+            <h2>Variable Passing — Common Mistakes</h2>
+            <p>Always define input parameters in your flow with clear <code>Display Names</code> and <code>Descriptions</code>. Copilot Studio uses these descriptions to determine what data to pass. Vague parameter names like "input1" lead to incorrect data being sent — I've seen this break production agents silently.</p>
+
+            <div class="key-takeaways">
+              <h3>Key Takeaways</h3>
+              <ul>
+                <li>Design flows as reusable microservices — one flow, one responsibility</li>
+                <li>Always add error handling in flows and return structured error responses to the agent</li>
+                <li>Use child flows for shared logic to avoid duplication</li>
+                <li>Test flows independently before connecting to agents</li>
+              </ul>
+            </div>
+    </article>
+  </main>
+  <footer><a href="../blog.html#power-automate-agent-actions">Back to articles</a><a href="../#contact">Contact Satyam</a></footer>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Multi-Agent Orchestration: Building Complex AI Workflows That Actually Work | Satyam Rai</title>
+  <meta name="description" content="Practical guide to multi-agent orchestration patterns — orchestrator-worker architecture, agent-to-agent communication, error recovery, and production deployment.">
+  <meta name="author" content="Satyam Rai">
+  <link rel="canonical" href="https://satyam-rai-1998.github.io/portfolio/articles/multi-agent-orchestration.html">
+  <link rel="stylesheet" href="article.css">
+  <link rel="icon" href="../icon-192.png">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://satyam-rai-1998.github.io/portfolio/articles/multi-agent-orchestration.html">
+  <meta property="og:title" content="Multi-Agent Orchestration: Building Complex AI Workflows That Actually Work">
+  <meta property="og:description" content="Practical guide to multi-agent orchestration patterns — orchestrator-worker architecture, agent-to-agent communication, error recovery, and production deployment.">
+  <meta property="og:image" content="https://satyam-rai-1998.github.io/portfolio/photo.jpeg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Multi-Agent Orchestration: Building Complex AI Workflows That Actually Work",
+  "datePublished": "2025-09-05",
+  "dateModified": "2025-09-05",
+  "author": {
+    "@type": "Person",
+    "name": "Satyam Rai",
+    "url": "https://satyam-rai-1998.github.io/portfolio/",
+    "@id": "https://satyam-rai-1998.github.io/portfolio/#person"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Satyam Rai"
+  },
+  "description": "Practical guide to multi-agent orchestration patterns — orchestrator-worker architecture, agent-to-agent communication, error recovery, and production deployment.",
+  "keywords": "multi-agent, orchestration, AI architecture, Copilot Studio, enterprise AI",
+  "url": "https://satyam-rai-1998.github.io/portfolio/articles/multi-agent-orchestration.html",
+  "inLanguage": "en-US",
+  "timeRequired": "PT9M",
+  "@id": "https://satyam-rai-1998.github.io/portfolio/articles/multi-agent-orchestration.html#article",
+  "isPartOf": {
+    "@id": "https://satyam-rai-1998.github.io/portfolio/blog.html#blog"
+  },
+  "mainEntityOfPage": "https://satyam-rai-1998.github.io/portfolio/articles/multi-agent-orchestration.html",
+  "image": "https://satyam-rai-1998.github.io/portfolio/photo.jpeg"
+}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#article">Skip to article</a>
+  <nav aria-label="Site navigation"><a href="../">Satyam Rai</a><a href="../blog.html">All articles</a><a href="../#projects">Projects</a></nav>
+  <main id="article">
+    <article>
+      <header>
+        <span class="category">AI Architecture</span>
+        <h1>Multi-Agent Orchestration: Building Complex AI Workflows That Actually Work</h1>
+        <p class="byline">By <a href="../#about">Satyam Rai</a> · <time datetime="2025-09-05">2025-09-05</time></p>
+        <p class="intro">Single agents hit a ceiling. When a task requires multiple specializations — research, analysis, writing, approval — multi-agent orchestration is the answer. Here's the architecture pattern I use to build reliable multi-agent systems in enterprise environments.</p>
+      </header>
+      <h2>Why Multi-Agent?</h2>
+            <p>A single agent with too many responsibilities becomes unreliable — it confuses context, makes poor routing decisions, and becomes difficult to maintain. Specialized agents perform better, are easier to test, and can be updated independently without breaking the whole system.</p>
+
+            <h2>The Orchestrator Pattern</h2>
+            <p>One <strong>Orchestrator Agent</strong> handles user interaction and delegates tasks to specialized <strong>Worker Agents</strong>:</p>
+            <ul>
+              <li>Orchestrator receives the request, determines intent</li>
+              <li>Routes to: HR Agent, IT Agent, Finance Agent, or Knowledge Agent</li>
+              <li>Worker agent executes its specialized task</li>
+              <li>Orchestrator compiles and presents the final response</li>
+            </ul>
+
+            <h2>Communication Between Agents</h2>
+            <p>In Copilot Studio, agent-to-agent calls are made via Power Automate flows that invoke the target agent's API endpoint. Pass structured JSON payloads and always validate the response schema before using it. Add timeout handling — external agent calls can fail silently.</p>
+
+            <h2>Error Recovery &amp; Fallback</h2>
+            <p>Every agent call must have a fallback. If the IT Agent fails, the Orchestrator should: log the failure, notify the user of the delay, and escalate to a human agent via Teams adaptive card. Never let a failure result in silent termination of the user's request.</p>
+
+            <div class="key-takeaways">
+              <h3>Key Takeaways</h3>
+              <ul>
+                <li>Start with a single agent; extract to multi-agent when complexity demands it</li>
+                <li>Each worker agent should have one clear responsibility</li>
+                <li>Always implement circuit breakers — fail fast, fail visibly</li>
+                <li>Log all agent-to-agent calls for debugging and auditing</li>
+              </ul>
+            </div>
+    </article>
+  </main>
+  <footer><a href="../blog.html#multi-agent-orchestration">Back to articles</a><a href="../#contact">Contact Satyam</a></footer>
+</body>
+</html>

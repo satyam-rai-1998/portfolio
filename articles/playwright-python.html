@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Building a Python data pipeline with Playwright and Pandas | Satyam Rai</title>
+  <meta name="description" content="Use Playwright to wait for a JavaScript-rendered page, then validate and deduplicate the extracted records with Pandas. A bounded queue keeps the collection rate predictable.">
+  <meta name="author" content="Satyam Rai">
+  <link rel="canonical" href="https://satyam-rai-1998.github.io/portfolio/articles/playwright-python.html">
+  <link rel="stylesheet" href="article.css">
+  <link rel="icon" href="../icon-192.png">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://satyam-rai-1998.github.io/portfolio/articles/playwright-python.html">
+  <meta property="og:title" content="Building a Python data pipeline with Playwright and Pandas">
+  <meta property="og:description" content="Use Playwright to wait for a JavaScript-rendered page, then validate and deduplicate the extracted records with Pandas. A bounded queue keeps the collection rate predictable.">
+  <meta property="og:image" content="https://satyam-rai-1998.github.io/portfolio/photo.jpeg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Building a Python data pipeline with Playwright and Pandas",
+  "datePublished": "2025-05-03",
+  "dateModified": "2026-11-18",
+  "author": {
+    "@type": "Person",
+    "name": "Satyam Rai",
+    "url": "https://satyam-rai-1998.github.io/portfolio/",
+    "@id": "https://satyam-rai-1998.github.io/portfolio/#person"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Satyam Rai"
+  },
+  "description": "Use Playwright to wait for a JavaScript-rendered page, then validate and deduplicate the extracted records with Pandas. A bounded queue keeps the collection rate predictable.",
+  "keywords": "Playwright, Python, Pandas, data extraction, data validation",
+  "url": "https://satyam-rai-1998.github.io/portfolio/articles/playwright-python.html",
+  "inLanguage": "en-US",
+  "timeRequired": "PT7M",
+  "@id": "https://satyam-rai-1998.github.io/portfolio/articles/playwright-python.html#article",
+  "isPartOf": {
+    "@id": "https://satyam-rai-1998.github.io/portfolio/blog.html#blog"
+  },
+  "mainEntityOfPage": "https://satyam-rai-1998.github.io/portfolio/articles/playwright-python.html",
+  "image": "https://satyam-rai-1998.github.io/portfolio/photo.jpeg"
+}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#article">Skip to article</a>
+  <nav aria-label="Site navigation"><a href="../">Satyam Rai</a><a href="../blog.html">All articles</a><a href="../#projects">Projects</a></nav>
+  <main id="article">
+    <article>
+      <header>
+        <span class="category">Python</span>
+        <h1>Building a Python data pipeline with Playwright and Pandas</h1>
+        <p class="byline">By <a href="../#about">Satyam Rai</a> · <time datetime="2025-05-03">2025-05-03</time></p>
+        <p class="intro">Use Playwright to wait for a JavaScript-rendered page, then validate and deduplicate the extracted records with Pandas. A bounded queue keeps the collection rate predictable.</p>
+      </header>
+      <h2>Wait for the records</h2>
+      <p>On a page you have permission to collect, identify the element that marks a complete result. Wait for it before reading the rows. A fixed delay can finish before a slow response or waste time after a fast one.</p>
+      <h2>Separate collection from parsing</h2>
+      <p>Keep the source URL and collection time with each batch. Save a sample response so that parsing changes can be tested locally. Bound concurrent requests and respect the service’s published limits.</p>
+      <h2>Check the resulting table</h2>
+      <p>Normalize whitespace, convert numeric columns to the expected type and check for missing record IDs. Use a stable source ID to remove duplicate rows before exporting the table. Track missing-field counts to spot a page layout change.</p>
+    </article>
+  </main>
+  <footer><a href="../blog.html#playwright-python">Back to articles</a><a href="../#contact">Contact Satyam</a></footer>
+</body>
+</html>

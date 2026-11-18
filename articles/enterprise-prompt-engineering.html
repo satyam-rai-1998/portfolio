@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Advanced Prompt Engineering Techniques for Enterprise AI Agents | Satyam Rai</title>
+  <meta name="description" content="Proven prompt engineering techniques that improve AI agent accuracy, tone, and task completion — from role/context/constraints to few-shot examples and output format control.">
+  <meta name="author" content="Satyam Rai">
+  <link rel="canonical" href="https://satyam-rai-1998.github.io/portfolio/articles/enterprise-prompt-engineering.html">
+  <link rel="stylesheet" href="article.css">
+  <link rel="icon" href="../icon-192.png">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://satyam-rai-1998.github.io/portfolio/articles/enterprise-prompt-engineering.html">
+  <meta property="og:title" content="Advanced Prompt Engineering Techniques for Enterprise AI Agents">
+  <meta property="og:description" content="Proven prompt engineering techniques that improve AI agent accuracy, tone, and task completion — from role/context/constraints to few-shot examples and output format control.">
+  <meta property="og:image" content="https://satyam-rai-1998.github.io/portfolio/photo.jpeg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Advanced Prompt Engineering Techniques for Enterprise AI Agents",
+  "datePublished": "2026-04-10",
+  "dateModified": "2026-04-10",
+  "author": {
+    "@type": "Person",
+    "name": "Satyam Rai",
+    "url": "https://satyam-rai-1998.github.io/portfolio/",
+    "@id": "https://satyam-rai-1998.github.io/portfolio/#person"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Satyam Rai"
+  },
+  "description": "Proven prompt engineering techniques that improve AI agent accuracy, tone, and task completion — from role/context/constraints to few-shot examples and output format control.",
+  "keywords": "Prompt Engineering, Copilot Studio, AI quality, system prompt, few-shot",
+  "url": "https://satyam-rai-1998.github.io/portfolio/articles/enterprise-prompt-engineering.html",
+  "inLanguage": "en-US",
+  "timeRequired": "PT6M",
+  "@id": "https://satyam-rai-1998.github.io/portfolio/articles/enterprise-prompt-engineering.html#article",
+  "isPartOf": {
+    "@id": "https://satyam-rai-1998.github.io/portfolio/blog.html#blog"
+  },
+  "mainEntityOfPage": "https://satyam-rai-1998.github.io/portfolio/articles/enterprise-prompt-engineering.html",
+  "image": "https://satyam-rai-1998.github.io/portfolio/photo.jpeg"
+}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#article">Skip to article</a>
+  <nav aria-label="Site navigation"><a href="../">Satyam Rai</a><a href="../blog.html">All articles</a><a href="../#projects">Projects</a></nav>
+  <main id="article">
+    <article>
+      <header>
+        <span class="category">Copilot Studio</span>
+        <h1>Advanced Prompt Engineering Techniques for Enterprise AI Agents</h1>
+        <p class="byline">By <a href="../#about">Satyam Rai</a> · <time datetime="2026-04-10">2026-04-10</time></p>
+        <p class="intro">The difference between an AI agent that frustrates users and one that delights them often comes down to the quality of your prompt engineering. After building 15+ production agents, here are the techniques that consistently improve accuracy, tone, and task completion rates.</p>
+      </header>
+      <h2>Why Prompts Matter More Than You Think</h2>
+            <p>In Copilot Studio, the <strong>Instructions</strong> field (your system prompt) is the single most powerful tool you have. It shapes every response the agent generates. Most developers write 2–3 lines here. The best agents I've built have 20–30 lines of carefully crafted instructions.</p>
+
+            <h2>Technique 1: Role + Context + Constraints</h2>
+            <p>Structure your system prompt in three layers:</p>
+            <ul>
+              <li><strong>Role:</strong> "You are an expert HR assistant for Acme Corp..."</li>
+              <li><strong>Context:</strong> "You help employees with leave requests, policy questions, and onboarding..."</li>
+              <li><strong>Constraints:</strong> "Never discuss salaries. Always escalate complaints to HR@acme.com..."</li>
+            </ul>
+
+            <h2>Technique 2: Few-Shot Examples in Knowledge</h2>
+            <p>Add a knowledge file with Q&amp;A examples showing exactly how the agent should respond to common queries. Format: <code>Q: [question] A: [ideal response]</code>. This dramatically improves consistency for domain-specific language.</p>
+
+            <h2>Technique 3: Output Format Control</h2>
+            <p>Tell the agent exactly how to format responses: "Always respond in bullet points for lists. Use numbered steps for processes. Keep responses under 200 words unless the user asks for detail." Structured output makes responses scannable and professional.</p>
+
+            <h2>Technique 4: Graceful Scope Management</h2>
+            <p>Add explicit instructions for out-of-scope queries: "If the user asks about topics not related to HR, politely redirect them: 'I specialize in HR queries. For [topic], please contact [department].'" This prevents hallucination on unfamiliar topics.</p>
+
+            <div class="key-takeaways">
+              <h3>Key Takeaways</h3>
+              <ul>
+                <li>Invest 20% of your build time in prompt refinement — it yields 80% of quality improvements</li>
+                <li>Use few-shot examples for domain-specific language and tone</li>
+                <li>Always define what the agent should NOT do, not just what it should do</li>
+                <li>Test prompts with adversarial inputs — users will always surprise you</li>
+              </ul>
+            </div>
+    </article>
+  </main>
+  <footer><a href="../blog.html#enterprise-prompt-engineering">Back to articles</a><a href="../#contact">Contact Satyam</a></footer>
+</body>
+</html>

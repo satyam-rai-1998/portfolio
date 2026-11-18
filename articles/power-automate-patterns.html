@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Power Automate: 10 Advanced Patterns Every Developer Must Know | Satyam Rai</title>
+  <meta name="description" content="10 advanced Power Automate patterns for production flows — scope-based error handling, child flows, concurrency control, retry policies, and performance optimization.">
+  <meta name="author" content="Satyam Rai">
+  <link rel="canonical" href="https://satyam-rai-1998.github.io/portfolio/articles/power-automate-patterns.html">
+  <link rel="stylesheet" href="article.css">
+  <link rel="icon" href="../icon-192.png">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://satyam-rai-1998.github.io/portfolio/articles/power-automate-patterns.html">
+  <meta property="og:title" content="Power Automate: 10 Advanced Patterns Every Developer Must Know">
+  <meta property="og:description" content="10 advanced Power Automate patterns for production flows — scope-based error handling, child flows, concurrency control, retry policies, and performance optimization.">
+  <meta property="og:image" content="https://satyam-rai-1998.github.io/portfolio/photo.jpeg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Power Automate: 10 Advanced Patterns Every Developer Must Know",
+  "datePublished": "2024-07-08",
+  "dateModified": "2024-07-08",
+  "author": {
+    "@type": "Person",
+    "name": "Satyam Rai",
+    "url": "https://satyam-rai-1998.github.io/portfolio/",
+    "@id": "https://satyam-rai-1998.github.io/portfolio/#person"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Satyam Rai"
+  },
+  "description": "10 advanced Power Automate patterns for production flows — scope-based error handling, child flows, concurrency control, retry policies, and performance optimization.",
+  "keywords": "Power Automate, Power Platform, enterprise automation, advanced patterns, error handling",
+  "url": "https://satyam-rai-1998.github.io/portfolio/articles/power-automate-patterns.html",
+  "inLanguage": "en-US",
+  "timeRequired": "PT5M",
+  "@id": "https://satyam-rai-1998.github.io/portfolio/articles/power-automate-patterns.html#article",
+  "isPartOf": {
+    "@id": "https://satyam-rai-1998.github.io/portfolio/blog.html#blog"
+  },
+  "mainEntityOfPage": "https://satyam-rai-1998.github.io/portfolio/articles/power-automate-patterns.html",
+  "image": "https://satyam-rai-1998.github.io/portfolio/photo.jpeg"
+}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#article">Skip to article</a>
+  <nav aria-label="Site navigation"><a href="../">Satyam Rai</a><a href="../blog.html">All articles</a><a href="../#projects">Projects</a></nav>
+  <main id="article">
+    <article>
+      <header>
+        <span class="category">Power Platform</span>
+        <h1>Power Automate: 10 Advanced Patterns Every Developer Must Know</h1>
+        <p class="byline">By <a href="../#about">Satyam Rai</a> · <time datetime="2024-07-08">2024-07-08</time></p>
+        <p class="intro">After building 50+ Power Automate flows in production, I've compiled the patterns that separate amateur flows from enterprise-grade automation. These aren't beginner tips — they're the techniques that prevent 3am incident calls and make flows maintainable a year after you wrote them.</p>
+      </header>
+      <h2>1. Scope-Based Error Handling</h2>
+            <p>Wrap every critical section in a <strong>Scope</strong> action. Set the scope to run "has failed", then add error logging and notification logic inside. This gives you try-catch semantics in Power Automate and prevents silent failures.</p>
+
+            <h2>2. Child Flows for Shared Logic</h2>
+            <p>If the same logic (e.g., send Teams notification, log to SharePoint) appears in 3+ flows, extract it to a child flow. Call it via the <strong>Run a Child Flow</strong> action. When you need to update the logic, change it once — all parent flows benefit immediately.</p>
+
+            <h2>3. Concurrency Control</h2>
+            <p>For flows triggered by a list or array, use <strong>Apply to Each</strong> with concurrency enabled (Settings → Concurrency Control → On → Degree: 5–10). This runs iterations in parallel, reducing processing time by 80% for large datasets. But: never use concurrent Apply to Each when items depend on each other.</p>
+
+            <h2>4. Configure Run After for Complex Logic</h2>
+            <p>Every action's "Configure run after" lets you set it to run after success, failure, timeout, or skip. Use this to build branching error paths without nesting If conditions 5 levels deep. Flat flows are readable flows.</p>
+
+            <h2>5. Variables at the Top, Always</h2>
+            <p>Initialize ALL variables at the very start of the flow, even if you don't use them immediately. Power Automate doesn't allow variable initialization inside loops or branches. Moving variables mid-flow is a common source of "Variable not initialized" errors that only surface under specific conditions in production.</p>
+
+            <h2>6–10: Quick Wins</h2>
+            <ul>
+              <li><strong>Use HTTP + Swagger for API calls</strong> — generates typed responses automatically</li>
+              <li><strong>Filter query on Get Items</strong> — always filter at the source, never in Power Automate</li>
+              <li><strong>Retry policy on connectors</strong> — set to "Fixed interval, 3 retries" for transient failures</li>
+              <li><strong>Use Compose to debug</strong> — add temporary Compose actions to inspect expressions</li>
+              <li><strong>Flow checker before saving</strong> — catches 80% of common mistakes before they reach production</li>
+            </ul>
+
+            <div class="key-takeaways">
+              <h3>Key Takeaways</h3>
+              <ul>
+                <li>Every production flow needs scope-based error handling — no exceptions</li>
+                <li>Child flows are the DRY principle for Power Automate</li>
+                <li>Always filter data at the source connector, not in Power Automate logic</li>
+                <li>Test with real data in dev environment before promoting to production</li>
+              </ul>
+            </div>
+    </article>
+  </main>
+  <footer><a href="../blog.html#power-automate-patterns">Back to articles</a><a href="../#contact">Contact Satyam</a></footer>
+</body>
+</html>

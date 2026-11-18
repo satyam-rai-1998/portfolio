@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Azure AI Foundry: From Model Deployment to Production in 5 Steps | Satyam Rai</title>
+  <meta name="description" content="Practical 5-step guide to Azure AI Foundry — hub setup, model selection, Prompt Flow orchestration, evaluation gating, and production monitoring.">
+  <meta name="author" content="Satyam Rai">
+  <link rel="canonical" href="https://satyam-rai-1998.github.io/portfolio/articles/azure-ai-foundry-deployment.html">
+  <link rel="stylesheet" href="article.css">
+  <link rel="icon" href="../icon-192.png">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://satyam-rai-1998.github.io/portfolio/articles/azure-ai-foundry-deployment.html">
+  <meta property="og:title" content="Azure AI Foundry: From Model Deployment to Production in 5 Steps">
+  <meta property="og:description" content="Practical 5-step guide to Azure AI Foundry — hub setup, model selection, Prompt Flow orchestration, evaluation gating, and production monitoring.">
+  <meta property="og:image" content="https://satyam-rai-1998.github.io/portfolio/photo.jpeg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Azure AI Foundry: From Model Deployment to Production in 5 Steps",
+  "datePublished": "2025-07-18",
+  "dateModified": "2025-07-18",
+  "author": {
+    "@type": "Person",
+    "name": "Satyam Rai",
+    "url": "https://satyam-rai-1998.github.io/portfolio/",
+    "@id": "https://satyam-rai-1998.github.io/portfolio/#person"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Satyam Rai"
+  },
+  "description": "Practical 5-step guide to Azure AI Foundry — hub setup, model selection, Prompt Flow orchestration, evaluation gating, and production monitoring.",
+  "keywords": "Azure AI Foundry, Prompt Flow, Azure OpenAI, MLOps, model deployment",
+  "url": "https://satyam-rai-1998.github.io/portfolio/articles/azure-ai-foundry-deployment.html",
+  "inLanguage": "en-US",
+  "timeRequired": "PT8M",
+  "@id": "https://satyam-rai-1998.github.io/portfolio/articles/azure-ai-foundry-deployment.html#article",
+  "isPartOf": {
+    "@id": "https://satyam-rai-1998.github.io/portfolio/blog.html#blog"
+  },
+  "mainEntityOfPage": "https://satyam-rai-1998.github.io/portfolio/articles/azure-ai-foundry-deployment.html",
+  "image": "https://satyam-rai-1998.github.io/portfolio/photo.jpeg"
+}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#article">Skip to article</a>
+  <nav aria-label="Site navigation"><a href="../">Satyam Rai</a><a href="../blog.html">All articles</a><a href="../#projects">Projects</a></nav>
+  <main id="article">
+    <article>
+      <header>
+        <span class="category">Azure AI</span>
+        <h1>Azure AI Foundry: From Model Deployment to Production in 5 Steps</h1>
+        <p class="byline">By <a href="../#about">Satyam Rai</a> · <time datetime="2025-07-18">2025-07-18</time></p>
+        <p class="intro">Azure AI Foundry (formerly Azure Machine Learning + Azure OpenAI combined) is Microsoft's unified platform for building, evaluating, and deploying AI applications at scale. After deploying 10+ production AI solutions on it, here's my practical guide to going from zero to production.</p>
+      </header>
+      <h2>Step 1: Set Up Your AI Foundry Hub</h2>
+            <p>Create an AI Foundry Hub in Azure portal — this is your centralized workspace. Connect it to Azure OpenAI, Azure AI Search, and Azure Blob Storage during setup. Use a dedicated resource group and tag everything consistently — you'll thank yourself during cost reviews.</p>
+
+            <h2>Step 2: Choose and Deploy Your Model</h2>
+            <p>The model catalog has 1,700+ models. For enterprise use cases: <strong>GPT-4o</strong> for reasoning and generation, <strong>text-embedding-3-large</strong> for embeddings, <strong>Phi-3.5</strong> for cost-sensitive high-volume tasks. Deploy as a managed endpoint with auto-scaling enabled.</p>
+
+            <h2>Step 3: Build with Prompt Flow</h2>
+            <p>Prompt Flow is Azure AI Foundry's visual orchestration tool. Chain LLM calls, Python scripts, and API calls into a reusable pipeline. Version-control your flows in Git. This is the layer where RAG, tool calling, and business logic come together.</p>
+
+            <h2>Step 4: Evaluate Before Deploying</h2>
+            <p>Run the built-in evaluation suite: groundedness, relevance, coherence, fluency. Set minimum thresholds (e.g., groundedness ≥ 4.0/5.0) as a CI/CD gate. Never skip evaluation — I've caught critical hallucination issues here that would have reached production.</p>
+
+            <h2>Step 5: Monitor in Production</h2>
+            <p>Enable Azure Monitor and AI Foundry's content safety filters. Set up alerts for: high token usage, low safety scores, latency spikes. Review flagged conversations weekly and feed learnings back into your prompt and evaluation pipeline.</p>
+
+            <div class="key-takeaways">
+              <h3>Key Takeaways</h3>
+              <ul>
+                <li>Use Phi-3.5 for high-volume simple tasks — 10x cheaper than GPT-4o</li>
+                <li>Never deploy without running the evaluation suite</li>
+                <li>Content safety filters are non-negotiable for enterprise deployments</li>
+                <li>Prompt Flow versioning in Git enables rollback when things break</li>
+              </ul>
+            </div>
+    </article>
+  </main>
+  <footer><a href="../blog.html#azure-ai-foundry-deployment">Back to articles</a><a href="../#contact">Contact Satyam</a></footer>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RAG Architecture: Building Smart Knowledge Bases with Azure AI Search &amp; Copilot Studio | Satyam Rai</title>
+  <meta name="description" content="How to architect RAG systems that scale to millions of documents using Azure AI Search, Azure OpenAI embeddings, and Copilot Studio — including hybrid search and chunking strategies.">
+  <meta name="author" content="Satyam Rai">
+  <link rel="canonical" href="https://satyam-rai-1998.github.io/portfolio/articles/rag-with-azure-ai-search.html">
+  <link rel="stylesheet" href="article.css">
+  <link rel="icon" href="../icon-192.png">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://satyam-rai-1998.github.io/portfolio/articles/rag-with-azure-ai-search.html">
+  <meta property="og:title" content="RAG Architecture: Building Smart Knowledge Bases with Azure AI Search &amp; Copilot Studio">
+  <meta property="og:description" content="How to architect RAG systems that scale to millions of documents using Azure AI Search, Azure OpenAI embeddings, and Copilot Studio — including hybrid search and chunking strategies.">
+  <meta property="og:image" content="https://satyam-rai-1998.github.io/portfolio/photo.jpeg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "RAG Architecture: Building Smart Knowledge Bases with Azure AI Search & Copilot Studio",
+  "datePublished": "2026-02-15",
+  "dateModified": "2026-02-15",
+  "author": {
+    "@type": "Person",
+    "name": "Satyam Rai",
+    "url": "https://satyam-rai-1998.github.io/portfolio/",
+    "@id": "https://satyam-rai-1998.github.io/portfolio/#person"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Satyam Rai"
+  },
+  "description": "How to architect RAG systems that scale to millions of documents using Azure AI Search, Azure OpenAI embeddings, and Copilot Studio — including hybrid search and chunking strategies.",
+  "keywords": "RAG, Azure AI Search, Azure OpenAI, Copilot Studio, vector search, hybrid search",
+  "url": "https://satyam-rai-1998.github.io/portfolio/articles/rag-with-azure-ai-search.html",
+  "inLanguage": "en-US",
+  "timeRequired": "PT10M",
+  "@id": "https://satyam-rai-1998.github.io/portfolio/articles/rag-with-azure-ai-search.html#article",
+  "isPartOf": {
+    "@id": "https://satyam-rai-1998.github.io/portfolio/blog.html#blog"
+  },
+  "mainEntityOfPage": "https://satyam-rai-1998.github.io/portfolio/articles/rag-with-azure-ai-search.html",
+  "image": "https://satyam-rai-1998.github.io/portfolio/photo.jpeg"
+}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#article">Skip to article</a>
+  <nav aria-label="Site navigation"><a href="../">Satyam Rai</a><a href="../blog.html">All articles</a><a href="../#projects">Projects</a></nav>
+  <main id="article">
+    <article>
+      <header>
+        <span class="category">Azure AI</span>
+        <h1>RAG Architecture: Building Smart Knowledge Bases with Azure AI Search &amp; Copilot Studio</h1>
+        <p class="byline">By <a href="../#about">Satyam Rai</a> · <time datetime="2026-02-15">2026-02-15</time></p>
+        <p class="intro">Retrieval Augmented Generation (RAG) is the backbone of every reliable enterprise AI agent. Instead of relying on the model's training data, RAG fetches real-time, accurate information from your own data sources. Here's how I architect RAG systems that scale to millions of documents.</p>
+      </header>
+      <h2>The Problem RAG Solves</h2>
+            <p>LLMs hallucinate when asked about domain-specific or recent information. RAG fixes this by injecting relevant documents into the model's context at query time — so answers are grounded in your actual data, not the model's stale training knowledge.</p>
+
+            <h2>Architecture Overview</h2>
+            <ul>
+              <li><strong>Data ingestion:</strong> SharePoint / Blob Storage → Azure AI Search indexer</li>
+              <li><strong>Embedding:</strong> text-embedding-ada-002 via Azure OpenAI</li>
+              <li><strong>Retrieval:</strong> Hybrid search (vector + BM25 keyword)</li>
+              <li><strong>Generation:</strong> GPT-4o with retrieved chunks as context</li>
+              <li><strong>Interface:</strong> Copilot Studio agent with Azure AI Search action</li>
+            </ul>
+
+            <h2>Chunking Strategy — The Most Overlooked Factor</h2>
+            <p>How you split documents dramatically affects retrieval quality. My recommended approach: chunk by semantic boundary (paragraph breaks), target 500–800 tokens per chunk, with 10% overlap between adjacent chunks. For tables and structured data, keep entire tables as single chunks.</p>
+
+            <h2>Hybrid Search: Best of Both Worlds</h2>
+            <p>Pure vector search misses exact keyword matches. Pure keyword search misses semantic similarity. Azure AI Search's hybrid mode combines both with Reciprocal Rank Fusion (RRF) — I consistently see 15–20% relevance improvement over either approach alone.</p>
+
+            <div class="key-takeaways">
+              <h3>Key Takeaways</h3>
+              <ul>
+                <li>Use hybrid search (vector + keyword) — always outperforms either alone</li>
+                <li>Chunk at semantic boundaries, not arbitrary token counts</li>
+                <li>Add metadata filters (department, date, document type) to improve precision</li>
+                <li>Evaluate with RAGAS metrics: faithfulness, answer relevancy, context recall</li>
+              </ul>
+            </div>
+    </article>
+  </main>
+  <footer><a href="../blog.html#rag-with-azure-ai-search">Back to articles</a><a href="../#contact">Contact Satyam</a></footer>
+</body>
+</html>

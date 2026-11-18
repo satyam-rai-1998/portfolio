@@ -3,19 +3,63 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://satyam-rai-1998.github.io/portfolio/</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-11-18</lastmod>
+
+
     <image:image>
       <image:loc>https://satyam-rai-1998.github.io/portfolio/photo.jpeg</image:loc>
-      <image:title>Satyam Rai — AI Agent Developer and RPA Expert</image:title>
-      <image:caption>Satyam Rai, AI Agent Developer and RPA Developer based in Gurugram, India</image:caption>
+
+
     </image:image>
   </url>
   <url>
     <loc>https://satyam-rai-1998.github.io/portfolio/blog.html</loc>
-    <lastmod>2026-06-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-11-18</lastmod>
+
+
+  </url>
+  <url>
+    <loc>https://satyam-rai-1998.github.io/portfolio/articles/unit-distance-problem.html</loc>
+    <lastmod>2026-11-18</lastmod>
+  </url>
+  <url>
+    <loc>https://satyam-rai-1998.github.io/portfolio/articles/copilot-studio-agents.html</loc>
+    <lastmod>2026-05-28</lastmod>
+  </url>
+  <url>
+    <loc>https://satyam-rai-1998.github.io/portfolio/articles/enterprise-prompt-engineering.html</loc>
+    <lastmod>2026-04-10</lastmod>
+  </url>
+  <url>
+    <loc>https://satyam-rai-1998.github.io/portfolio/articles/rag-with-azure-ai-search.html</loc>
+    <lastmod>2026-02-15</lastmod>
+  </url>
+  <url>
+    <loc>https://satyam-rai-1998.github.io/portfolio/articles/power-automate-agent-actions.html</loc>
+    <lastmod>2025-11-20</lastmod>
+  </url>
+  <url>
+    <loc>https://satyam-rai-1998.github.io/portfolio/articles/multi-agent-orchestration.html</loc>
+    <lastmod>2025-09-05</lastmod>
+  </url>
+  <url>
+    <loc>https://satyam-rai-1998.github.io/portfolio/articles/azure-ai-foundry-deployment.html</loc>
+    <lastmod>2025-07-18</lastmod>
+  </url>
+  <url>
+    <loc>https://satyam-rai-1998.github.io/portfolio/articles/playwright-python.html</loc>
+    <lastmod>2026-11-18</lastmod>
+  </url>
+  <url>
+    <loc>https://satyam-rai-1998.github.io/portfolio/articles/rpa-or-ai-agents.html</loc>
+    <lastmod>2025-02-22</lastmod>
+  </url>
+  <url>
+    <loc>https://satyam-rai-1998.github.io/portfolio/articles/fastapi-ai-services.html</loc>
+    <lastmod>2026-11-18</lastmod>
+  </url>
+  <url>
+    <loc>https://satyam-rai-1998.github.io/portfolio/articles/power-automate-patterns.html</loc>
+    <lastmod>2024-07-08</lastmod>
   </url>
 </urlset>

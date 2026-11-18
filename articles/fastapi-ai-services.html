@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FastAPI for Enterprise AI Services: Production Patterns You Need to Know | Satyam Rai</title>
+  <meta name="description" content="Production FastAPI patterns for AI services — async endpoints, Pydantic validation, API key auth, rate limiting with slowapi, and Gunicorn+Uvicorn deployment.">
+  <meta name="author" content="Satyam Rai">
+  <link rel="canonical" href="https://satyam-rai-1998.github.io/portfolio/articles/fastapi-ai-services.html">
+  <link rel="stylesheet" href="article.css">
+  <link rel="icon" href="../icon-192.png">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://satyam-rai-1998.github.io/portfolio/articles/fastapi-ai-services.html">
+  <meta property="og:title" content="FastAPI for Enterprise AI Services: Production Patterns You Need to Know">
+  <meta property="og:description" content="Production FastAPI patterns for AI services — async endpoints, Pydantic validation, API key auth, rate limiting with slowapi, and Gunicorn+Uvicorn deployment.">
+  <meta property="og:image" content="https://satyam-rai-1998.github.io/portfolio/photo.jpeg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "FastAPI for Enterprise AI Services: Production Patterns You Need to Know",
+  "datePublished": "2024-10-14",
+  "dateModified": "2026-11-18",
+  "author": {
+    "@type": "Person",
+    "name": "Satyam Rai",
+    "url": "https://satyam-rai-1998.github.io/portfolio/",
+    "@id": "https://satyam-rai-1998.github.io/portfolio/#person"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Satyam Rai"
+  },
+  "description": "Production FastAPI patterns for AI services — async endpoints, Pydantic validation, API key auth, rate limiting with slowapi, and Gunicorn+Uvicorn deployment.",
+  "keywords": "FastAPI, Python, REST API, async, rate limiting, production deployment",
+  "url": "https://satyam-rai-1998.github.io/portfolio/articles/fastapi-ai-services.html",
+  "inLanguage": "en-US",
+  "timeRequired": "PT8M",
+  "@id": "https://satyam-rai-1998.github.io/portfolio/articles/fastapi-ai-services.html#article",
+  "isPartOf": {
+    "@id": "https://satyam-rai-1998.github.io/portfolio/blog.html#blog"
+  },
+  "mainEntityOfPage": "https://satyam-rai-1998.github.io/portfolio/articles/fastapi-ai-services.html",
+  "image": "https://satyam-rai-1998.github.io/portfolio/photo.jpeg"
+}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#article">Skip to article</a>
+  <nav aria-label="Site navigation"><a href="../">Satyam Rai</a><a href="../blog.html">All articles</a><a href="../#projects">Projects</a></nav>
+  <main id="article">
+    <article>
+      <header>
+        <span class="category">Python</span>
+        <h1>FastAPI for Enterprise AI Services: Production Patterns You Need to Know</h1>
+        <p class="byline">By <a href="../#about">Satyam Rai</a> · <time datetime="2024-10-14">2024-10-14</time></p>
+        <p class="intro">FastAPI has become my default framework for wrapping AI models, ML pipelines, and automation logic as REST APIs. It's fast, type-safe, and self-documenting out of the box. But production-grade FastAPI requires more than just <code>@app.get()</code> decorators — here are the patterns that matter.</p>
+      </header>
+      <h2>Why FastAPI for AI Services</h2>
+            <p>FastAPI is built on Starlette and Pydantic, giving you: async request handling (critical for I/O-bound AI calls), automatic OpenAPI/Swagger docs, runtime type validation, and native Python type hints. For AI workloads that call external models or databases, async is not optional — it's essential.</p>
+
+            <h2>Async AI Endpoint Pattern</h2>
+            <pre><code>from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel, Field
+import httpx
+
+app = FastAPI()
+
+class SearchRequest(BaseModel):
+    query: str = Field(min_length=1, max_length=500)
+
+@app.post("/search")
+async def search(request: SearchRequest):
+    # This example expects a local retrieval service on port 8001.
+    try:
+        async with httpx.AsyncClient(timeout=5.0) as client:
+            result = await client.post(
+                "http://127.0.0.1:8001/query",
+                json={"query": request.query},
+            )
+            result.raise_for_status()
+    except httpx.TimeoutException as exc:
+        raise HTTPException(504, "Retrieval timed out") from exc
+    except httpx.HTTPError as exc:
+        raise HTTPException(502, "Retrieval service unavailable") from exc
+    return result.json()</code></pre>
+
+            <h2>Authentication with API Keys</h2>
+            <p>Use FastAPI's <code>Security</code> dependency for API key authentication. Store keys in Azure Key Vault, not environment variables, for production. Rotate keys every 90 days and log all authenticated requests for audit trails.</p>
+
+            <h2>Rate Limiting with slowapi</h2>
+            <p>Install <code>slowapi</code> and add <code>@limiter.limit("20/minute")</code> to sensitive endpoints. Rate limiting protects both your infrastructure and your AI model quotas. Always return a <code>429</code> with a <code>Retry-After</code> header so clients can back off gracefully.</p>
+
+            <div class="key-takeaways">
+              <h3>Key Takeaways</h3>
+              <ul>
+                <li>Use <code>async def</code> for all endpoints that make I/O calls — never block the event loop</li>
+                <li>Pydantic models are your first line of input validation — use them for every request/response</li>
+                <li>Add health check endpoints (<code>/health</code>, <code>/ready</code>) for load balancers</li>
+                <li>Deploy with Gunicorn + Uvicorn workers: <code>gunicorn -w 4 -k uvicorn.workers.UvicornWorker</code></li>
+              </ul>
+            </div>
+    </article>
+  </main>
+  <footer><a href="../blog.html#fastapi-ai-services">Back to articles</a><a href="../#contact">Contact Satyam</a></footer>
+</body>
+</html>
