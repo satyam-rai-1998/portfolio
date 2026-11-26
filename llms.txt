@@ -19,6 +19,11 @@
 - [Retrieval-augmented generation with Azure AI Search](https://satyam-rai-1998.github.io/portfolio/articles/rag-with-azure-ai-search.html) covers chunking and hybrid retrieval.
 - [Skills and project evidence](https://satyam-rai-1998.github.io/portfolio/#skills) covers AI agents, Power Platform, automation, Azure, Python and enterprise integrations.
 
+## Learning resources
+
+- [Learn: Build an AI agent](https://satyam-rai-1998.github.io/portfolio/learn-agents/) is a hands-on lab that follows one customer order from question to grounded answer. It builds the same order-support agent in Copilot Studio and in Python, and covers LLMs and context, state and memory, Azure OpenAI and Microsoft Foundry, LangChain, retrieval and RAG, tools and Model Context Protocol (MCP), orchestration, reliable automation, and evaluation.
+- [Agent skills directory](https://satyam-rai-1998.github.io/portfolio/agent-skills/) is a browsable catalog of agent skills with examples and usage notes.
+
 ## Background and contact
 
 - [Experience](https://satyam-rai-1998.github.io/portfolio/#experience) includes Hollister Incorporated, Areness and KIPM.

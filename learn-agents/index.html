@@ -1,5 +1,68 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>How to Build an AI Agent | Satyam Rai’s Learning Lab</title><meta name="description" content="Build an order-support agent with Copilot Studio or Python. Learn Azure OpenAI, Microsoft Foundry, LangChain, RAG, tools and MCP."><link rel="canonical" href="https://satyam-rai-1998.github.io/portfolio/learn-agents/"><link rel="stylesheet" href="../articles/article.css">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>How to Build an AI Agent | Satyam Rai’s Learning Lab</title><meta name="description" content="Build an order-support agent with Copilot Studio or Python. Learn Azure OpenAI, Microsoft Foundry, LangChain, RAG, tools and MCP."><link rel="canonical" href="https://satyam-rai-1998.github.io/portfolio/learn-agents/"><meta name="author" content="Satyam Rai"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"><meta name="keywords" content="how to build an AI agent, AI agent tutorial, Copilot Studio agent, Azure OpenAI, Microsoft Foundry, LangChain agent, RAG, Model Context Protocol, MCP, agent orchestration, Satyam Rai"><link rel="icon" type="image/png" href="../icon-192.png?v=cf686446a2"><link rel="author" href="https://linkedin.com/in/raisatyam"><link rel="alternate" type="text/plain" title="LLM-readable summary" href="https://satyam-rai-1998.github.io/portfolio/llms.txt">
+<!-- Open Graph -->
+<meta property="og:type" content="article"><meta property="og:title" content="How to Build an AI Agent — Hands-on Learning Lab"><meta property="og:description" content="Build an order-support agent with Copilot Studio or Python. Learn Azure OpenAI, Microsoft Foundry, LangChain, RAG, tools and MCP."><meta property="og:url" content="https://satyam-rai-1998.github.io/portfolio/learn-agents/"><meta property="og:image" content="https://satyam-rai-1998.github.io/portfolio/photo.jpeg?v=3e246dc63a"><meta property="og:image:alt" content="Satyam Rai — AI agent Learning Lab"><meta property="og:site_name" content="Satyam Rai | AI Agent Developer Portfolio"><meta property="og:locale" content="en_US">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="How to Build an AI Agent — Hands-on Learning Lab"><meta name="twitter:description" content="Build an order-support agent with Copilot Studio or Python. Learn Azure OpenAI, Microsoft Foundry, LangChain, RAG, tools and MCP."><meta name="twitter:image" content="https://satyam-rai-1998.github.io/portfolio/photo.jpeg?v=3e246dc63a">
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["TechArticle", "LearningResource"],
+      "@id": "https://satyam-rai-1998.github.io/portfolio/learn-agents/#article",
+      "headline": "How to Build an AI Agent — Hands-on Learning Lab",
+      "name": "Build an AI Agent",
+      "description": "A hands-on lab that follows one customer order from question to grounded answer, built in Copilot Studio or Python, covering LLMs, state, Azure OpenAI, Microsoft Foundry, LangChain, RAG, tools and MCP, orchestration, automation and evaluation.",
+      "url": "https://satyam-rai-1998.github.io/portfolio/learn-agents/",
+      "mainEntityOfPage": "https://satyam-rai-1998.github.io/portfolio/learn-agents/",
+      "inLanguage": "en",
+      "datePublished": "2026-11-26",
+      "dateModified": "2026-11-26",
+      "learningResourceType": "Tutorial",
+      "educationalLevel": "Intermediate",
+      "proficiencyLevel": "Intermediate",
+      "image": "https://satyam-rai-1998.github.io/portfolio/photo.jpeg?v=3e246dc63a",
+      "keywords": "AI agents, Copilot Studio, Azure OpenAI, Microsoft Foundry, LangChain, RAG, Model Context Protocol, agent orchestration",
+      "about": ["AI agents", "Microsoft Copilot Studio", "Azure OpenAI", "Microsoft Foundry", "LangChain", "Retrieval-augmented generation", "Model Context Protocol", "Agent orchestration"],
+      "author": { "@type": "Person", "name": "Satyam Rai", "@id": "https://satyam-rai-1998.github.io/portfolio/#person", "url": "https://satyam-rai-1998.github.io/portfolio/" },
+      "publisher": { "@type": "Person", "name": "Satyam Rai", "@id": "https://satyam-rai-1998.github.io/portfolio/#person" }
+    },
+    {
+      "@type": "Course",
+      "@id": "https://satyam-rai-1998.github.io/portfolio/learn-agents/#course",
+      "name": "Build an AI Agent",
+      "description": "Follow an order from customer question to grounded answer. Build it in Copilot Studio or Python, then take the workflow into production.",
+      "url": "https://satyam-rai-1998.github.io/portfolio/learn-agents/",
+      "inLanguage": "en",
+      "provider": { "@type": "Person", "name": "Satyam Rai", "@id": "https://satyam-rai-1998.github.io/portfolio/#person", "url": "https://satyam-rai-1998.github.io/portfolio/" },
+      "teaches": ["LLMs and context", "State and memory", "Copilot Studio", "OpenAI and LangChain", "Azure OpenAI and Microsoft Foundry", "Retrieval and RAG", "Tools and MCP", "Planning and orchestration", "Events and reliable automation", "Evaluation and operations"],
+      "about": ["AI agents", "Copilot Studio", "Azure OpenAI", "LangChain", "RAG", "Model Context Protocol"],
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "courseWorkload": "PT3H"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "category": "Free"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://satyam-rai-1998.github.io/portfolio/" },
+        { "@type": "ListItem", "position": 2, "name": "Learning Lab", "item": "https://satyam-rai-1998.github.io/portfolio/learn-agents/" }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="../articles/article.css">
 <link rel="stylesheet" href="lab.css"></head>
 <body><a class="skip" href="#main">Skip to guide</a><nav><a href="../#learning">Portfolio learning lab</a><a href="../agent-skills/">Skill directory</a></nav><main id="main"><header class="hero"><div><p class="eyebrow">Satyam Rai / Learning Lab</p><h1>Build an <em>AI agent.</em></h1><p class="lead">Follow an order from customer question to grounded answer. Build it in Copilot Studio or Python, then take the workflow into production.</p><div class="actions"><a href="#copilot">Start with low code</a><a href="#python">Start with Python</a></div></div>
 <figure id="trace"><figcaption>Workflow simulator <small>Local demo</small></figcaption><label for="scenario">Order lookup scenario</label><select id="scenario" disabled><option value="ok">A100 · Known order</option><option value="missing">A999 · Unknown order</option><option value="timeout">A101 · Service timeout</option></select><ol class="pipeline"><li><b>LLM router</b><span>Request shipment status and returns policy</span></li><li><b>Tools + retrieval</b><span id="observation">Lookup: Dispatched · Policy: 14 days</span></li><li><b>Answer</b><span id="answer" aria-live="polite">A100 has shipped. Unused items can be returned within 14 days of delivery.</span></li></ol></figure></header><div class="layout"><aside aria-label="Lesson navigation"><p class="eyebrow">Lab syllabus</p><a href="#trace">Workflow simulator</a><a href="#model">LLMs and context</a><a href="#state">State and memory</a><a href="#copilot">Copilot Studio</a><a href="#python">OpenAI and LangChain</a><a href="#azure">Azure and Foundry</a><a href="#rag">Retrieval and RAG</a><a href="#mcp">Tools and MCP</a><a href="#orchestration">Planning and orchestration</a><a href="#automation">Events and reliable automation</a><a href="#operations">Evaluation and operations</a><a href="#evaluate">Release checklist</a></aside><article><p class="lab"><strong>Demo setup</strong> Create two fictional orders, A100 (Dispatched) and A101 (Processing). Save a text file called “Demo returns policy” with a 14-day return window for unused items.</p><section id="model"><h2>LLMs and context</h2><h3>Inputs and modalities</h3><p>For chat, pass the customer’s text. For a receipt photo, use OCR or a vision-capable model to propose the order ID, show it back to the customer when uncertain, and look up the confirmed ID in the order service. Track extraction quality separately from the final answer.</p><p>A large language model (LLM) turns the customer’s question into a proposed next step. Give it the task, available tool schemas and relevant evidence. For A100, the model can request a lookup. The order service supplies the shipping fact.</p><dl><dt>Model selection</dt><dd>Compare a smaller and a larger model on the same questions. Measure correct tool selection, response time and cost per completed task. Prefer the least expensive model that meets the quality target.</dd><dt>Context engineering</dt><dd>The context window is a finite token budget shared by instructions, history, tool descriptions and results. Keep the latest order ID and cited policy passage. Summarize old turns and reserve space for the answer.</dd><dt>Structured outputs</dt><dd>Define required fields such as order_id, status and policy_source. Validate the returned object in code. A valid schema still needs a factual check against the lookup result.</dd></dl></section>
