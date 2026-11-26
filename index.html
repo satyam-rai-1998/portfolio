@@ -936,6 +936,13 @@
     .freelance-badge { text-decoration: none; }
     .skills-grid, .projects-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
     @media (min-width: 769px) { .projects-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); } }
+    #learning { scroll-margin-top: 5rem; }
+    .learning-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,17rem),1fr)); gap: 1rem; }
+    .learning-card { display: grid; align-content: start; gap: .5rem; padding: 1.25rem; border: 1px solid var(--border); border-top: 2px solid var(--accent); border-radius: .7rem; background: var(--card); color: var(--text); text-decoration: none; }
+    .learning-card span { color: var(--muted); }
+    .learning-card:hover, .learning-card:focus-visible { border-color: var(--accent); }
+    .learning-actions { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: 1.4rem; }
+    @media (min-width:769px) and (max-width:1060px) { .nav-links { gap: .65rem; } }
   </style>
   <noscript><style>
     .hamburger, .theme-toggle, .filter-bar, #ai-chat-btn { display: none; }
@@ -959,6 +966,7 @@
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#learning">Learn</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -985,6 +993,7 @@
       <li><a href="#experience" class="mob-link">Experience</a></li>
       <li><a href="#projects" class="mob-link">Projects</a></li>
       <li><a href="#certifications" class="mob-link">Certifications</a></li>
+      <li><a href="#learning" class="mob-link">Learn</a></li>
       <li><a href="blog.html" class="mob-link">Blog</a></li>
       <li><a href="#contact" class="mob-link">Contact</a></li>
     </ul>
@@ -1154,7 +1163,6 @@
   <section id="skills" class="fade-in">
     <p class="section-label">What I Know</p>
     <h2 class="section-title">Technical Skills</h2>
-    <p class="hero-sub"><a href="agent-skills/">Explore 100 hot AI agent skills and their GitHub repositories</a></p>
     <div class="section-divider"></div>
     <div class="skills-grid">
 
@@ -1588,6 +1596,21 @@
       </div>
 
     </div>
+  </section>
+
+  <section id="learning" class="fade-in">
+    <h2 class="section-title">AI Agent Learning Lab</h2>
+    <div class="section-divider"></div>
+    <p class="hero-sub">Build an order-support agent in Copilot Studio or Python. Follow a lesson, connect your data, and test the result.</p>
+    <div class="learning-grid">
+      <a class="learning-card" href="learn-agents/#copilot"><strong>Copilot Studio</strong><span>Build a no-code knowledge agent and give it a low-code lookup flow.</span></a>
+      <a class="learning-card" href="learn-agents/#python"><strong>OpenAI and LangChain</strong><span>Write a Python tool and let a model use it to answer an order question.</span></a>
+      <a class="learning-card" href="learn-agents/#azure"><strong>Azure OpenAI and Microsoft Foundry</strong><span>Deploy a model on Azure and inspect how a hosted agent uses tools.</span></a>
+      <a class="learning-card" href="learn-agents/#rag"><strong>Retrieval and RAG</strong><span>Give policy answers a source using document chunks, search and citations.</span></a>
+      <a class="learning-card" href="learn-agents/#mcp"><strong>Tool integration and MCP</strong><span>Connect an API and expose a reusable tool through Model Context Protocol.</span></a>
+      <a class="learning-card" href="learn-agents/#evaluate"><strong>Testing and release</strong><span>Check grounding, permissions and failure handling before publishing.</span></a>
+    </div>
+    <div class="learning-actions"><a class="btn btn-primary" href="learn-agents/">Open the learning guide</a><a class="btn btn-outline" href="agent-skills/">Browse 100 agent skills</a></div>
   </section>
 
   <!-- CERTIFICATIONS & EDUCATION -->
