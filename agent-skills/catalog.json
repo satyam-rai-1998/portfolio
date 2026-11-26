@@ -1,0 +1,606 @@
+{
+  "snapshot": "2026-11-26",
+  "source": "https://skills.sh/hot",
+  "skills": [
+    {
+      "hotRank": 1,
+      "skill": "test-slack-app",
+      "repository": "https://github.com/slackapi/slack-skills-plugin",
+      "listing": "https://skills.sh/slackapi/slack-skills-plugin/test-slack-app"
+    },
+    {
+      "hotRank": 2,
+      "skill": "create-slack-app",
+      "repository": "https://github.com/slackapi/slack-skills-plugin",
+      "listing": "https://skills.sh/slackapi/slack-skills-plugin/create-slack-app"
+    },
+    {
+      "hotRank": 3,
+      "skill": "slack-search",
+      "repository": "https://github.com/slackapi/slack-skills-plugin",
+      "listing": "https://skills.sh/slackapi/slack-skills-plugin/slack-search"
+    },
+    {
+      "hotRank": 4,
+      "skill": "block-kit",
+      "repository": "https://github.com/slackapi/slack-skills-plugin",
+      "listing": "https://skills.sh/slackapi/slack-skills-plugin/block-kit"
+    },
+    {
+      "hotRank": 5,
+      "skill": "slack-docs",
+      "repository": "https://github.com/slackapi/slack-skills-plugin",
+      "listing": "https://skills.sh/slackapi/slack-skills-plugin/slack-docs"
+    },
+    {
+      "hotRank": 6,
+      "skill": "slack-messaging",
+      "repository": "https://github.com/slackapi/slack-skills-plugin",
+      "listing": "https://skills.sh/slackapi/slack-skills-plugin/slack-messaging"
+    },
+    {
+      "hotRank": 7,
+      "skill": "slack-cli",
+      "repository": "https://github.com/slackapi/slack-skills-plugin",
+      "listing": "https://skills.sh/slackapi/slack-skills-plugin/slack-cli"
+    },
+    {
+      "hotRank": 8,
+      "skill": "slack-api",
+      "repository": "https://github.com/slackapi/slack-skills-plugin",
+      "listing": "https://skills.sh/slackapi/slack-skills-plugin/slack-api"
+    },
+    {
+      "hotRank": 9,
+      "skill": "deploy-slack-app",
+      "repository": "https://github.com/slackapi/slack-skills-plugin",
+      "listing": "https://skills.sh/slackapi/slack-skills-plugin/deploy-slack-app"
+    },
+    {
+      "hotRank": 12,
+      "skill": "revenuecat-cli",
+      "repository": "https://github.com/revenuecat/ai-toolkit",
+      "listing": "https://skills.sh/revenuecat/ai-toolkit/revenuecat-cli"
+    },
+    {
+      "hotRank": 13,
+      "skill": "game-developer",
+      "repository": "https://github.com/jeffallan/claude-skills",
+      "listing": "https://skills.sh/jeffallan/claude-skills/game-developer"
+    },
+    {
+      "hotRank": 14,
+      "skill": "revenuecat-paywall",
+      "repository": "https://github.com/revenuecat/ai-toolkit",
+      "listing": "https://skills.sh/revenuecat/ai-toolkit/revenuecat-paywall"
+    },
+    {
+      "hotRank": 15,
+      "skill": "create-revenuecat-project",
+      "repository": "https://github.com/revenuecat/ai-toolkit",
+      "listing": "https://skills.sh/revenuecat/ai-toolkit/create-revenuecat-project"
+    },
+    {
+      "hotRank": 16,
+      "skill": "revenuecat-status",
+      "repository": "https://github.com/revenuecat/ai-toolkit",
+      "listing": "https://skills.sh/revenuecat/ai-toolkit/revenuecat-status"
+    },
+    {
+      "hotRank": 17,
+      "skill": "revenuecat-store-state",
+      "repository": "https://github.com/revenuecat/ai-toolkit",
+      "listing": "https://skills.sh/revenuecat/ai-toolkit/revenuecat-store-state"
+    },
+    {
+      "hotRank": 18,
+      "skill": "integrate-revenuecat",
+      "repository": "https://github.com/revenuecat/ai-toolkit",
+      "listing": "https://skills.sh/revenuecat/ai-toolkit/integrate-revenuecat"
+    },
+    {
+      "hotRank": 19,
+      "skill": "indykite-outbound-events",
+      "repository": "https://github.com/indykite/skills",
+      "listing": "https://skills.sh/indykite/skills/indykite-outbound-events"
+    },
+    {
+      "hotRank": 20,
+      "skill": "firebase-expert",
+      "repository": "https://github.com/jeffallan/claude-skills",
+      "listing": "https://skills.sh/jeffallan/claude-skills/firebase-expert"
+    },
+    {
+      "hotRank": 21,
+      "skill": "social-carousel-generation",
+      "repository": "https://github.com/eachlabs/skills",
+      "listing": "https://skills.sh/eachlabs/skills/social-carousel-generation"
+    },
+    {
+      "hotRank": 23,
+      "skill": "secret-hygiene",
+      "repository": "https://github.com/sentimony/skills",
+      "listing": "https://skills.sh/sentimony/skills/secret-hygiene"
+    },
+    {
+      "hotRank": 24,
+      "skill": "h3-image-prompt-writing",
+      "repository": "https://github.com/minimax-ai/minimax-h3-image",
+      "listing": "https://skills.sh/minimax-ai/minimax-h3-image/h3-image-prompt-writing"
+    },
+    {
+      "hotRank": 25,
+      "skill": "supabase-server",
+      "repository": "https://github.com/supabase/server",
+      "listing": "https://skills.sh/supabase/server/supabase-server"
+    },
+    {
+      "hotRank": 26,
+      "skill": "indykite-mcp-server",
+      "repository": "https://github.com/indykite/skills",
+      "listing": "https://skills.sh/indykite/skills/indykite-mcp-server"
+    },
+    {
+      "hotRank": 27,
+      "skill": "indykite-ciq-create-node",
+      "repository": "https://github.com/indykite/skills",
+      "listing": "https://skills.sh/indykite/skills/indykite-ciq-create-node"
+    },
+    {
+      "hotRank": 28,
+      "skill": "product-strategy-session",
+      "repository": "https://github.com/deanpeters/product-manager-skills",
+      "listing": "https://skills.sh/deanpeters/product-manager-skills/product-strategy-session"
+    },
+    {
+      "hotRank": 29,
+      "skill": "council",
+      "repository": "https://github.com/dancorreia-swe/skills",
+      "listing": "https://skills.sh/dancorreia-swe/skills/council"
+    },
+    {
+      "hotRank": 30,
+      "skill": "social-media-image-sizes",
+      "repository": "https://github.com/branding5/social-media-image-sizes",
+      "listing": "https://skills.sh/branding5/social-media-image-sizes/social-media-image-sizes"
+    },
+    {
+      "hotRank": 31,
+      "skill": "virtual-try-on",
+      "repository": "https://github.com/eachlabs/skills",
+      "listing": "https://skills.sh/eachlabs/skills/virtual-try-on"
+    },
+    {
+      "hotRank": 32,
+      "skill": "menu-design-generation",
+      "repository": "https://github.com/eachlabs/skills",
+      "listing": "https://skills.sh/eachlabs/skills/menu-design-generation"
+    },
+    {
+      "hotRank": 33,
+      "skill": "clerk-billing",
+      "repository": "https://github.com/clerk/skills",
+      "listing": "https://skills.sh/clerk/skills/clerk-billing"
+    },
+    {
+      "hotRank": 34,
+      "skill": "release-readiness",
+      "repository": "https://github.com/deanpeters/product-manager-skills",
+      "listing": "https://skills.sh/deanpeters/product-manager-skills/release-readiness"
+    },
+    {
+      "hotRank": 35,
+      "skill": "twitch-overlay-generation",
+      "repository": "https://github.com/eachlabs/skills",
+      "listing": "https://skills.sh/eachlabs/skills/twitch-overlay-generation"
+    },
+    {
+      "hotRank": 36,
+      "skill": "nextjs-developer",
+      "repository": "https://github.com/jeffallan/claude-skills",
+      "listing": "https://skills.sh/jeffallan/claude-skills/nextjs-developer"
+    },
+    {
+      "hotRank": 37,
+      "skill": "saas-economics-efficiency-metrics",
+      "repository": "https://github.com/deanpeters/product-manager-skills",
+      "listing": "https://skills.sh/deanpeters/product-manager-skills/saas-economics-efficiency-metrics"
+    },
+    {
+      "hotRank": 38,
+      "skill": "geo-report",
+      "repository": "https://github.com/zubair-trabzada/geo-seo-claude",
+      "listing": "https://skills.sh/zubair-trabzada/geo-seo-claude/geo-report"
+    },
+    {
+      "hotRank": 39,
+      "skill": "managed-workflows-quickstart",
+      "repository": "https://github.com/qiskit/skills",
+      "listing": "https://skills.sh/qiskit/skills/managed-workflows-quickstart"
+    },
+    {
+      "hotRank": 40,
+      "skill": "lean-ux-canvas",
+      "repository": "https://github.com/deanpeters/product-manager-skills",
+      "listing": "https://skills.sh/deanpeters/product-manager-skills/lean-ux-canvas"
+    },
+    {
+      "hotRank": 41,
+      "skill": "user-story-mapping-workshop",
+      "repository": "https://github.com/deanpeters/product-manager-skills",
+      "listing": "https://skills.sh/deanpeters/product-manager-skills/user-story-mapping-workshop"
+    },
+    {
+      "hotRank": 42,
+      "skill": "analog-found-footage-horror",
+      "repository": "https://github.com/arjun988/blender-skills",
+      "listing": "https://skills.sh/arjun988/blender-skills/analog-found-footage-horror"
+    },
+    {
+      "hotRank": 43,
+      "skill": "vue-expert-js",
+      "repository": "https://github.com/jeffallan/claude-skills",
+      "listing": "https://skills.sh/jeffallan/claude-skills/vue-expert-js"
+    },
+    {
+      "hotRank": 44,
+      "skill": "finding-youtube-channels-by-growth-rate",
+      "repository": "https://github.com/apidojo-io/apidojo-skills",
+      "listing": "https://skills.sh/apidojo-io/apidojo-skills/finding-youtube-channels-by-growth-rate"
+    },
+    {
+      "hotRank": 46,
+      "skill": "brochure-design-generation",
+      "repository": "https://github.com/eachlabs/skills",
+      "listing": "https://skills.sh/eachlabs/skills/brochure-design-generation"
+    },
+    {
+      "hotRank": 47,
+      "skill": "certificate-generation",
+      "repository": "https://github.com/eachlabs/skills",
+      "listing": "https://skills.sh/eachlabs/skills/certificate-generation"
+    },
+    {
+      "hotRank": 48,
+      "skill": "sticker-design-generation",
+      "repository": "https://github.com/eachlabs/skills",
+      "listing": "https://skills.sh/eachlabs/skills/sticker-design-generation"
+    },
+    {
+      "hotRank": 50,
+      "skill": "geo-compare",
+      "repository": "https://github.com/zubair-trabzada/geo-seo-claude",
+      "listing": "https://skills.sh/zubair-trabzada/geo-seo-claude/geo-compare"
+    },
+    {
+      "hotRank": 51,
+      "skill": "eol-process",
+      "repository": "https://github.com/deanpeters/product-manager-skills",
+      "listing": "https://skills.sh/deanpeters/product-manager-skills/eol-process"
+    },
+    {
+      "hotRank": 52,
+      "skill": "launch-plan",
+      "repository": "https://github.com/deanpeters/product-manager-skills",
+      "listing": "https://skills.sh/deanpeters/product-manager-skills/launch-plan"
+    },
+    {
+      "hotRank": 53,
+      "skill": "user-story",
+      "repository": "https://github.com/deanpeters/product-manager-skills",
+      "listing": "https://skills.sh/deanpeters/product-manager-skills/user-story"
+    },
+    {
+      "hotRank": 54,
+      "skill": "windsor-ai-business-data",
+      "repository": "https://github.com/cline/skills",
+      "listing": "https://skills.sh/cline/skills/windsor-ai-business-data"
+    },
+    {
+      "hotRank": 55,
+      "skill": "cloud-architect",
+      "repository": "https://github.com/jeffallan/claude-skills",
+      "listing": "https://skills.sh/jeffallan/claude-skills/cloud-architect"
+    },
+    {
+      "hotRank": 56,
+      "skill": "salesforce-developer",
+      "repository": "https://github.com/jeffallan/claude-skills",
+      "listing": "https://skills.sh/jeffallan/claude-skills/salesforce-developer"
+    },
+    {
+      "hotRank": 57,
+      "skill": "redis-best-practices",
+      "repository": "https://github.com/upstash/skills",
+      "listing": "https://skills.sh/upstash/skills/redis-best-practices"
+    },
+    {
+      "hotRank": 58,
+      "skill": "shopify-expert",
+      "repository": "https://github.com/jeffallan/claude-skills",
+      "listing": "https://skills.sh/jeffallan/claude-skills/shopify-expert"
+    },
+    {
+      "hotRank": 59,
+      "skill": "prioritization-advisor",
+      "repository": "https://github.com/deanpeters/product-manager-skills",
+      "listing": "https://skills.sh/deanpeters/product-manager-skills/prioritization-advisor"
+    },
+    {
+      "hotRank": 60,
+      "skill": "upstash-ratelimit-js",
+      "repository": "https://github.com/upstash/skills",
+      "listing": "https://skills.sh/upstash/skills/upstash-ratelimit-js"
+    },
+    {
+      "hotRank": 61,
+      "skill": "migrate-qiskit-ibm-runtime",
+      "repository": "https://github.com/qiskit/skills",
+      "listing": "https://skills.sh/qiskit/skills/migrate-qiskit-ibm-runtime"
+    },
+    {
+      "hotRank": 62,
+      "skill": "leaving-pr-comments",
+      "repository": "https://github.com/dancorreia-swe/skills",
+      "listing": "https://skills.sh/dancorreia-swe/skills/leaving-pr-comments"
+    },
+    {
+      "hotRank": 63,
+      "skill": "received-review",
+      "repository": "https://github.com/sentimony/skills",
+      "listing": "https://skills.sh/sentimony/skills/received-review"
+    },
+    {
+      "hotRank": 64,
+      "skill": "quantum-skills",
+      "repository": "https://github.com/unitarylab/quantum-skills",
+      "listing": "https://skills.sh/unitarylab/quantum-skills/quantum-skills"
+    },
+    {
+      "hotRank": 65,
+      "skill": "discord-graphics-generation",
+      "repository": "https://github.com/eachlabs/skills",
+      "listing": "https://skills.sh/eachlabs/skills/discord-graphics-generation"
+    },
+    {
+      "hotRank": 66,
+      "skill": "08-business-process-modeling",
+      "repository": "https://github.com/peterbamuhigire/chwezi-sdlc-documentation",
+      "listing": "https://skills.sh/peterbamuhigire/chwezi-sdlc-documentation/08-business-process-modeling"
+    },
+    {
+      "hotRank": 67,
+      "skill": "cross-review",
+      "repository": "https://github.com/sentimony/skills",
+      "listing": "https://skills.sh/sentimony/skills/cross-review"
+    },
+    {
+      "hotRank": 68,
+      "skill": "select-error-mitigation",
+      "repository": "https://github.com/qiskit/skills",
+      "listing": "https://skills.sh/qiskit/skills/select-error-mitigation"
+    },
+    {
+      "hotRank": 69,
+      "skill": "photo-restoration",
+      "repository": "https://github.com/eachlabs/skills",
+      "listing": "https://skills.sh/eachlabs/skills/photo-restoration"
+    },
+    {
+      "hotRank": 70,
+      "skill": "discovery-process",
+      "repository": "https://github.com/deanpeters/product-manager-skills",
+      "listing": "https://skills.sh/deanpeters/product-manager-skills/discovery-process"
+    },
+    {
+      "hotRank": 71,
+      "skill": "research",
+      "repository": "https://github.com/mohcen56/ytb-research-skills",
+      "listing": "https://skills.sh/mohcen56/ytb-research-skills/research"
+    },
+    {
+      "hotRank": 72,
+      "skill": "pricing-packaging-tracker",
+      "repository": "https://github.com/deanpeters/product-manager-skills",
+      "listing": "https://skills.sh/deanpeters/product-manager-skills/pricing-packaging-tracker"
+    },
+    {
+      "hotRank": 74,
+      "skill": "chatgpt-app-builder",
+      "repository": "https://github.com/mcp-use/mcp-use",
+      "listing": "https://skills.sh/mcp-use/mcp-use/chatgpt-app-builder"
+    },
+    {
+      "hotRank": 76,
+      "skill": "gh-switch",
+      "repository": "https://github.com/sentimony/skills",
+      "listing": "https://skills.sh/sentimony/skills/gh-switch"
+    },
+    {
+      "hotRank": 77,
+      "skill": "hologram-content-generation",
+      "repository": "https://github.com/eachlabs/skills",
+      "listing": "https://skills.sh/eachlabs/skills/hologram-content-generation"
+    },
+    {
+      "hotRank": 78,
+      "skill": "eol-checklist",
+      "repository": "https://github.com/deanpeters/product-manager-skills",
+      "listing": "https://skills.sh/deanpeters/product-manager-skills/eol-checklist"
+    },
+    {
+      "hotRank": 79,
+      "skill": "object-removal",
+      "repository": "https://github.com/eachlabs/skills",
+      "listing": "https://skills.sh/eachlabs/skills/object-removal"
+    },
+    {
+      "hotRank": 80,
+      "skill": "management-consulting",
+      "repository": "https://github.com/gcamilo/management-consulting",
+      "listing": "https://skills.sh/gcamilo/management-consulting/management-consulting"
+    },
+    {
+      "hotRank": 81,
+      "skill": "scraping-youtube-videos-by-keyword",
+      "repository": "https://github.com/apidojo-io/apidojo-skills",
+      "listing": "https://skills.sh/apidojo-io/apidojo-skills/scraping-youtube-videos-by-keyword"
+    },
+    {
+      "hotRank": 82,
+      "skill": "gmgn-dev-score",
+      "repository": "https://github.com/gmgnai/gmgn-skills",
+      "listing": "https://skills.sh/gmgnai/gmgn-skills/gmgn-dev-score"
+    },
+    {
+      "hotRank": 83,
+      "skill": "age-transformation",
+      "repository": "https://github.com/eachlabs/skills",
+      "listing": "https://skills.sh/eachlabs/skills/age-transformation"
+    },
+    {
+      "hotRank": 84,
+      "skill": "eachlabs-image-generation",
+      "repository": "https://github.com/eachlabs/skills",
+      "listing": "https://skills.sh/eachlabs/skills/eachlabs-image-generation"
+    },
+    {
+      "hotRank": 85,
+      "skill": "agent-setup",
+      "repository": "https://github.com/dancorreia-swe/skills",
+      "listing": "https://skills.sh/dancorreia-swe/skills/agent-setup"
+    },
+    {
+      "hotRank": 86,
+      "skill": "status",
+      "repository": "https://github.com/backnotprop/bro",
+      "listing": "https://skills.sh/backnotprop/bro/status"
+    },
+    {
+      "hotRank": 87,
+      "skill": "month-end-close",
+      "repository": "https://github.com/alirezarezvani/claude-skills",
+      "listing": "https://skills.sh/alirezarezvani/claude-skills/month-end-close"
+    },
+    {
+      "hotRank": 88,
+      "skill": "competitor-analysis",
+      "repository": "https://github.com/phuryn/pm-skills",
+      "listing": "https://skills.sh/phuryn/pm-skills/competitor-analysis"
+    },
+    {
+      "hotRank": 89,
+      "skill": "indykite-ciq-create-relationship",
+      "repository": "https://github.com/indykite/skills",
+      "listing": "https://skills.sh/indykite/skills/indykite-ciq-create-relationship"
+    },
+    {
+      "hotRank": 91,
+      "skill": "golang-pro",
+      "repository": "https://github.com/jeffallan/claude-skills",
+      "listing": "https://skills.sh/jeffallan/claude-skills/golang-pro"
+    },
+    {
+      "hotRank": 92,
+      "skill": "skill-authoring-workflow",
+      "repository": "https://github.com/deanpeters/product-manager-skills",
+      "listing": "https://skills.sh/deanpeters/product-manager-skills/skill-authoring-workflow"
+    },
+    {
+      "hotRank": 93,
+      "skill": "breakout-detector",
+      "repository": "https://github.com/mohcen56/ytb-research-skills",
+      "listing": "https://skills.sh/mohcen56/ytb-research-skills/breakout-detector"
+    },
+    {
+      "hotRank": 94,
+      "skill": "legacy-modernizer",
+      "repository": "https://github.com/jeffallan/claude-skills",
+      "listing": "https://skills.sh/jeffallan/claude-skills/legacy-modernizer"
+    },
+    {
+      "hotRank": 95,
+      "skill": "readback",
+      "repository": "https://github.com/backnotprop/bro",
+      "listing": "https://skills.sh/backnotprop/bro/readback"
+    },
+    {
+      "hotRank": 96,
+      "skill": "indykite-authzen-search-subject",
+      "repository": "https://github.com/indykite/skills",
+      "listing": "https://skills.sh/indykite/skills/indykite-authzen-search-subject"
+    },
+    {
+      "hotRank": 97,
+      "skill": "indykite-capture-upsert-relationships",
+      "repository": "https://github.com/indykite/skills",
+      "listing": "https://skills.sh/indykite/skills/indykite-capture-upsert-relationships"
+    },
+    {
+      "hotRank": 98,
+      "skill": "cpp-pro",
+      "repository": "https://github.com/jeffallan/claude-skills",
+      "listing": "https://skills.sh/jeffallan/claude-skills/cpp-pro"
+    },
+    {
+      "hotRank": 99,
+      "skill": "review-loop",
+      "repository": "https://github.com/dancorreia-swe/skills",
+      "listing": "https://skills.sh/dancorreia-swe/skills/review-loop"
+    },
+    {
+      "hotRank": 100,
+      "skill": "sprint-planning",
+      "repository": "https://github.com/deanpeters/product-manager-skills",
+      "listing": "https://skills.sh/deanpeters/product-manager-skills/sprint-planning"
+    },
+    {
+      "hotRank": 101,
+      "skill": "user-story-mapping",
+      "repository": "https://github.com/deanpeters/product-manager-skills",
+      "listing": "https://skills.sh/deanpeters/product-manager-skills/user-story-mapping"
+    },
+    {
+      "hotRank": 102,
+      "skill": "facts",
+      "repository": "https://github.com/backnotprop/bro",
+      "listing": "https://skills.sh/backnotprop/bro/facts"
+    },
+    {
+      "hotRank": 103,
+      "skill": "script",
+      "repository": "https://github.com/mohcen56/ytb-research-skills",
+      "listing": "https://skills.sh/mohcen56/ytb-research-skills/script"
+    },
+    {
+      "hotRank": 104,
+      "skill": "cr-request",
+      "repository": "https://github.com/sentimony/agentic-workflow",
+      "listing": "https://skills.sh/sentimony/agentic-workflow/cr-request"
+    },
+    {
+      "hotRank": 105,
+      "skill": "gmgn-market",
+      "repository": "https://github.com/gmgnai/gmgn-skills",
+      "listing": "https://skills.sh/gmgnai/gmgn-skills/gmgn-market"
+    },
+    {
+      "hotRank": 106,
+      "skill": "regret-minimization",
+      "repository": "https://github.com/backnotprop/bro",
+      "listing": "https://skills.sh/backnotprop/bro/regret-minimization"
+    },
+    {
+      "hotRank": 107,
+      "skill": "ugc-video-generation",
+      "repository": "https://github.com/eachlabs/skills",
+      "listing": "https://skills.sh/eachlabs/skills/ugc-video-generation"
+    },
+    {
+      "hotRank": 108,
+      "skill": "storyboard",
+      "repository": "https://github.com/deanpeters/product-manager-skills",
+      "listing": "https://skills.sh/deanpeters/product-manager-skills/storyboard"
+    }
+  ]
+}
