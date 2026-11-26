@@ -739,5 +739,16 @@
       "listing": "https://skills.sh/vercel-labs/agent-skills/vercel-composition-patterns",
       "description": "Design reusable React component APIs with composition and shared state."
     }
+  ],
+  "mySkills": [
+    {
+      "title": "Hindi-to-English Speaking Coach",
+      "skill": "hindi-to-english-speaking-coach",
+      "repository": "https://github.com/satyam-rai-1998/English-Speaking-Coach",
+      "listing": "https://github.com/satyam-rai-1998/English-Speaking-Coach/blob/main/SKILL.md",
+      "description": "Help Hindi-speaking learners practise English through short conversations, workplace and interview role-play, focused corrections, and Hindi/Hinglish explanations.",
+      "license": "MIT",
+      "author": "Satyam Rai"
+    }
   ]
 }

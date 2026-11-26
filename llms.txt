@@ -21,6 +21,8 @@
 
 ## Learning resources
 
+- [Hindi-to-English Speaking Coach](https://github.com/satyam-rai-1998/English-Speaking-Coach) is Satyam Rai's MIT-licensed Agent Skill for short English conversations, workplace and interview role-play, and focused corrections with Hindi/Hinglish explanations. Voice features depend on the host AI application.
+
 - [Learn: Build an AI agent](https://satyam-rai-1998.github.io/portfolio/learn-agents/) is a hands-on lab that follows one customer order from question to grounded answer. It builds the same order-support agent in Copilot Studio and in Python, and covers LLMs and context, state and memory, Azure OpenAI and Microsoft Foundry, LangChain, retrieval and RAG, tools and Model Context Protocol (MCP), orchestration, reliable automation, and evaluation.
 - [Agent skills directory](https://satyam-rai-1998.github.io/portfolio/agent-skills/) lists 100 GitHub-backed skills from the 26 November 2026 skills.sh Hot snapshot, plus five web development picks, with short descriptions and links to source repositories.
 
