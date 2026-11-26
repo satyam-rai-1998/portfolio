@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://satyam-rai-1998.github.io/portfolio/</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-26</lastmod>
 
 
     <image:image>
@@ -24,7 +24,7 @@
   </url>
   <url>
     <loc>https://satyam-rai-1998.github.io/portfolio/articles/copilot-studio-agents.html</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://satyam-rai-1998.github.io/portfolio/articles/enterprise-prompt-engineering.html</loc>
@@ -32,7 +32,7 @@
   </url>
   <url>
     <loc>https://satyam-rai-1998.github.io/portfolio/articles/rag-with-azure-ai-search.html</loc>
-    <lastmod>2026-02-15</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
   <url>
     <loc>https://satyam-rai-1998.github.io/portfolio/articles/power-automate-agent-actions.html</loc>

@@ -5,11 +5,11 @@
 ## Selected work
 
 - [GISP-Auto — Scheduled Supply Planning Reports](https://satyam-rai-1998.github.io/portfolio/#gisp-auto) runs on recurring Power Automate triggers with plant-specific prompts. The Copilot Studio agent retrieves data from a Microsoft Fabric data agent and delivers HTML reports by email and to the appropriate Teams group chat.
-- [GISP Assistant — Global Inventory and Supply Planning](https://satyam-rai-1998.github.io/portfolio/#gisp-assistant) gives planners a Copilot Studio interface to a Microsoft Fabric data agent built on the global supply chain report’s Power BI semantic models. It supports questions about backorders, inventory across countries, planned production and capacity.
+- [GISP Assistant — Global Inventory and Supply Planning](https://satyam-rai-1998.github.io/portfolio/case-studies/gisp-assistant.html) gives planners a Copilot Studio interface to a Microsoft Fabric data agent built on the global supply chain report’s Power BI semantic models. It supports questions about backorders, inventory across countries, planned production and capacity.
 - [Fit for Growth Requirements & Traceability Assistant](https://satyam-rai-1998.github.io/portfolio/#ffg-assistant) helps SAP S/4HANA project teams trace requirements to test cases and defects. It uses an Excel export for coverage reports and Azure DevOps MCP for read-only checks of individual work items.
 - [IBPedia](https://satyam-rai-1998.github.io/portfolio/#ibpedia) filters incoming SAP IBP emails for relevance and duplicates, then writes structured questions and answers to an Excel knowledge base.
 - [HR and IT support agent](https://satyam-rai-1998.github.io/portfolio/#hr-it-agent) integrates Copilot Studio, Microsoft Teams and Graph API for ticket management. The project reduced support resolution time by 50%.
-- [Invoice automation](https://satyam-rai-1998.github.io/portfolio/#invoice-automation) uses Azure AI Document Intelligence and Power Automate to extract data from 500+ invoices per week at 95% accuracy.
+- [Invoice automation](https://satyam-rai-1998.github.io/portfolio/case-studies/invoice-automation.html) uses Azure AI Document Intelligence and Power Automate to extract data from 500+ invoices per week at 95% accuracy.
 - [Marketing insights](https://satyam-rai-1998.github.io/portfolio/#marketing-insights) turns Salesforce and Chatter notes into Power BI insights. Analysis time fell from 120–240 minutes to about 10 minutes.
 - [Full project portfolio](https://satyam-rai-1998.github.io/portfolio/#projects) includes résumé parsing, business card extraction and HR workflow automation.
 
@@ -22,7 +22,7 @@
 ## Learning resources
 
 - [Learn: Build an AI agent](https://satyam-rai-1998.github.io/portfolio/learn-agents/) is a hands-on lab that follows one customer order from question to grounded answer. It builds the same order-support agent in Copilot Studio and in Python, and covers LLMs and context, state and memory, Azure OpenAI and Microsoft Foundry, LangChain, retrieval and RAG, tools and Model Context Protocol (MCP), orchestration, reliable automation, and evaluation.
-- [Agent skills directory](https://satyam-rai-1998.github.io/portfolio/agent-skills/) is a browsable catalog of agent skills with examples and usage notes.
+- [Agent skills directory](https://satyam-rai-1998.github.io/portfolio/agent-skills/) lists 100 GitHub-backed skills from the 26 November 2026 skills.sh Hot snapshot, plus five web development picks, with short descriptions and links to source repositories.
 
 ## Background and contact
 

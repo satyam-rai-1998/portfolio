@@ -10,7 +10,10 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": ["TechArticle", "LearningResource"],
+      "@type": [
+        "TechArticle",
+        "LearningResource"
+      ],
       "@id": "https://satyam-rai-1998.github.io/portfolio/learn-agents/#article",
       "headline": "How to Build an AI Agent — Hands-on Learning Lab",
       "name": "Build an AI Agent",
@@ -25,38 +28,43 @@
       "proficiencyLevel": "Intermediate",
       "image": "https://satyam-rai-1998.github.io/portfolio/photo.jpeg?v=3e246dc63a",
       "keywords": "AI agents, Copilot Studio, Azure OpenAI, Microsoft Foundry, LangChain, RAG, Model Context Protocol, agent orchestration",
-      "about": ["AI agents", "Microsoft Copilot Studio", "Azure OpenAI", "Microsoft Foundry", "LangChain", "Retrieval-augmented generation", "Model Context Protocol", "Agent orchestration"],
-      "author": { "@type": "Person", "name": "Satyam Rai", "@id": "https://satyam-rai-1998.github.io/portfolio/#person", "url": "https://satyam-rai-1998.github.io/portfolio/" },
-      "publisher": { "@type": "Person", "name": "Satyam Rai", "@id": "https://satyam-rai-1998.github.io/portfolio/#person" }
-    },
-    {
-      "@type": "Course",
-      "@id": "https://satyam-rai-1998.github.io/portfolio/learn-agents/#course",
-      "name": "Build an AI Agent",
-      "description": "Follow an order from customer question to grounded answer. Build it in Copilot Studio or Python, then take the workflow into production.",
-      "url": "https://satyam-rai-1998.github.io/portfolio/learn-agents/",
-      "inLanguage": "en",
-      "provider": { "@type": "Person", "name": "Satyam Rai", "@id": "https://satyam-rai-1998.github.io/portfolio/#person", "url": "https://satyam-rai-1998.github.io/portfolio/" },
-      "teaches": ["LLMs and context", "State and memory", "Copilot Studio", "OpenAI and LangChain", "Azure OpenAI and Microsoft Foundry", "Retrieval and RAG", "Tools and MCP", "Planning and orchestration", "Events and reliable automation", "Evaluation and operations"],
-      "about": ["AI agents", "Copilot Studio", "Azure OpenAI", "LangChain", "RAG", "Model Context Protocol"],
-      "hasCourseInstance": {
-        "@type": "CourseInstance",
-        "courseMode": "online",
-        "courseWorkload": "PT3H"
+      "about": [
+        "AI agents",
+        "Microsoft Copilot Studio",
+        "Azure OpenAI",
+        "Microsoft Foundry",
+        "LangChain",
+        "Retrieval-augmented generation",
+        "Model Context Protocol",
+        "Agent orchestration"
+      ],
+      "author": {
+        "@type": "Person",
+        "name": "Satyam Rai",
+        "@id": "https://satyam-rai-1998.github.io/portfolio/#person",
+        "url": "https://satyam-rai-1998.github.io/portfolio/"
       },
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "category": "Free"
+      "publisher": {
+        "@type": "Person",
+        "name": "Satyam Rai",
+        "@id": "https://satyam-rai-1998.github.io/portfolio/#person"
       }
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://satyam-rai-1998.github.io/portfolio/" },
-        { "@type": "ListItem", "position": 2, "name": "Learning Lab", "item": "https://satyam-rai-1998.github.io/portfolio/learn-agents/" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://satyam-rai-1998.github.io/portfolio/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Learning Lab",
+          "item": "https://satyam-rai-1998.github.io/portfolio/learn-agents/"
+        }
       ]
     }
   ]
@@ -64,8 +72,8 @@
 </script>
 <link rel="stylesheet" href="../articles/article.css">
 <link rel="stylesheet" href="lab.css"></head>
-<body><a class="skip" href="#main">Skip to guide</a><nav><a href="../#learning">Portfolio learning lab</a><a href="../agent-skills/">Skill directory</a></nav><main id="main"><header class="hero"><div><p class="eyebrow">Satyam Rai / Learning Lab</p><h1>Build an <em>AI agent.</em></h1><p class="lead">Follow an order from customer question to grounded answer. Build it in Copilot Studio or Python, then take the workflow into production.</p><div class="actions"><a href="#copilot">Start with low code</a><a href="#python">Start with Python</a></div></div>
-<figure id="trace"><figcaption>Workflow simulator <small>Local demo</small></figcaption><label for="scenario">Order lookup scenario</label><select id="scenario" disabled><option value="ok">A100 · Known order</option><option value="missing">A999 · Unknown order</option><option value="timeout">A101 · Service timeout</option></select><ol class="pipeline"><li><b>LLM router</b><span>Request shipment status and returns policy</span></li><li><b>Tools + retrieval</b><span id="observation">Lookup: Dispatched · Policy: 14 days</span></li><li><b>Answer</b><span id="answer" aria-live="polite">A100 has shipped. Unused items can be returned within 14 days of delivery.</span></li></ol></figure></header><div class="layout"><aside aria-label="Lesson navigation"><p class="eyebrow">Lab syllabus</p><a href="#trace">Workflow simulator</a><a href="#model">LLMs and context</a><a href="#state">State and memory</a><a href="#copilot">Copilot Studio</a><a href="#python">OpenAI and LangChain</a><a href="#azure">Azure and Foundry</a><a href="#rag">Retrieval and RAG</a><a href="#mcp">Tools and MCP</a><a href="#orchestration">Planning and orchestration</a><a href="#automation">Events and reliable automation</a><a href="#operations">Evaluation and operations</a><a href="#evaluate">Release checklist</a></aside><article><p class="lab"><strong>Demo setup</strong> Create two fictional orders, A100 (Dispatched) and A101 (Processing). Save a text file called “Demo returns policy” with a 14-day return window for unused items.</p><section id="model"><h2>LLMs and context</h2><h3>Inputs and modalities</h3><p>For chat, pass the customer’s text. For a receipt photo, use OCR or a vision-capable model to propose the order ID, show it back to the customer when uncertain, and look up the confirmed ID in the order service. Track extraction quality separately from the final answer.</p><p>A large language model (LLM) turns the customer’s question into a proposed next step. Give it the task, available tool schemas and relevant evidence. For A100, the model can request a lookup. The order service supplies the shipping fact.</p><dl><dt>Model selection</dt><dd>Compare a smaller and a larger model on the same questions. Measure correct tool selection, response time and cost per completed task. Prefer the least expensive model that meets the quality target.</dd><dt>Context engineering</dt><dd>The context window is a finite token budget shared by instructions, history, tool descriptions and results. Keep the latest order ID and cited policy passage. Summarize old turns and reserve space for the answer.</dd><dt>Structured outputs</dt><dd>Define required fields such as order_id, status and policy_source. Validate the returned object in code. A valid schema still needs a factual check against the lookup result.</dd></dl></section>
+<body><a class="skip" href="#main">Skip to guide</a><nav><a href="../#learning">Portfolio learning lab</a><a href="../agent-skills/">Skill directory</a></nav><main id="main"><header class="hero"><div><p class="eyebrow">Satyam Rai / Learning Lab</p><p>By <a href="../#about">Satyam Rai</a> · Updated <time datetime="2026-11-26">26 November 2026</time></p><h1>Build an <em>AI agent.</em></h1><p class="lead">Follow an order from customer question to grounded answer. Build it in Copilot Studio or Python, then take the workflow into production.</p><div class="actions"><a href="#copilot">Start with low code</a><a href="#python">Start with Python</a></div></div>
+<figure id="trace"><figcaption>Workflow simulator <small>Local demo</small></figcaption><label for="scenario">Order lookup scenario</label><select id="scenario" disabled><option value="ok">A100 · Known order</option><option value="missing">A999 · Unknown order</option><option value="timeout">A101 · Service timeout</option></select><ol class="pipeline"><li><b>LLM router</b><span>Request shipment status and returns policy</span></li><li><b>Tools + retrieval</b><span id="observation">Lookup: Dispatched · Policy: 14 days</span></li><li><b>Answer</b><span id="answer" aria-live="polite">A100 has shipped. Unused items can be returned within 14 days of delivery.</span></li></ol></figure></header><div class="layout"><aside aria-label="Lesson navigation"><p class="eyebrow">Lab syllabus</p><a href="#trace">Workflow simulator</a><a href="#model">LLMs and context</a><a href="#state">State and memory</a><a href="#copilot">Copilot Studio</a><a href="#python">OpenAI and LangChain</a><a href="#azure">Azure and Foundry</a><a href="#rag">Retrieval and RAG</a><a href="#mcp">Tools and MCP</a><a href="#orchestration">Planning and orchestration</a><a href="#automation">Events and reliable automation</a><a href="#operations">Evaluation and operations</a><a href="#evaluate">Release checklist</a><a href="#questions">Common questions</a></aside><article><p class="lab"><strong>Demo setup</strong> Create two fictional orders, A100 (Dispatched) and A101 (Processing). Save a text file called “Demo returns policy” with a 14-day return window for unused items.</p><section id="model"><h2>LLMs and context</h2><h3>Inputs and modalities</h3><p>For chat, pass the customer’s text. For a receipt photo, use OCR or a vision-capable model to propose the order ID, show it back to the customer when uncertain, and look up the confirmed ID in the order service. Track extraction quality separately from the final answer.</p><p>A large language model (LLM) turns the customer’s question into a proposed next step. Give it the task, available tool schemas and relevant evidence. For A100, the model can request a lookup. The order service supplies the shipping fact.</p><dl><dt>Model selection</dt><dd>Compare a smaller and a larger model on the same questions. Measure correct tool selection, response time and cost per completed task. Prefer the least expensive model that meets the quality target.</dd><dt>Context engineering</dt><dd>The context window is a finite token budget shared by instructions, history, tool descriptions and results. Keep the latest order ID and cited policy passage. Summarize old turns and reserve space for the answer.</dd><dt>Structured outputs</dt><dd>Define required fields such as order_id, status and policy_source. Validate the returned object in code. A valid schema still needs a factual check against the lookup result.</dd></dl></section>
 <section id="state"><h2>State and memory</h2><p>A follow-up such as “What about that other order?” needs a conversation history and a rule for resolving ambiguity. Keep working state scoped to the current user and conversation.</p><dl><dt>Working state</dt><dd>Store the selected order ID, retrieved passages and completed steps for this run. When two orders are in scope, ask which one the customer means.</dd><dt>Durable memory</dt><dd>Persist a preference such as language only when appropriate. Associate it with an authenticated identity, define its retention period and support deletion.</dd><dt>Checkpoints</dt><dd>Save the run ID and last completed step before pausing for human approval. On resume, reload state and recheck permissions before any external action.</dd></dl></section><section id="copilot"><h2>Copilot Studio</h2><ol><li>Create a new agent in a development environment. In its instructions, tell it to answer returns questions from the policy and use the order tool for shipping status.</li><li>Upload your demo policy as a knowledge source. Ask whether an unused item is eligible ten days after delivery. Check that the citation opens the right file.</li><li>Add an agent flow using “When an agent calls the flow”. Define a text input called <code>order_id</code>. Use a Switch to return Dispatched for A100, Processing for A101 and Unknown order for other IDs. Use “Respond to the agent” to return the status.</li><li>Add the flow as a tool and describe when to call it. Test a combined order and policy question in the test pane before publishing to a test channel.</li></ol><p><strong>Try it.</strong> Ask about A999. The agent should acknowledge the missing order and still answer the policy question.</p><a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/fundamentals-get-started">Copilot Studio quickstart</a> · <a href="../articles/power-automate-agent-actions.html">Power Automate actions guide</a></section>
 <section id="python"><h2>OpenAI and LangChain</h2><p>With OpenAI function calling, send the model a description of the lookup function and a schema with one required string, <code>order_id</code>. When the response contains a function call, your application validates the arguments, runs the lookup and sends its result back with the same call ID. The model can then answer using the returned status.</p><h3>Run it with LangChain and an OpenAI model</h3><p>Install <code>langchain</code> and <code>langchain-openai</code> in a Python environment. Set <code>OPENAI_API_KEY</code> and <code>OPENAI_MODEL</code> locally using a model that supports tool calling. Run the script below. LangChain handles the calls between the model and your Python function.</p><pre><code>import os
 from langchain.agents import create_agent
@@ -92,4 +100,9 @@ print(result["messages"][-1].content)</code></pre><p><strong>Check your result.<
 <section id="orchestration"><h2>Planning and orchestration</h2><p>Give the workflow a clear start, allowed transitions and a stopping condition. For the compound order question, the order lookup and policy retrieval can run independently before their results are combined.</p><dl><dt>Routing and planning</dt><dd>Route status requests to the order tool and policy questions to retrieval. For mixed intent, construct a two-step plan. Ask for a missing order ID before starting the lookup.</dd><dt>Agent loops and handoffs</dt><dd>In an agent loop, the model selects a tool, observes the result and decides whether to continue. Cap iterations and elapsed time. For a specialist handoff, pass the task, evidence and expected output explicitly.</dd><dt>Parallel work</dt><dd>Run independent reads together. Wait for both before composing the answer. If the order service fails, the policy passage can still support a partial answer.</dd></dl></section>
 <section id="automation"><h2>Events and reliable automation</h2><p>Turn the interactive assistant into a scheduled workflow. For example, a daily trigger could collect delayed orders and send one report to the operations team.</p><dl><dt>Triggers and queues</dt><dd>A schedule, webhook or queue message can start a run. Validate the event and record its unique ID. Use a queue when arrivals can exceed the processing rate.</dd><dt>Retries and duplicate delivery</dt><dd>Retry transient reads with a bounded backoff. Give each report a stable delivery key. Use the provider’s idempotency support where available and reconcile uncertain sends before retrying.</dd><dt>Human decisions</dt><dd>Pause before changing an order or issuing a refund. Show the operator the order, proposed change and evidence. Record approval or rejection and revalidate the order before acting.</dd></dl></section>
 <section id="operations"><h2>Evaluation and operations</h2><h3>Deployment and cost controls</h3><p>Keep development and production connections separate. Version the prompt, tool schema and index together. Set per-run token and tool-call limits. Cache public policy passages by document version and isolate any customer-specific cache entries by identity and permission scope.</p><p>Trace one request from trigger to answer. A successful HTTP response can still contain the wrong order status, so score the business outcome as well as the execution.</p><dl><dt>Retrieval quality</dt><dd>Build a small labelled set with expected passages. Measure whether the right passage appeared in the top results, then check whether each answer claim follows from its citation. Add cases involving outdated or inaccessible documents.</dd><dt>Trust boundaries</dt><dd>Treat retrieved documents and tool output as untrusted data. Enforce access filters during retrieval, keep secrets server-side and restrict each tool identity to the operations it needs.</dd><dt>Tracing and rollout</dt><dd>Record the run ID, prompt version, tool calls, timings, token use and redacted errors. Track cost per resolved question and the slowest step. Compare releases against saved cases, roll out gradually and retain a rollback version.</dd></dl></section><section id="evaluate"><h2>Testing and release</h2><ul><li><strong>Known order.</strong> A100 should produce Dispatched. Score the status and the policy citation separately.</li><li><strong>Missing ID.</strong> Ask “Where is my order?” and check that the agent requests the ID.</li><li><strong>Service outage.</strong> Simulate a timeout. Confirm the answer explains that status is unavailable and can still answer a policy question.</li><li><strong>Changed policy.</strong> Update the fictional return window to 21 days. Refresh the index and verify that the answer cites the new version.</li></ul><p>Record the question, expected facts, tool selected, latency and result. Run the cases again after changing models, instructions or connectors. Start with a test group and inspect failed traces before expanding access.</p></section>
+<section id="questions"><h2>AI agent building: common questions</h2>
+<h3>How do I build an AI agent without writing code?</h3><p>In Microsoft Copilot Studio, define the task, connect a knowledge source, and add an agent flow as a tool. Test a known answer, missing data and a failed tool call before publishing. The <a href="#copilot">low-code walkthrough</a> uses fictional orders so you can learn without connecting business data.</p>
+<h3>What is the difference between an AI agent and an agentic workflow?</h3><p>An AI agent uses a model to choose its next action from available tools. An agentic workflow combines those decisions with defined steps, triggers and controls. Use a fixed flow for predictable steps and give the model only the choices the task needs. See <a href="#orchestration">planning and orchestration</a>.</p>
+<h3>How do RAG, tools and MCP work together?</h3><p>RAG retrieves passages to support an answer. Tools fetch live data or perform an allowed action. MCP provides a shared protocol for connecting a host to tools and resources. In this lab, retrieval supplies the returns policy and a tool supplies the order status; MCP can expose that same tool to compatible clients.</p>
+<h3>How do I move from a demo to a production workflow?</h3><p>Add authenticated access, server-side authorization, bounded retries, duplicate-delivery protection, tracing and a repeatable evaluation set. Require human approval for consequential changes. The <a href="../case-studies/gisp-assistant.html">GISP case study</a> shows the distinction between a conversational data assistant and scheduled reporting.</p></section>
 <p><a href="https://www.anthropic.com/research/building-effective-agents">Workflow patterns from Anthropic</a> · <a href="https://docs.langchain.com/oss/python/langgraph/overview">LangGraph orchestration guide</a></p></article></div></main><footer><a href="../agent-skills/">Explore 100 agent skills</a><a href="../#learning">Back to learning lab</a></footer><script src="lab.js"></script></body></html>
